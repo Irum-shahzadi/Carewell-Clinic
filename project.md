@@ -29,7 +29,7 @@ No build tools, frameworks, or package managers are required. The entire site sh
 
 ```
 New folder/
-├── clinic.html.html   ← Main website (all HTML, CSS, JS in one file)
+├── index.html   ← Main website (all HTML, CSS, JS in one file)
 └── project.md         ← This documentation
 ```
 
@@ -142,7 +142,7 @@ Supports `prefers-reduced-motion` to disable animations for accessibility.
 ## Development Notes
 
 ### Running Locally
-Simply open `clinic.html.html` in any modern browser — no server required.
+Simply open `index.html` in any modern browser — no server required.
 
 ### Editing
 All code lives in a single file:
@@ -154,7 +154,7 @@ All code lives in a single file:
 All images are hotlinked from Unsplash. For production, download and self-host images to avoid external dependency and improve loading performance.
 
 ### Suggested Improvements
-- [ ] Rename file from `clinic.html.html` → `index.html`
+- [x] Rename homepage file to `index.html`
 - [ ] Extract CSS into a separate `styles.css` file
 - [ ] Extract JS into a separate `main.js` file
 - [ ] Self-host images and optimize with WebP format
@@ -167,3 +167,4 @@ All images are hotlinked from Unsplash. For production, download and self-host i
 ## License
 
 This project is for demonstration / educational purposes. Unsplash images are subject to the [Unsplash License](https://unsplash.com/license).
+
