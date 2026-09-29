@@ -1,0 +1,2341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carewell Clinic — Compassionate Care. Better Health.</title>
+<meta name="description" content="Carewell Clinic offers personalized, patient-centered healthcare with experienced professionals and modern facilities. Book an appointment today.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Golos+Text:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+/* ============================= */
+/* 1. ROOT VARIABLES              */
+/* ============================= */
+:root{
+  --primary:#004636;
+  --accent:#D2B168;
+  --white:#FFFFFF;
+  --black:#000000;
+
+  --primary-08:rgba(0,70,54,.08);
+  --primary-12:rgba(0,70,54,.12);
+  --primary-30:rgba(0,70,54,.30);
+  --primary-60:rgba(0,70,54,.60);
+  --primary-85:rgba(0,70,54,.85);
+  --primary-92:rgba(0,70,54,.92);
+
+  --accent-15:rgba(210,177,104,.15);
+  --accent-25:rgba(210,177,104,.25);
+  --accent-40:rgba(210,177,104,.40);
+  --accent-60:rgba(210,177,104,.60);
+
+  --white-70:rgba(255,255,255,.70);
+  --white-85:rgba(255,255,255,.85);
+  --white-92:rgba(255,255,255,.92);
+
+  --black-08:rgba(0,0,0,.08);
+  --black-12:rgba(0,0,0,.12);
+  --black-30:rgba(0,0,0,.30);
+
+  --font-heading:"Gloock", serif;
+  --font-body:"Golos Text", sans-serif;
+
+  --container:1240px;
+  --radius-sm:6px;
+  --radius-md:14px;
+  --radius-lg:28px;
+
+  --shadow-soft:0 20px 50px var(--black-08);
+  --shadow-lift:0 26px 60px var(--primary-30);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;overflow-x:clip;}
+body{
+  width:100%;max-width:100%;overflow-x:clip;
+  font-family:var(--font-body);
+  color:var(--primary);
+  background:var(--white);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+ul{list-style:none;}
+button{font-family:var(--font-body);cursor:pointer;border:none;background:none;}
+input,select,textarea{font-family:var(--font-body);}
+h1,h2,h3,h4{font-family:var(--font-heading);font-weight:400;color:var(--primary);line-height:1.15;}
+
+.container{max-width:var(--container);margin:0 auto;padding:0 24px;}
+.section{padding:100px 0;}
+.section-tight{padding:70px 0;}
+
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;scroll-behavior:auto !important;}
+}
+
+/* ============================= */
+/* Shared components               */
+/* ============================= */
+.eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:.78rem;font-weight:600;letter-spacing:.04em;
+  color:var(--accent);
+  margin-bottom:16px;
+}
+.eyebrow::before{
+  content:"";width:26px;height:2px;background:var(--accent);display:inline-block;
+}
+h2.heading{font-size:clamp(2rem,3.6vw,2.75rem);max-width:640px;}
+.section-head{margin-bottom:52px;}
+.section-head.center{text-align:center;margin-left:auto;margin-right:auto;}
+.section-head.center h2{margin-left:auto;margin-right:auto;}
+.lede{color:var(--primary-85);max-width:560px;font-size:1.02rem;}
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  font-family:var(--font-body);font-weight:600;font-size:.96rem;
+  padding:15px 30px;border-radius:100px;
+  transition:transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease, border-color .25s ease;
+  white-space:nowrap;
+}
+.btn-primary{
+  background:var(--accent);color:var(--primary);border:1px solid var(--accent);
+}
+.btn-primary:hover{background:var(--white);border-color:var(--accent);transform:translateY(-2px);box-shadow:0 14px 30px var(--accent-40);}
+.btn-primary:active{transform:translateY(0);box-shadow:none;}
+.btn-primary:visited{color:var(--primary);}
+
+.btn-outline{
+  background:transparent;color:var(--white);border:1px solid var(--white-70);
+}
+.btn-outline:hover{background:var(--white);color:var(--primary);border-color:var(--white);transform:translateY(-2px);}
+.btn-outline:active{transform:translateY(0);}
+
+.btn-dark{
+  background:var(--primary);color:var(--white);border:1px solid var(--primary);
+}
+.btn-dark:hover{background:transparent;color:var(--primary);transform:translateY(-2px);}
+.btn-dark:active{transform:translateY(0);}
+
+.btn-ghost-dark{
+  background:transparent;color:var(--primary);border:1px solid var(--primary-30);
+}
+.btn-ghost-dark:hover{border-color:var(--primary);background:var(--primary-08);}
+.btn-sm{padding:10px 22px;font-size:.86rem;}
+
+/* reveal-on-scroll */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease, transform .7s ease;}
+.reveal.is-visible{opacity:1;transform:translateY(0);}
+
+/* ============================= */
+/* ============================= */
+/* 5. Announcement Marquee Bar   */
+/* ============================= */
+.announcement{
+  background:var(--primary);color:var(--accent);font-size:.84rem;
+  padding:10px 0;overflow:hidden;position:relative;white-space:nowrap;
+  border-bottom:1px solid rgba(210,177,104,0.25);z-index:101;
+}
+.announcement-marquee{
+  display:flex;width:max-content;animation:marqueeScroll 28s linear infinite;will-change:transform;
+}
+.announcement:hover .announcement-marquee{animation-play-state:paused;}
+.marquee-group{
+  display:flex;align-items:center;gap:36px;padding-right:36px;flex-shrink:0;
+}
+.marquee-item{
+  display:inline-flex;align-items:center;gap:10px;color:var(--white);font-weight:500;letter-spacing:.02em;
+}
+.marquee-item i{color:var(--accent);font-size:.88rem;}
+.marquee-item a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;font-weight:600;margin-left:4px;}
+.marquee-item a:hover{color:var(--white);}
+.marquee-separator{color:var(--accent);opacity:.6;font-size:.75rem;}
+@keyframes marqueeScroll{
+  0%{transform:translateX(0);}
+  100%{transform:translateX(-50%);}
+}
+@media (prefers-reduced-motion:reduce){
+  .announcement-marquee{animation:none;overflow-x:auto;}
+}
+
+/* ============================= */
+/* 6. Header / Navigation         */
+/* ============================= */
+.site-header{
+  position:sticky;top:0;z-index:1000;
+  background:rgba(255,255,255,0.98);
+  border-bottom:1px solid var(--black-08);
+  transition:box-shadow .3s ease, padding .3s ease, background-color .3s ease;
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+}
+.site-header.scrolled{
+  box-shadow:0 10px 30px rgba(0,70,54,0.10);
+  background:rgba(255,255,255,0.99);
+}
+.nav-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px 0;
+}
+.logo{display:flex;align-items:center;gap:12px;font-family:var(--font-heading);}
+.logo-icon{
+  width:44px;height:44px;border-radius:50%;
+  background:var(--primary);color:var(--accent);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.1rem;flex-shrink:0;
+}
+.logo-text{display:flex;flex-direction:column;line-height:1.1;}
+.logo-name{font-size:1.35rem;color:var(--primary);white-space:nowrap;}
+.logo-sub{font-family:var(--font-body);font-size:.6rem;letter-spacing:.16em;color:var(--accent);font-weight:600;white-space:nowrap;}
+
+.main-nav{display:flex;align-items:center;gap:36px;}
+.main-nav a{
+  font-size:.94rem;font-weight:500;color:var(--primary-85);
+  position:relative;padding:6px 0;
+}
+.main-nav a::after{
+  content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--accent);
+  transition:width .25s ease;
+}
+.main-nav a:hover::after,.main-nav a.active::after{width:100%;}
+.main-nav a.active{color:var(--primary);}
+
+.nav-right{display:flex;align-items:center;gap:22px;}
+.nav-phone{display:flex;align-items:center;gap:8px;font-weight:600;font-size:.92rem;color:var(--primary);}
+.nav-phone i{color:var(--accent);}
+.hamburger{
+  display:none;flex-direction:column;gap:5px;width:26px;background:none;border:none;
+  padding:4px;
+}
+.hamburger span{display:block;width:100%;height:2px;background:var(--primary);transition:transform .3s ease, opacity .3s ease;}
+.hamburger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hamburger[aria-expanded="true"] span:nth-child(2){opacity:0;}
+.hamburger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+.nav-overlay{
+  position:fixed;inset:0;background:var(--primary-60);z-index:490;
+  opacity:0;pointer-events:none;transition:opacity .3s ease;
+}
+.nav-overlay.is-active{opacity:1;pointer-events:auto;}
+
+@media (max-width:960px){
+  .main-nav{
+    position:fixed;top:0;right:0;height:100vh;width:min(340px,85vw);
+    background:var(--white);flex-direction:column;align-items:flex-start;
+    padding:100px 32px 32px;gap:26px;z-index:495;
+    transform:translateX(100%);transition:transform .35s ease;
+    box-shadow:-20px 0 50px var(--black-12);
+  }
+  .main-nav.is-open{transform:translateX(0);}
+  .nav-phone{display:none;}
+  .hamburger{display:flex;}
+  .book-btn-header{display:none;}
+}
+
+/* ============================= */
+/* 7. Hero                        */
+/* ============================= */
+.hero{
+  position:relative;background:var(--primary);color:var(--white);
+  padding:100px 0 130px;overflow:hidden;
+}
+.hero::before{
+  content:"";position:absolute;top:-160px;right:-160px;width:480px;height:480px;
+  border-radius:50%;border:1px solid var(--accent-25);
+}
+.hero::after{
+  content:"";position:absolute;bottom:-220px;left:-140px;width:420px;height:420px;
+  border-radius:50%;background:radial-gradient(circle, var(--accent-15), transparent 70%);
+}
+.hero-grid{
+  display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center;position:relative;z-index:2;
+}
+.hero-eyebrow{color:var(--accent);font-weight:600;font-size:.8rem;letter-spacing:.04em;margin-bottom:20px;display:flex;align-items:center;gap:10px;}
+.hero-eyebrow::before{content:"";width:26px;height:2px;background:var(--accent);}
+.hero h1{font-size:clamp(2.4rem,4.6vw,3.6rem);color:var(--white);max-width:620px;}
+.hero p.hero-desc{margin-top:22px;color:var(--white-85);max-width:520px;font-size:1.06rem;}
+.hero-actions{display:flex;gap:16px;margin-top:36px;flex-wrap:wrap;}
+.hero-trust{display:flex;gap:30px;margin-top:52px;flex-wrap:wrap;}
+.hero-trust-item{display:flex;align-items:center;gap:10px;font-size:.9rem;color:var(--white-85);}
+.hero-trust-item i{color:var(--accent);}
+
+.hero-visual{position:relative;}
+.hero-visual-frame{
+  border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--accent-25);
+  box-shadow:var(--shadow-lift);aspect-ratio:4/5;
+}
+.hero-visual-frame img{width:100%;height:100%;object-fit:cover;}
+.floating-card{
+  position:absolute;background:var(--white);color:var(--primary);
+  border-radius:var(--radius-md);padding:16px 20px;
+  box-shadow:0 22px 44px var(--black-12);
+  display:flex;align-items:center;gap:14px;
+}
+.floating-card .fc-icon{
+  width:44px;height:44px;border-radius:50%;background:var(--primary);color:var(--accent);
+  display:flex;align-items:center;justify-content:center;font-size:1.05rem;flex-shrink:0;
+}
+.floating-card .fc-num{font-family:var(--font-heading);font-size:1.15rem;line-height:1;}
+.floating-card .fc-label{font-size:.74rem;color:var(--primary-85);margin-top:2px;}
+.fc-experience{top:-8%;left:-8%;}
+.fc-patients{bottom:-6%;right:-6%;}
+
+@media (max-width:960px){
+  .hero-grid{grid-template-columns:1fr;}
+  .hero-visual{margin-top:40px;max-width:420px;}
+  .floating-card{position:static;margin-top:16px;display:inline-flex;}
+  .hero-visual-frame{aspect-ratio:4/3;}
+}
+
+/* ============================= */
+/* 8. Trust strip                 */
+/* ============================= */
+.trust-strip{background:var(--primary-08);}
+.trust-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:0;
+}
+.trust-item{
+  display:flex;align-items:center;gap:16px;padding:34px 24px;
+  border-right:1px solid var(--primary-12);
+}
+.trust-item:last-child{border-right:none;}
+.trust-item i{font-size:1.5rem;color:var(--accent);flex-shrink:0;}
+.trust-item span{font-weight:600;font-size:.94rem;}
+@media (max-width:900px){
+  .trust-grid{grid-template-columns:repeat(2,1fr);}
+  .trust-item{border-right:1px solid var(--primary-12);border-bottom:1px solid var(--primary-12);}
+  .trust-item:nth-child(2n){border-right:none;}
+}
+
+/* ============================= */
+/* 9. About                       */
+/* ============================= */
+.about-grid{
+  display:grid;grid-template-columns:.95fr 1.05fr;gap:70px;align-items:center;
+}
+.about-visual{position:relative;}
+.about-visual img{
+  border-radius:var(--radius-lg);aspect-ratio:4/5;object-fit:cover;box-shadow:var(--shadow-soft);
+}
+.about-badge{
+  position:absolute;bottom:-26px;left:-26px;background:var(--primary);color:var(--white);
+  border-radius:var(--radius-md);padding:18px 24px;box-shadow:0 20px 40px var(--primary-30);
+  display:flex;align-items:center;gap:12px;max-width:220px;
+}
+.about-badge i{color:var(--accent);font-size:1.3rem;}
+.about-badge span{font-family:var(--font-heading);font-size:1rem;line-height:1.3;}
+.about-points{margin-top:28px;display:grid;gap:18px;}
+.about-point{display:flex;gap:16px;align-items:flex-start;}
+.about-point i{
+  width:38px;height:38px;border-radius:50%;background:var(--primary-08);color:var(--primary);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.95rem;
+}
+.about-point h4{font-family:var(--font-body);font-size:1rem;font-weight:600;margin-bottom:4px;}
+.about-point p{color:var(--primary-85);font-size:.94rem;}
+@media (max-width:900px){
+  .about-grid{grid-template-columns:1fr;}
+  .about-badge{position:static;margin-top:-40px;margin-left:20px;width:fit-content;}
+}
+
+/* Statistics section removed */
+
+/* ============================= */
+/* 11. Services                   */
+/* ============================= */
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;}
+.service-card{
+  background:var(--white);
+  border:1px solid var(--black-08);
+  border-radius:var(--radius-md);
+  overflow:hidden;
+  transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+  display:flex;
+  flex-direction:column;
+  position:relative;
+}
+.service-card:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(0,70,54,0.12);border-color:var(--accent);}
+.service-card-media{
+  position:relative;
+  width:100%;
+  aspect-ratio:16/10;
+  overflow:hidden;
+  background:var(--primary-08);
+}
+.service-card-media img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .5s ease;
+}
+.service-card:hover .service-card-media img{transform:scale(1.08);}
+.service-badge-num{
+  position:absolute;
+  top:14px;
+  right:14px;
+  background:rgba(0,70,54,0.85);
+  backdrop-filter:blur(6px);
+  color:var(--accent);
+  font-family:var(--font-heading);
+  font-size:0.92rem;
+  padding:4px 12px;
+  border-radius:100px;
+  border:1px solid var(--accent-40);
+  z-index:2;
+}
+.service-card-body{
+  padding:24px 24px 28px;
+  display:flex;
+  flex-direction:column;
+  flex-grow:1;
+}
+.service-icon{
+  width:50px;height:50px;border-radius:50%;background:var(--primary-08);color:var(--primary);
+  display:flex;align-items:center;justify-content:center;font-size:1.25rem;margin-bottom:16px;
+  transition:background .3s ease, color .3s ease, transform .3s ease;
+}
+.service-card:hover .service-icon{background:var(--primary);color:var(--accent);transform:scale(1.08);}
+.service-card h3{font-size:1.22rem;margin-bottom:8px;color:var(--primary);}
+.service-card p{color:var(--primary-85);font-size:.92rem;line-height:1.55;margin-bottom:20px;flex-grow:1;}
+.service-link{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:.9rem;color:var(--primary);margin-top:auto;}
+.service-link i{transition:transform .3s ease;color:var(--accent);}
+.service-card:hover .service-link i{transform:translateX(6px);}
+@media (max-width:960px){.services-grid{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:600px){.services-grid{grid-template-columns:1fr;}}
+
+/* ============================= */
+/* 12. Featured checkup split     */
+/* ============================= */
+.split-section{background:var(--primary-08);}
+.split-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;}
+.split-grid.reverse .split-image{order:2;}
+.split-grid.reverse .split-copy{order:1;}
+.split-image img{border-radius:var(--radius-lg);aspect-ratio:4/3;object-fit:cover;box-shadow:var(--shadow-soft);}
+.split-copy ul{margin:24px 0 30px;display:grid;gap:14px;}
+.split-copy ul li{display:flex;gap:12px;align-items:flex-start;font-size:.95rem;color:var(--primary-85);}
+.split-copy ul li i{color:var(--accent);margin-top:4px;}
+@media (max-width:900px){
+  .split-grid{grid-template-columns:1fr;gap:40px;}
+  .split-grid.reverse .split-image,.split-grid.reverse .split-copy{order:0;}
+}
+
+/* ============================= */
+/* 13. Doctors / Team Slider      */
+/* ============================= */
+.team-slider-wrap{position:relative;margin-top:20px;}
+.team-slider-viewport{overflow:hidden;padding:14px 4px 26px;}
+.team-slider-track{
+  display:flex;
+  gap:24px;
+  transition:transform .45s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change:transform;
+}
+.team-slide{
+  flex:0 0 calc((100% - 72px) / 4);
+  min-width:0;
+}
+.doctor-card{
+  background:var(--white);
+  border-radius:var(--radius-md);
+  overflow:hidden;
+  border:1px solid var(--black-08);
+  transition:box-shadow .35s ease,transform .35s ease,border-color .35s ease;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+}
+.doctor-card:hover{box-shadow:var(--shadow-soft);transform:translateY(-6px);border-color:var(--accent-40);}
+.doctor-photo{aspect-ratio:3/4;overflow:hidden;position:relative;background:var(--primary-08);}
+.doctor-photo img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
+.doctor-card:hover .doctor-photo img{transform:scale(1.06);}
+.doctor-badge-overlay{
+  position:absolute;bottom:12px;left:12px;
+  background:rgba(0,70,54,0.88);backdrop-filter:blur(6px);color:var(--white);
+  font-size:.72rem;font-weight:600;padding:4px 10px;border-radius:100px;
+  border:1px solid var(--accent-25);letter-spacing:.04em;
+}
+.doctor-info{padding:20px 20px 24px;display:flex;flex-direction:column;flex-grow:1;}
+.doctor-info h3{font-size:1.1rem;margin-bottom:3px;color:var(--primary);}
+.doctor-specialty{color:var(--accent);font-weight:600;font-size:.84rem;margin-bottom:6px;}
+.doctor-meta{font-size:.8rem;color:var(--primary-85);margin-bottom:14px;display:flex;align-items:center;gap:6px;}
+.doctor-meta i{color:var(--accent);font-size:.78rem;}
+.doctor-footer{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:14px;border-top:1px solid var(--black-08);}
+.doctor-social{display:flex;gap:8px;}
+.doctor-social a{
+  width:32px;height:32px;border-radius:50%;border:1px solid var(--primary-12);
+  display:flex;align-items:center;justify-content:center;font-size:.78rem;color:var(--primary);
+  transition:background .25s ease,color .25s ease,border-color .25s ease;
+}
+.doctor-social a:hover{background:var(--primary);color:var(--accent);border-color:var(--primary);}
+.doctor-info .view-profile{
+  font-size:.82rem;font-weight:600;display:inline-flex;align-items:center;gap:6px;
+  color:var(--primary);background:none;border:none;cursor:pointer;padding:0;
+  transition:color .2s ease;
+}
+.doctor-info .view-profile:hover{color:var(--accent);}
+.doctor-info .view-profile i{color:var(--accent);transition:transform .2s ease;}
+.doctor-info .view-profile:hover i{transform:translateX(4px);}
+
+.team-slider-wrap{position:relative;margin-top:20px;padding:0 24px;}
+.team-arrow{
+  position:absolute;top:50%;transform:translateY(-50%);z-index:10;
+  width:46px;height:46px;border-radius:50%;border:1px solid var(--primary-30);background:var(--white);
+  color:var(--primary);display:flex;align-items:center;justify-content:center;font-size:1rem;
+  cursor:pointer;transition:all .25s ease;box-shadow:0 6px 20px rgba(0,70,54,0.12);
+}
+.team-arrow#teamPrev{left:-18px;}
+.team-arrow#teamNext{right:-18px;}
+.team-arrow:hover:not(:disabled){background:var(--primary);color:var(--accent);border-color:var(--primary);transform:translateY(-50%) scale(1.06);}
+.team-arrow:disabled{opacity:.35;cursor:not-allowed;}
+.team-dots{display:none !important;}
+@media (max-width:768px){
+  .team-slider-wrap{padding:0 6px;}
+  .team-arrow#teamPrev{left:-4px;}
+  .team-arrow#teamNext{right:-4px;}
+}
+@media (max-width:1200px){.team-slide{flex:0 0 calc((100% - 48px) / 3);}}
+@media (max-width:860px){.team-slide{flex:0 0 calc((100% - 24px) / 2);}}
+@media (max-width:560px){.team-slide{flex:0 0 100%;}}
+
+/* ============================= */
+/* 14. Why choose us               */
+/* ============================= */
+.why-section{background:var(--primary-08);padding:100px 0;}
+.why-grid{
+  display:grid;grid-template-columns:1fr 1.15fr;gap:64px;align-items:stretch;
+}
+.why-visual-col{
+  display:flex;flex-direction:column;
+}
+.why-visual-frame{
+  position:relative;height:100%;min-height:560px;border-radius:var(--radius-lg);overflow:hidden;
+  box-shadow:var(--shadow-soft);background:var(--white);
+}
+.why-visual-frame img{
+  width:100%;height:100%;object-fit:cover;display:block;
+}
+.why-visual-frame .why-overlay-badge{
+  position:absolute;bottom:24px;left:24px;right:24px;
+  background:rgba(0,70,54,0.92);backdrop-filter:blur(8px);
+  border:1px solid var(--accent-40);border-radius:var(--radius-md);
+  padding:20px 22px;color:var(--white);display:flex;align-items:center;gap:18px;
+}
+.why-overlay-badge i{
+  font-size:2rem;color:var(--accent);flex-shrink:0;
+}
+.why-overlay-badge h5{
+  font-family:var(--font-heading);font-size:1.15rem;color:var(--white);margin-bottom:3px;
+}
+.why-overlay-badge p{
+  font-size:.82rem;color:var(--white-85);margin:0;line-height:1.4;
+}
+.why-copy-col{
+  display:flex;flex-direction:column;justify-content:center;
+}
+.why-cards-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:28px;
+}
+.why-card-item{
+  background:var(--white);border:1px solid var(--black-08);border-radius:var(--radius-md);
+  padding:22px 20px;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;
+  display:flex;gap:14px;align-items:flex-start;
+}
+.why-card-item:hover{
+  transform:translateY(-3px);border-color:var(--accent-40);box-shadow:0 12px 24px var(--black-08);
+}
+.why-card-icon{
+  width:40px;height:40px;border-radius:50%;background:var(--primary-08);color:var(--primary);
+  display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0;
+  transition:background .25s ease,color .25s ease;
+}
+.why-card-item:hover .why-card-icon{background:var(--primary);color:var(--accent);}
+.why-card-content h4{font-size:.96rem;margin-bottom:4px;color:var(--primary);}
+.why-card-content p{font-size:.82rem;color:var(--primary-85);line-height:1.45;margin:0;}
+@media (max-width:992px){
+  .why-grid{grid-template-columns:1fr;gap:40px;}
+  .why-visual-frame{min-height:400px;}
+}
+@media (max-width:640px){
+  .why-cards-grid{grid-template-columns:1fr;}
+}
+
+/* ============================= */
+/* 15. How it works                */
+/* ============================= */
+.steps-wrap{position:relative;}
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;position:relative;}
+.steps-grid::before{
+  content:"";position:absolute;top:34px;left:12%;right:12%;height:1px;background:var(--primary-12);
+}
+.step-card{position:relative;text-align:center;}
+.step-icon{
+  width:68px;height:68px;border-radius:50%;background:var(--primary);color:var(--accent);
+  display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin:0 auto 20px;
+  position:relative;z-index:2;border:6px solid var(--white);
+}
+.step-tag{font-size:.72rem;font-weight:600;letter-spacing:.1em;color:var(--accent);margin-bottom:8px;}
+.step-card h4{font-size:1.02rem;}
+@media (max-width:900px){
+  .steps-grid{grid-template-columns:1fr;gap:36px;}
+  .steps-grid::before{display:none;}
+}
+
+/* ============================= */
+/* 16. Appointment                 */
+/* ============================= */
+.appointment-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:start;}
+.appointment-copy img{border-radius:var(--radius-lg);margin-top:26px;aspect-ratio:4/3;object-fit:cover;}
+.appointment-benefits{display:grid;gap:14px;margin-top:22px;}
+.appointment-benefits li{display:flex;gap:10px;align-items:flex-start;font-size:.92rem;color:var(--primary-85);}
+.appointment-benefits i{color:var(--accent);margin-top:4px;}
+
+.appointment-form{
+  background:var(--white);border:1px solid var(--black-08);border-radius:var(--radius-lg);
+  padding:40px;box-shadow:var(--shadow-soft);
+}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.form-group{margin-bottom:20px;}
+.form-group.full{grid-column:1/-1;}
+.form-group label{display:block;font-size:.84rem;font-weight:600;margin-bottom:8px;}
+.input-wrap{position:relative;}
+.input-wrap i{position:absolute;left:16px;top:50%;transform:translateY(-50%);color:var(--primary-60);font-size:.88rem;}
+.form-group input,.form-group select,.form-group textarea{
+  width:100%;padding:13px 16px 13px 42px;border:1px solid var(--primary-12);border-radius:var(--radius-sm);
+  font-size:.92rem;color:var(--primary);background:var(--white);transition:border-color .2s ease,box-shadow .2s ease;
+}
+.form-group textarea{padding-left:16px;min-height:110px;resize:vertical;}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{
+  border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-15);outline:none;
+}
+.form-group select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23004636' stroke-width='1.5' fill='none' fill-rule='evenodd'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;}
+.field-error{color:var(--primary);background:var(--accent-15);border-left:3px solid var(--accent);padding:6px 10px;font-size:.78rem;margin-top:6px;border-radius:4px;display:none;}
+.form-group.has-error input,.form-group.has-error select{border-color:var(--accent);}
+.form-group.has-error .field-error{display:block;}
+.form-msg{
+  margin-top:18px;padding:16px 18px;border-radius:var(--radius-sm);font-size:.9rem;display:none;gap:10px;align-items:flex-start;
+}
+.form-msg.success{display:flex;background:var(--primary-08);border-left:3px solid var(--primary);}
+.form-msg.error{display:flex;background:var(--accent-15);border-left:3px solid var(--accent);}
+@media (max-width:900px){.appointment-grid{grid-template-columns:1fr;}}
+@media (max-width:560px){.form-row{grid-template-columns:1fr;}.appointment-form{padding:26px;}}
+
+/* Resources section removed */
+
+/* ============================= */
+/* 18. Testimonials                 */
+/* ============================= */
+.testimonials{background:var(--primary-08);}
+.carousel{position:relative;padding:0 30px;}
+.carousel-track-wrap{overflow:hidden;}
+.carousel-track{display:flex;transition:transform .5s ease;}
+.t-slide{flex:0 0 33.3333%;padding:6px 14px;}
+.t-card{
+  background:var(--white);border-radius:var(--radius-md);padding:32px 28px;height:100%;
+  border:1px solid var(--black-08);position:relative;
+}
+.t-quote-icon{color:var(--accent-40);font-size:1.8rem;margin-bottom:14px;}
+.t-stars{color:var(--accent);font-size:.82rem;margin-bottom:12px;}
+.t-text{font-size:.94rem;color:var(--primary-85);margin-bottom:20px;}
+.t-person{display:flex;align-items:center;gap:12px;}
+.t-person img{width:46px;height:46px;border-radius:50%;object-fit:cover;}
+.t-name{font-weight:600;font-size:.92rem;}
+.t-context{font-size:.78rem;color:var(--primary-60);}
+.carousel-arrow{
+  position:absolute;top:50%;transform:translateY(-50%);z-index:10;
+  width:46px;height:46px;border-radius:50%;border:1px solid var(--primary-30);background:var(--white);
+  display:flex;align-items:center;justify-content:center;color:var(--primary);
+  transition:all .25s ease;box-shadow:0 6px 20px rgba(0,70,54,0.12);cursor:pointer;
+}
+.carousel-arrow#carPrev{left:-18px;}
+.carousel-arrow#carNext{right:-18px;}
+.carousel-arrow:hover{background:var(--primary);color:var(--accent);transform:translateY(-50%) scale(1.06);}
+.carousel-dots{display:none !important;}
+@media (max-width:768px){
+  .carousel{padding:0 6px;}
+  .carousel-arrow#carPrev{left:-4px;}
+  .carousel-arrow#carNext{right:-4px;}
+}
+@media (max-width:960px){.t-slide{flex:0 0 50%;}}
+@media (max-width:640px){.t-slide{flex:0 0 100%;}}
+
+/* ============================= */
+/* 19. FAQ Section                */
+/* ============================= */
+.faq-section{padding:100px 0;background:var(--white);}
+.faq-grid{display:grid;grid-template-columns:1fr 1.35fr;gap:60px;align-items:flex-start;}
+.faq-showcase{
+  background:var(--white);
+  border:1px solid var(--black-08);
+  border-radius:var(--radius-lg);
+  overflow:hidden;
+  box-shadow:var(--shadow-soft);
+  position:sticky;
+  top:100px;
+}
+.faq-showcase-img{
+  position:relative;width:100%;aspect-ratio:16/11;overflow:hidden;background:var(--primary-08);
+}
+.faq-showcase-img img{width:100%;height:100%;object-fit:cover;display:block;}
+.faq-showcase-badge{
+  position:absolute;bottom:14px;left:14px;background:rgba(0,70,54,0.90);
+  backdrop-filter:blur(6px);color:var(--white);font-size:.76rem;font-weight:600;
+  padding:6px 14px;border-radius:100px;display:flex;align-items:center;gap:8px;
+  border:1px solid var(--accent-40);
+}
+.faq-showcase-badge i{color:var(--accent);}
+.faq-showcase-body{padding:28px 26px;}
+.faq-showcase-body h3{font-size:1.4rem;color:var(--primary);margin-bottom:8px;}
+.faq-showcase-body p{color:var(--primary-85);font-size:.92rem;line-height:1.55;margin-bottom:20px;}
+.faq-contact-pills{display:flex;flex-direction:column;gap:10px;margin-bottom:22px;}
+.faq-contact-pill{
+  display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:var(--radius-sm);
+  background:var(--primary-08);color:var(--primary);font-size:.88rem;font-weight:600;
+}
+.faq-contact-pill i{color:var(--accent);font-size:1rem;}
+.faq-filter-bar{
+  display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px;
+}
+.faq-filter-btn{
+  background:var(--primary-08);color:var(--primary);border:1px solid transparent;
+  padding:7px 16px;border-radius:100px;font-size:.82rem;font-weight:600;cursor:pointer;
+  transition:background .2s ease,color .2s ease,border-color .2s ease;
+}
+.faq-filter-btn:hover{background:var(--primary-12);}
+.faq-filter-btn.active{background:var(--primary);color:var(--accent);border-color:var(--primary);}
+
+.faq-list{display:flex;flex-direction:column;gap:14px;}
+.faq-item{
+  background:#FAFBFA;
+  border:1px solid var(--black-08);
+  border-radius:var(--radius-md);
+  overflow:hidden;
+  transition:border-color .25s ease,box-shadow .25s ease,background-color .25s ease;
+}
+.faq-item:hover{border-color:var(--accent-40);box-shadow:0 8px 24px var(--black-08);}
+.faq-item.open{border-color:var(--accent);background:var(--white);box-shadow:0 12px 30px var(--primary-08);}
+.faq-question{
+  width:100%;display:flex;align-items:center;justify-content:space-between;gap:18px;
+  padding:20px 24px;text-align:left;font-weight:600;font-size:1rem;color:var(--primary);
+  background:none;border:none;cursor:pointer;
+}
+.faq-question-title{display:flex;align-items:center;gap:12px;}
+.faq-tag{
+  font-size:.68rem;text-transform:uppercase;letter-spacing:.08em;font-weight:700;
+  padding:2px 8px;border-radius:4px;background:var(--primary-12);color:var(--primary);
+}
+.faq-question i{
+  width:32px;height:32px;border-radius:50%;background:var(--white);color:var(--primary);
+  display:flex;align-items:center;justify-content:center;font-size:.82rem;flex-shrink:0;
+  border:1px solid var(--black-08);transition:transform .3s ease,background .3s ease,color .3s ease;
+}
+.faq-item.open .faq-question i{
+  transform:rotate(45deg);background:var(--primary);color:var(--accent);border-color:var(--primary);
+}
+.faq-answer{
+  display:none;
+}
+.faq-item.open .faq-answer{
+  display:block;
+}
+.faq-answer-inner{
+  padding:0 24px 22px;
+  color:var(--primary-85);
+  font-size:.92rem;
+  line-height:1.65;
+}
+@media (max-width:960px){
+  .faq-grid{grid-template-columns:1fr;gap:40px;}
+  .faq-showcase{position:static;}
+}
+
+/* Emergency notice removed */
+
+/* ============================= */
+/* 21. Contact                       */
+/* ============================= */
+.contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:60px;}
+.contact-info-list{display:grid;gap:22px;margin-top:26px;}
+.contact-info-item{display:flex;gap:16px;align-items:flex-start;}
+.contact-info-item i{
+  width:42px;height:42px;border-radius:50%;background:var(--primary-08);color:var(--primary);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.contact-info-item h4{font-size:.94rem;font-weight:600;margin-bottom:3px;}
+.contact-info-item p{font-size:.9rem;color:var(--primary-85);}
+.map-placeholder{
+  margin-top:28px;border-radius:var(--radius-md);border:1px dashed var(--primary-30);
+  background:var(--primary-08);height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:var(--primary-85);text-align:center;padding:20px;
+}
+.map-placeholder i{font-size:1.6rem;color:var(--accent);}
+.contact-form-card{
+  background:var(--white);border:1px solid var(--black-08);border-radius:var(--radius-lg);padding:40px;box-shadow:var(--shadow-soft);
+}
+@media (max-width:900px){.contact-grid{grid-template-columns:1fr;}}
+@media (max-width:560px){.contact-form-card{padding:26px;}}
+
+/* ============================= */
+/* 22. Enhanced CTA Panel        */
+/* ============================= */
+.cta-panel-wrap{padding:100px 0;}
+.cta-panel{
+  background:linear-gradient(135deg, #003629 0%, #004636 50%, #00241b 100%);
+  border-radius:var(--radius-xl);
+  border:1px solid rgba(199,228,70,0.30);
+  box-shadow:0 24px 60px -12px rgba(0,70,54,0.35), 0 0 0 1px rgba(255,255,255,0.08) inset;
+  padding:72px 48px;
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  position:relative;
+  overflow:hidden;
+}
+.cta-panel::before{
+  content:"";
+  position:absolute;
+  top:-50%;
+  left:50%;
+  transform:translateX(-50%);
+  width:600px;
+  height:400px;
+  background:radial-gradient(circle, rgba(199,228,70,0.18) 0%, transparent 70%);
+  filter:blur(50px);
+  pointer-events:none;
+}
+/* cta-pill removed for clean modern CTA */
+.cta-panel h2{
+  color:var(--white);
+  font-size:clamp(1.9rem,3.6vw,2.7rem);
+  font-family:var(--font-heading);
+  line-height:1.2;
+  max-width:760px;
+  position:relative;
+  z-index:1;
+}
+.cta-panel p{
+  color:rgba(255,255,255,0.88);
+  margin-top:18px;
+  max-width:640px;
+  font-size:1.02rem;
+  line-height:1.65;
+  position:relative;
+  z-index:1;
+}
+.cta-btn-group{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:18px;
+  margin-top:34px;
+  flex-wrap:wrap;
+  position:relative;
+  z-index:1;
+}
+.cta-btn-main{
+  background:var(--accent);
+  color:var(--primary);
+  font-weight:700;
+  padding:15px 32px;
+  border-radius:100px;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  box-shadow:0 10px 24px -4px rgba(199,228,70,0.4);
+  transition:all .25s ease;
+}
+.cta-btn-main:hover{
+  background:var(--white);
+  color:var(--primary);
+  transform:translateY(-2px);
+  box-shadow:0 14px 30px -4px rgba(255,255,255,0.4);
+}
+.cta-btn-secondary{
+  background:rgba(255,255,255,0.12);
+  color:var(--white);
+  font-weight:600;
+  padding:15px 28px;
+  border-radius:100px;
+  border:1px solid rgba(255,255,255,0.25);
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  transition:all .25s ease;
+}
+.cta-btn-secondary:hover{
+  background:rgba(255,255,255,0.22);
+  color:var(--white);
+  border-color:var(--white);
+  transform:translateY(-2px);
+}
+/* cta-trust-bar removed */
+@media (max-width:600px){
+  .cta-panel{padding:48px 24px;}
+  .cta-btn-group{flex-direction:column;width:100%;}
+  .cta-btn-main,.cta-btn-secondary{width:100%;justify-content:center;}
+  .cta-trust-bar{gap:16px;}
+}
+
+/* ============================= */
+/* 23. Footer                        */
+/* ============================= */
+.site-footer{background:var(--primary);color:var(--white-85);padding-top:80px;position:relative;}
+.footer-grid{
+  display:grid;grid-template-columns:1.3fr .85fr 1fr 1.15fr;gap:44px;padding-bottom:56px;
+  border-bottom:1px solid rgba(255,255,255,.14);
+}
+.footer-brand p{margin-top:16px;color:var(--white-70);font-size:.9rem;line-height:1.6;max-width:300px;}
+.footer-logo{display:flex;align-items:center;gap:12px;flex-wrap:nowrap;}
+.footer-logo-icon{
+  width:42px;height:42px;border-radius:50%;background:var(--accent);color:var(--primary);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1rem;
+}
+.footer-logo-text{display:flex;flex-direction:column;gap:2px;}
+.footer-logo-name{font-family:var(--font-heading);font-size:1.4rem;line-height:1.1;color:var(--white);white-space:nowrap;}
+.footer-logo-subtitle{font-family:var(--font-body);font-size:.62rem;letter-spacing:.16em;color:var(--accent);white-space:nowrap;font-weight:600;}
+.footer-social{display:flex;gap:10px;margin-top:22px;}
+.footer-social a{
+  width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.10);color:var(--white);
+  display:flex;align-items:center;justify-content:center;font-size:.9rem;
+  transition:background .25s ease,color .25s ease,transform .25s ease;
+}
+.footer-social a:hover{background:var(--accent);color:var(--primary);transform:translateY(-3px);}
+
+.footer-col h4{
+  font-family:var(--font-body);font-size:1rem;font-weight:600;color:var(--white);
+  margin-bottom:20px;letter-spacing:.02em;position:relative;padding-bottom:8px;
+}
+.footer-col h4::after{
+  content:"";position:absolute;left:0;bottom:0;width:24px;height:2px;background:var(--accent);
+}
+.footer-col ul{display:grid;gap:11px;}
+.footer-col ul a{
+  color:var(--white-70);font-size:.9rem;transition:color .2s ease,padding-left .2s ease;
+  display:inline-block;
+}
+.footer-col ul a:hover{color:var(--accent);padding-left:4px;}
+.footer-hours-list li{
+  display:flex;justify-content:space-between;gap:12px;font-size:.88rem;color:var(--white-85);
+  padding-bottom:6px;border-bottom:1px dashed rgba(255,255,255,.12);
+}
+.footer-hours-list li:last-child{border-bottom:none;}
+.footer-contact-info{font-style:normal;display:grid;gap:12px;}
+.footer-contact-item{display:flex;gap:12px;align-items:flex-start;font-size:.9rem;color:var(--white-85);}
+.footer-contact-item i{color:var(--accent);margin-top:4px;flex-shrink:0;}
+.footer-contact-item a{color:var(--white-85);transition:color .2s ease;}
+.footer-contact-item a:hover{color:var(--accent);}
+
+.footer-bottom{
+  padding:26px 0;display:flex;align-items:center;justify-content:space-between;
+  gap:20px;font-size:.84rem;color:var(--white-70);flex-wrap:wrap;
+}
+.footer-bottom-links{display:flex;gap:20px;flex-wrap:wrap;}
+.footer-bottom-links a{color:var(--white-70);transition:color .2s ease;}
+.footer-bottom-links a:hover{color:var(--accent);}
+
+@media (max-width:960px){
+  .footer-grid{grid-template-columns:1fr 1fr;gap:36px;}
+}
+@media (max-width:560px){
+  .footer-grid{grid-template-columns:1fr;}
+}
+
+/* ============================= */
+/* Scroll to top                     */
+/* ============================= */
+.scroll-top{
+  position:fixed;bottom:26px;right:26px;width:48px;height:48px;border-radius:50%;
+  background:var(--primary);color:var(--accent);display:flex;align-items:center;justify-content:center;
+  box-shadow:0 14px 30px var(--black-30);opacity:0;pointer-events:none;transform:translateY(10px);
+  transition:opacity .3s ease, transform .3s ease;z-index:400;
+}
+.scroll-top.is-visible{opacity:1;pointer-events:auto;transform:translateY(0);}
+.scroll-top:hover{background:var(--accent);color:var(--primary);}
+
+.sr-only{
+  position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+  clip:rect(0,0,0,0);white-space:nowrap;border:0;
+}
+.skip-link{
+  position:absolute;left:-999px;top:auto;background:var(--accent);color:var(--primary);
+  padding:12px 20px;z-index:1000;font-weight:600;border-radius:0 0 8px 0;
+}
+.skip-link:focus{left:0;top:0;}
+</style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- ============================= -->
+<!-- 5. Announcement Bar -->
+<!-- ============================= -->
+<div class="announcement">
+  <div class="announcement-marquee" aria-label="Clinic announcements">
+    <div class="marquee-group">
+      <span class="marquee-item"><i class="fa-solid fa-bolt" aria-hidden="true"></i> Same-Day Appointments Available</span>
+      <span class="marquee-separator">✦</span>
+      <span class="marquee-item"><i class="fa-solid fa-stethoscope" aria-hidden="true"></i> Free Initial Consultation for New Patients</span>
+      <span class="marquee-separator">✦</span>
+      <span class="marquee-item"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i> Preventive Health Checkups Available</span>
+      <span class="marquee-separator">✦</span>
+      <span class="marquee-item"><i class="fa-solid fa-user-doctor" aria-hidden="true"></i> Consult with Board-Certified Specialists</span>
+      <span class="marquee-separator">✦</span>
+      <span class="marquee-item"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i> Schedule Online Today <a href="#appointment">Book Now &rarr;</a></span>
+      <span class="marquee-separator">✦</span>
+      <span class="marquee-item"><i class="fa-solid fa-phone" aria-hidden="true"></i> Urgent Care Line: (000) 123-4567</span>
+      <span class="marquee-separator">✦</span>
+    </div>
+    <div class="marquee-group" aria-hidden="true">
+      <span class="marquee-item"><i class="fa-solid fa-bolt" aria-hidden="true"></i> Same-Day Appointments Available</span>
+      <span class="marquee-separator">✦</span>
+      <span class="marquee-item"><i class="fa-solid fa-stethoscope" aria-hidden="true"></i> Free Initial Consultation for New Patients</span>
+      <span class="marquee-separator">✦</span>
+      <span class="marquee-item"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i> Preventive Health Checkups Available</span>
+      <span class="marquee-separator">✦</span>
+      <span class="marquee-item"><i class="fa-solid fa-user-doctor" aria-hidden="true"></i> Consult with Board-Certified Specialists</span>
+      <span class="marquee-separator">✦</span>
+      <span class="marquee-item"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i> Schedule Online Today <a href="#appointment">Book Now &rarr;</a></span>
+      <span class="marquee-separator">✦</span>
+      <span class="marquee-item"><i class="fa-solid fa-phone" aria-hidden="true"></i> Urgent Care Line: (000) 123-4567</span>
+      <span class="marquee-separator">✦</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============================= -->
+<!-- 6. Header / Navigation -->
+<!-- ============================= -->
+<header class="site-header" id="siteHeader">
+  <div class="container nav-inner">
+    <a href="clinic.html.html" class="logo" aria-label="Carewell Clinic home">
+      <span class="logo-icon"><i class="fa-solid fa-plus" aria-hidden="true"></i></span>
+      <span class="logo-text">
+        <span class="logo-name">Carewell</span>
+        <span class="logo-sub">HEALTH CLINIC</span>
+      </span>
+    </a>
+
+    <nav class="main-nav" id="mainNav" aria-label="Primary">
+      <a href="clinic.html.html" class="active">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="doctors.html">Doctors</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="nav-right">
+      <a href="tel:+10001234567" class="nav-phone"><i class="fa-solid fa-phone" aria-hidden="true"></i> (000) 123-4567</a>
+      <a href="#appointment" class="btn btn-dark book-btn-header">Book Appointment</a>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="nav-overlay" id="navOverlay"></div>
+
+<main id="main-content">
+
+<!-- ============================= -->
+<!-- 7. Hero -->
+<!-- ============================= -->
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div>
+      <div class="hero-eyebrow">PERSONALIZED HEALTHCARE</div>
+      <h1>Healthcare That Puts You First</h1>
+      <p class="hero-desc">At Carewell Clinic, every visit begins with listening. Our care team combines clinical expertise with genuine attention to your story, building treatment plans around your life rather than the other way around.</p>
+      <div class="hero-actions">
+        <a href="#appointment" class="btn btn-primary">Book an Appointment</a>
+        <a href="services.html" class="btn btn-outline">Explore Services</a>
+      </div>
+      <div class="hero-trust">
+        <div class="hero-trust-item"><i class="fa-solid fa-user-doctor" aria-hidden="true"></i> Experienced Care Team</div>
+        <div class="hero-trust-item"><i class="fa-solid fa-hospital" aria-hidden="true"></i> Modern Facilities</div>
+        <div class="hero-trust-item"><i class="fa-solid fa-hand-holding-heart" aria-hidden="true"></i> Patient-Centered Care</div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-visual-frame">
+        <img src="hero_doctor_welcome.jpg" alt="Compassionate Carewell doctor warmly welcoming patient in modern clinic" width="900" height="675">
+      </div>
+      <div class="floating-card fc-experience">
+        <span class="fc-icon"><i class="fa-solid fa-award" aria-hidden="true"></i></span>
+        <span><span class="fc-num">15+</span><br><span class="fc-label">Years Experience</span></span>
+      </div>
+      <div class="floating-card fc-patients">
+        <span class="fc-icon"><i class="fa-solid fa-users" aria-hidden="true"></i></span>
+        <span><span class="fc-num">10K+</span><br><span class="fc-label">Patients Served</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= -->
+<!-- 8. Trust strip -->
+<!-- ============================= -->
+<section class="trust-strip">
+  <div class="container trust-grid">
+    <div class="trust-item"><i class="fa-solid fa-user-doctor" aria-hidden="true"></i><span>Experienced Professionals</span></div>
+    <div class="trust-item"><i class="fa-solid fa-building-circle-check" aria-hidden="true"></i><span>Modern Facilities</span></div>
+    <div class="trust-item"><i class="fa-solid fa-heart-circle-check" aria-hidden="true"></i><span>Personalized Care</span></div>
+    <div class="trust-item"><i class="fa-solid fa-lock" aria-hidden="true"></i><span>Confidential Service</span></div>
+  </div>
+</section>
+
+<!-- ============================= -->
+<!-- 9. About -->
+<!-- ============================= -->
+<section class="section" id="about">
+  <div class="container about-grid">
+    <div class="about-visual reveal">
+      <img src="https://images.unsplash.com/photo-1550831107-1553da8c8464?auto=format&fit=crop&w=800&q=80" alt="Nurse and elderly patient sharing a warm conversation during a check-up" loading="lazy" decoding="async">
+      <div class="about-badge">
+        <i class="fa-solid fa-hand-holding-heart" aria-hidden="true"></i>
+        <span>Care With Compassion</span>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="eyebrow">ABOUT CAREWELL</div>
+      <h2 class="heading">Healthcare Built Around People</h2>
+      <p class="lede" style="margin-top:18px;">Carewell Clinic was founded on a simple idea: healthcare works best when it starts with the person, not the paperwork. Our multidisciplinary team takes the time to understand your history, your goals, and your concerns before recommending a path forward.</p>
+      <div class="about-points">
+        <div class="about-point">
+          <i class="fa-solid fa-list-check" aria-hidden="true"></i>
+          <div><h4>Personalized treatment</h4><p>Care plans shaped around your health history and daily life.</p></div>
+        </div>
+        <div class="about-point">
+          <i class="fa-solid fa-user-doctor" aria-hidden="true"></i>
+          <div><h4>Experienced healthcare professionals</h4><p>Board-certified physicians and specialists across key disciplines.</p></div>
+        </div>
+        <div class="about-point">
+          <i class="fa-solid fa-hospital" aria-hidden="true"></i>
+          <div><h4>Modern facilities</h4><p>Comfortable, well-equipped spaces designed with patients in mind.</p></div>
+        </div>
+        <div class="about-point">
+          <i class="fa-solid fa-heart" aria-hidden="true"></i>
+          <div><h4>Patient-first approach</h4><p>Clear communication and shared decision-making at every step.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ============================= -->
+<!-- 11. Services -->
+<!-- ============================= -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-head center">
+      <div class="eyebrow" style="justify-content:center;">OUR SERVICES</div>
+      <h2 class="heading">Healthcare Services Designed Around You</h2>
+      <p class="lede" style="margin:16px auto 0;">From preventive checkups to specialized diagnostics, we provide thoughtful and comprehensive health services tailored to your needs.</p>
+    </div>
+    <div class="services-grid">
+      <!-- 01 General Medicine -->
+      <div class="service-card reveal">
+        <div class="service-card-media">
+          <img src="service-general-medicine.jpg" alt="General Medicine Consultation at Carewell Clinic" loading="lazy" decoding="async">
+          <span class="service-badge-num">01</span>
+        </div>
+        <div class="service-card-body">
+          <div class="service-icon"><i class="fa-solid fa-stethoscope" aria-hidden="true"></i></div>
+          <h3>General Medicine</h3>
+          <p>Comprehensive checkups, accurate diagnosis, and personalized treatment plans for everyday and chronic health concerns.</p>
+          <a href="#appointment" class="service-link">Learn more <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <!-- 02 Family Medicine -->
+      <div class="service-card reveal">
+        <div class="service-card-media">
+          <img src="service-family-medicine.jpg" alt="Family Medicine Healthcare at Carewell Clinic" loading="lazy" decoding="async">
+          <span class="service-badge-num">02</span>
+        </div>
+        <div class="service-card-body">
+          <div class="service-icon"><i class="fa-solid fa-people-group" aria-hidden="true"></i></div>
+          <h3>Family Medicine</h3>
+          <p>Ongoing, coordinated healthcare across all generations of your household, promoting lifelong wellness for the entire family.</p>
+          <a href="#appointment" class="service-link">Learn more <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <!-- 03 Pediatrics -->
+      <div class="service-card reveal">
+        <div class="service-card-media">
+          <img src="service-pediatrics.jpg" alt="Pediatric Care at Carewell Clinic" loading="lazy" decoding="async">
+          <span class="service-badge-num">03</span>
+        </div>
+        <div class="service-card-body">
+          <div class="service-icon"><i class="fa-solid fa-child" aria-hidden="true"></i></div>
+          <h3>Pediatrics</h3>
+          <p>Gentle, attentive medical care for infants, children, and teens with developmental screenings, vaccinations, and parental guidance.</p>
+          <a href="#appointment" class="service-link">Learn more <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <!-- 04 Women's Health -->
+      <div class="service-card reveal">
+        <div class="service-card-media">
+          <img src="service-womens-health.jpg" alt="Women's Health Screening at Carewell Clinic" loading="lazy" decoding="async">
+          <span class="service-badge-num">04</span>
+        </div>
+        <div class="service-card-body">
+          <div class="service-icon"><i class="fa-solid fa-venus" aria-hidden="true"></i></div>
+          <h3>Women's Health</h3>
+          <p>Dedicated clinical screenings, wellness consultations, hormonal health, and compassionate preventive care at every stage of life.</p>
+          <a href="#appointment" class="service-link">Learn more <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <!-- 05 Diagnostics -->
+      <div class="service-card reveal">
+        <div class="service-card-media">
+          <img src="service-diagnostics.jpg" alt="Modern Diagnostics and Lab Testing at Carewell Clinic" loading="lazy" decoding="async">
+          <span class="service-badge-num">05</span>
+        </div>
+        <div class="service-card-body">
+          <div class="service-icon"><i class="fa-solid fa-microscope" aria-hidden="true"></i></div>
+          <h3>Diagnostics & Lab</h3>
+          <p>State-of-the-art pathology testing, imaging, and rapid biometric analysis supporting fast and confident clinical decisions.</p>
+          <a href="#appointment" class="service-link">Learn more <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <!-- 06 Preventive Care -->
+      <div class="service-card reveal">
+        <div class="service-card-media">
+          <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=800&q=80" alt="Preventive Health and Wellness at Carewell Clinic" loading="lazy" decoding="async">
+          <span class="service-badge-num">06</span>
+        </div>
+        <div class="service-card-body">
+          <div class="service-icon"><i class="fa-solid fa-shield-heart" aria-hidden="true"></i></div>
+          <h3>Preventive Care</h3>
+          <p>Structured wellness checkups, cardiovascular risk reviews, and proactive health coaching to keep you ahead of health concerns.</p>
+          <a href="#appointment" class="service-link">Learn more <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= -->
+<!-- 12. Featured Health Checkup -->
+<!-- ============================= -->
+<section class="section split-section">
+  <div class="container split-grid">
+    <div class="split-image reveal">
+      <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=900&q=80" alt="Physician explaining checkup results to a patient using a tablet" loading="lazy" decoding="async">
+    </div>
+    <div class="split-copy reveal">
+      <div class="eyebrow">PREVENTIVE CARE</div>
+      <h2 class="heading">Make Your Health a Priority</h2>
+      <p class="lede" style="margin-top:16px;">Routine checkups catch small concerns before they become bigger ones. Our comprehensive health checkup reviews your vitals, bloodwork, and lifestyle factors in a single, unhurried visit.</p>
+      <ul>
+        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Full vitals and bloodwork review</li>
+        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Personalized risk assessment</li>
+        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Clear, judgment-free guidance</li>
+      </ul>
+      <a href="#appointment" class="btn btn-dark">Schedule a Checkup</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= -->
+<!-- 13. Doctors / Team Slider -->
+<!-- ============================= -->
+<section class="section" id="doctors">
+  <div class="container">
+    <div class="section-head center">
+      <div class="eyebrow" style="justify-content:center;">OUR TEAM</div>
+      <h2 class="heading">Meet Our Healthcare Professionals</h2>
+      <p class="lede" style="margin:16px auto 0;">Experienced clinicians across primary care and clinical specialties committed to unhurried consultations and evidence-based medicine.</p>
+    </div>
+
+    <!-- Team Slider Carousel -->
+    <div class="team-slider-wrap reveal" id="teamSliderWrap">
+      <div class="team-slider-viewport">
+        <div class="team-slider-track" id="teamSliderTrack">
+
+          <!-- 01 Dr. Sarah Ahmed -->
+          <div class="team-slide">
+            <div class="doctor-card">
+              <div class="doctor-photo">
+                <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=600&q=80" alt="Dr. Sarah Ahmed" loading="lazy" decoding="async">
+                <span class="doctor-badge-overlay">General Medicine</span>
+              </div>
+              <div class="doctor-info">
+                <h3>Dr. Sarah Ahmed</h3>
+                <div class="doctor-specialty">General Medicine</div>
+                <div class="doctor-meta"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> MBBS, FCPS · 15+ Yrs Exp</div>
+                <div class="doctor-footer">
+                  <div class="doctor-social">
+                    <a href="#" aria-label="Dr. Sarah Ahmed on LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+                    <a href="mailto:hello@carewellclinic.example" aria-label="Email Dr. Sarah Ahmed"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>
+                  </div>
+                  <a href="doctors.html" class="view-profile">Profile <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 02 Dr. James Wilson -->
+          <div class="team-slide">
+            <div class="doctor-card">
+              <div class="doctor-photo">
+                <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=600&q=80" alt="Dr. James Wilson" loading="lazy" decoding="async">
+                <span class="doctor-badge-overlay">Family Medicine</span>
+              </div>
+              <div class="doctor-info">
+                <h3>Dr. James Wilson</h3>
+                <div class="doctor-specialty">Family Medicine</div>
+                <div class="doctor-meta"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> MBBS, MD · 12+ Yrs Exp</div>
+                <div class="doctor-footer">
+                  <div class="doctor-social">
+                    <a href="#" aria-label="Dr. James Wilson on LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+                    <a href="mailto:hello@carewellclinic.example" aria-label="Email Dr. James Wilson"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>
+                  </div>
+                  <a href="doctors.html" class="view-profile">Profile <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 03 Dr. Emily Carter -->
+          <div class="team-slide">
+            <div class="doctor-card">
+              <div class="doctor-photo">
+                <img src="https://images.unsplash.com/photo-1651008376811-b90baee60c1f?auto=format&fit=crop&w=600&q=80" alt="Dr. Emily Carter" loading="lazy" decoding="async">
+                <span class="doctor-badge-overlay">Pediatrics</span>
+              </div>
+              <div class="doctor-info">
+                <h3>Dr. Emily Carter</h3>
+                <div class="doctor-specialty">Pediatrics</div>
+                <div class="doctor-meta"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> MBBS, DCH · 10+ Yrs Exp</div>
+                <div class="doctor-footer">
+                  <div class="doctor-social">
+                    <a href="#" aria-label="Dr. Emily Carter on LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+                    <a href="mailto:hello@carewellclinic.example" aria-label="Email Dr. Emily Carter"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>
+                  </div>
+                  <a href="doctors.html" class="view-profile">Profile <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 04 Dr. Daniel Khan -->
+          <div class="team-slide">
+            <div class="doctor-card">
+              <div class="doctor-photo">
+                <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=600&q=80" alt="Dr. Daniel Khan" loading="lazy" decoding="async">
+                <span class="doctor-badge-overlay">Diagnostics</span>
+              </div>
+              <div class="doctor-info">
+                <h3>Dr. Daniel Khan</h3>
+                <div class="doctor-specialty">Diagnostics & Internal</div>
+                <div class="doctor-meta"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> MBBS, FCPS · 14+ Yrs Exp</div>
+                <div class="doctor-footer">
+                  <div class="doctor-social">
+                    <a href="#" aria-label="Dr. Daniel Khan on LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+                    <a href="mailto:hello@carewellclinic.example" aria-label="Email Dr. Daniel Khan"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>
+                  </div>
+                  <a href="doctors.html" class="view-profile">Profile <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 05 Dr. Ayesha Malik -->
+          <div class="team-slide">
+            <div class="doctor-card">
+              <div class="doctor-photo">
+                <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80" alt="Dr. Ayesha Malik" loading="lazy" decoding="async">
+                <span class="doctor-badge-overlay">Women's Health</span>
+              </div>
+              <div class="doctor-info">
+                <h3>Dr. Ayesha Malik</h3>
+                <div class="doctor-specialty">Women's Health</div>
+                <div class="doctor-meta"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> MBBS, MRCOG · 13+ Yrs Exp</div>
+                <div class="doctor-footer">
+                  <div class="doctor-social">
+                    <a href="#" aria-label="Dr. Ayesha Malik on LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+                    <a href="mailto:hello@carewellclinic.example" aria-label="Email Dr. Ayesha Malik"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>
+                  </div>
+                  <a href="doctors.html" class="view-profile">Profile <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 06 Dr. Michael Brown -->
+          <div class="team-slide">
+            <div class="doctor-card">
+              <div class="doctor-photo">
+                <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=600&q=80" alt="Dr. Michael Brown" loading="lazy" decoding="async">
+                <span class="doctor-badge-overlay">Cardiology</span>
+              </div>
+              <div class="doctor-info">
+                <h3>Dr. Michael Brown</h3>
+                <div class="doctor-specialty">Cardiology</div>
+                <div class="doctor-meta"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> MD, FACC · 16+ Yrs Exp</div>
+                <div class="doctor-footer">
+                  <div class="doctor-social">
+                    <a href="#" aria-label="Dr. Michael Brown on LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+                    <a href="mailto:hello@carewellclinic.example" aria-label="Email Dr. Michael Brown"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>
+                  </div>
+                  <a href="doctors.html" class="view-profile">Profile <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 07 Dr. Sophia Williams -->
+          <div class="team-slide">
+            <div class="doctor-card">
+              <div class="doctor-photo">
+                <img src="https://images.unsplash.com/photo-1591604021695-0c69b7c03381?auto=format&fit=crop&w=600&q=80" alt="Dr. Sophia Williams" loading="lazy" decoding="async">
+                <span class="doctor-badge-overlay">Dermatology</span>
+              </div>
+              <div class="doctor-info">
+                <h3>Dr. Sophia Williams</h3>
+                <div class="doctor-specialty">Dermatology</div>
+                <div class="doctor-meta"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> MD, FAAD · 11+ Yrs Exp</div>
+                <div class="doctor-footer">
+                  <div class="doctor-social">
+                    <a href="#" aria-label="Dr. Sophia Williams on LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+                    <a href="mailto:hello@carewellclinic.example" aria-label="Email Dr. Sophia Williams"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>
+                  </div>
+                  <a href="doctors.html" class="view-profile">Profile <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 08 Dr. Hamza Ali -->
+          <div class="team-slide">
+            <div class="doctor-card">
+              <div class="doctor-photo">
+                <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=600&q=80" alt="Dr. Hamza Ali" loading="lazy" decoding="async">
+                <span class="doctor-badge-overlay">Preventive Care</span>
+              </div>
+              <div class="doctor-info">
+                <h3>Dr. Hamza Ali</h3>
+                <div class="doctor-specialty">Preventive Medicine</div>
+                <div class="doctor-meta"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> MBBS, MPH · 9+ Yrs Exp</div>
+                <div class="doctor-footer">
+                  <div class="doctor-social">
+                    <a href="#" aria-label="Dr. Hamza Ali on LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+                    <a href="mailto:hello@carewellclinic.example" aria-label="Email Dr. Hamza Ali"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>
+                  </div>
+                  <a href="doctors.html" class="view-profile">Profile <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Team Slider Navigation (Left & Right Arrows) -->
+      <button class="team-arrow" id="teamPrev" aria-label="Previous doctors slide"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+      <button class="team-arrow" id="teamNext" aria-label="Next doctors slide"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= -->
+<!-- 14. Why Choose Us -->
+<!-- ============================= -->
+<section class="section why-section">
+  <div class="container why-grid">
+    <div class="why-visual-col reveal">
+      <div class="why-visual-frame">
+        <img src="why_choose_us_clinic.jpg" alt="Carewell clinical team walking through state-of-the-art clinic facility" loading="lazy" decoding="async">
+        <div class="why-overlay-badge">
+          <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+          <div>
+            <h5>99.4% Patient Trust & Satisfaction</h5>
+            <p>Accredited clinical standards, multidisciplinary consultation, and warm individualized care.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="why-copy-col reveal">
+      <div class="eyebrow">WHY CHOOSE CAREWELL</div>
+      <h2 class="heading">Care That Goes Beyond the Consultation</h2>
+      <p class="lede" style="margin-top:14px;">We combine clinical expertise with deep personal attention, ensuring you are heard, respected, and supported throughout your healthcare journey.</p>
+      
+      <div class="why-cards-grid">
+        <div class="why-card-item">
+          <div class="why-card-icon"><i class="fa-solid fa-user-doctor" aria-hidden="true"></i></div>
+          <div class="why-card-content">
+            <h4>Experienced Specialists</h4>
+            <p>Clinicians with verified hospital and clinical credentials across diverse specialties.</p>
+          </div>
+        </div>
+
+        <div class="why-card-item">
+          <div class="why-card-icon"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i></div>
+          <div class="why-card-content">
+            <h4>Personalized Treatment</h4>
+            <p>Custom care plans crafted around your specific lifestyle, history, and health targets.</p>
+          </div>
+        </div>
+
+        <div class="why-card-item">
+          <div class="why-card-icon"><i class="fa-solid fa-hospital" aria-hidden="true"></i></div>
+          <div class="why-card-content">
+            <h4>Modern Facilities</h4>
+            <p>State-of-the-art diagnostic technology and soothing, comfortable examination suites.</p>
+          </div>
+        </div>
+
+        <div class="why-card-item">
+          <div class="why-card-icon"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i></div>
+          <div class="why-card-content">
+            <h4>Hassle-Free Appointments</h4>
+            <p>Fast online scheduling with flexible same-day slots and friendly pre-visit reminders.</p>
+          </div>
+        </div>
+
+        <div class="why-card-item">
+          <div class="why-card-icon"><i class="fa-solid fa-lock" aria-hidden="true"></i></div>
+          <div class="why-card-content">
+            <h4>Strict Patient Privacy</h4>
+            <p>Your medical records and personal health information remain securely protected.</p>
+          </div>
+        </div>
+
+        <div class="why-card-item">
+          <div class="why-card-icon"><i class="fa-solid fa-comments" aria-hidden="true"></i></div>
+          <div class="why-card-content">
+            <h4>Continued Follow-up</h4>
+            <p>Dedicated post-consultation check-ins to monitor recovery and maintain long-term wellness.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= -->
+<!-- 15. How Our Services Work -->
+<!-- ============================= -->
+<section class="section">
+  <div class="container">
+    <div class="section-head center">
+      <div class="eyebrow" style="justify-content:center;">OUR HEALTHCARE PROCESS</div>
+      <h2 class="heading">How Our Services Work</h2>
+    </div>
+    <div class="steps-wrap">
+      <div class="steps-grid">
+        <div class="step-card reveal">
+          <div class="step-icon"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i></div>
+          <div class="step-tag">STEP 01</div>
+          <h4>Book</h4>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-icon"><i class="fa-solid fa-user-doctor" aria-hidden="true"></i></div>
+          <div class="step-tag">STEP 02</div>
+          <h4>Visit</h4>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-icon"><i class="fa-solid fa-comments" aria-hidden="true"></i></div>
+          <div class="step-tag">STEP 03</div>
+          <h4>Discuss</h4>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-icon"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i></div>
+          <div class="step-tag">STEP 04</div>
+          <h4>Follow Up</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= -->
+<!-- 16. Appointment -->
+<!-- ============================= -->
+<section class="section split-section" id="appointment">
+  <div class="container appointment-grid">
+    <div class="appointment-copy reveal">
+      <div>
+        <div class="eyebrow">BOOK A VISIT</div>
+        <h2 class="heading">Request Your Appointment</h2>
+        <p class="lede" style="margin-top:14px;">Tell us a little about what you need, and our team will reach out to confirm the best available time.</p>
+        <ul class="appointment-benefits">
+          <li><i class="fa-solid fa-check" aria-hidden="true"></i> Same-day availability for urgent needs</li>
+          <li><i class="fa-solid fa-check" aria-hidden="true"></i> Choose your preferred doctor</li>
+          <li><i class="fa-solid fa-check" aria-hidden="true"></i> Friendly reminders before your visit</li>
+        </ul>
+      </div>
+      <img src="https://images.unsplash.com/photo-1666214280391-8ff5bd3c0bd0?auto=format&fit=crop&w=800&q=80" alt="Receptionist helping a patient schedule an appointment at the front desk" loading="lazy" decoding="async">
+    </div>
+
+    <form class="appointment-form reveal" id="appointmentForm" novalidate>
+      <div class="form-header" style="margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid var(--black-08);">
+        <h3 style="font-size:1.35rem;color:var(--primary);margin-bottom:4px;">Schedule Your Consultation</h3>
+        <p style="font-size:.88rem;color:var(--primary-85);">Fill out the information below to reserve your slot.</p>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="apptName">Full Name</label>
+          <div class="input-wrap"><i class="fa-solid fa-user" aria-hidden="true"></i><input type="text" id="apptName" name="name" required></div>
+          <div class="field-error">Please enter your full name.</div>
+        </div>
+        <div class="form-group">
+          <label for="apptEmail">Email</label>
+          <div class="input-wrap"><i class="fa-solid fa-envelope" aria-hidden="true"></i><input type="email" id="apptEmail" name="email" required></div>
+          <div class="field-error">Please enter a valid email address.</div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="apptPhone">Phone</label>
+          <div class="input-wrap"><i class="fa-solid fa-phone" aria-hidden="true"></i><input type="tel" id="apptPhone" name="phone" required></div>
+          <div class="field-error">Please enter a valid phone number.</div>
+        </div>
+        <div class="form-group">
+          <label for="apptDate">Preferred Date</label>
+          <div class="input-wrap"><i class="fa-solid fa-calendar" aria-hidden="true"></i><input type="date" id="apptDate" name="date" required></div>
+          <div class="field-error">Please choose a future date.</div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="apptTime">Preferred Time</label>
+          <div class="input-wrap"><i class="fa-solid fa-clock" aria-hidden="true"></i><input type="time" id="apptTime" name="time" required></div>
+          <div class="field-error">Please choose a preferred time.</div>
+        </div>
+        <div class="form-group">
+          <label for="apptService">Service</label>
+          <div class="input-wrap"><i class="fa-solid fa-notes-medical" aria-hidden="true"></i>
+            <select id="apptService" name="service" required>
+              <option value="">Select a service</option>
+              <option>General Medicine</option>
+              <option>Family Medicine</option>
+              <option>Pediatrics</option>
+              <option>Women's Health</option>
+              <option>Diagnostics</option>
+              <option>Preventive Care</option>
+            </select>
+          </div>
+          <div class="field-error">Please select a service.</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="apptDoctor">Preferred Doctor (optional)</label>
+        <div class="input-wrap"><i class="fa-solid fa-user-doctor" aria-hidden="true"></i>
+          <select id="apptDoctor" name="doctor">
+            <option value="">No preference</option>
+            <option>Dr. Sarah Ahmed</option>
+            <option>Dr. James Wilson</option>
+            <option>Dr. Emily Carter</option>
+            <option>Dr. Daniel Khan</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group full">
+        <label for="apptMessage">Message (optional)</label>
+        <textarea id="apptMessage" name="message" placeholder="Tell us anything that will help us prepare for your visit"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary" id="apptSubmitBtn" style="width:100%;">Request Appointment</button>
+    </form>
+  </div>
+</section>
+
+
+
+<!-- ============================= -->
+<!-- 18. Testimonials -->
+<!-- ============================= -->
+<section class="section testimonials">
+  <div class="container">
+    <div class="section-head center">
+      <div class="eyebrow" style="justify-content:center;">PATIENT STORIES</div>
+      <h2 class="heading">What Our Patients Say</h2>
+    </div>
+    <div class="carousel" role="region" aria-label="Patient testimonials" aria-roledescription="carousel">
+      <div class="carousel-track-wrap">
+        <div class="carousel-track" id="carouselTrack">
+          <div class="t-slide">
+            <div class="t-card">
+              <i class="fa-solid fa-quote-left t-quote-icon" aria-hidden="true"></i>
+              <div class="t-stars" aria-hidden="true">★★★★★</div>
+              <p class="t-text">The doctors here actually listen. I never feel rushed, and every question gets a clear answer.</p>
+              <div class="t-person">
+                <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=100&q=80" alt="" loading="lazy" decoding="async">
+                <div><div class="t-name">Amanda Reyes</div><div class="t-context">Long-time patient</div></div>
+              </div>
+            </div>
+          </div>
+          <div class="t-slide">
+            <div class="t-card">
+              <i class="fa-solid fa-quote-left t-quote-icon" aria-hidden="true"></i>
+              <div class="t-stars" aria-hidden="true">★★★★★</div>
+              <p class="t-text">Booking was simple and the same-day option genuinely saved us when my son had a fever.</p>
+              <div class="t-person">
+                <img src="https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?auto=format&fit=crop&w=100&q=80" alt="" loading="lazy" decoding="async">
+                <div><div class="t-name">Marcus Lee</div><div class="t-context">Parent of a pediatric patient</div></div>
+              </div>
+            </div>
+          </div>
+          <div class="t-slide">
+            <div class="t-card">
+              <i class="fa-solid fa-quote-left t-quote-icon" aria-hidden="true"></i>
+              <div class="t-stars" aria-hidden="true">★★★★★</div>
+              <p class="t-text">My annual checkup felt thorough, not rushed. The team followed up a week later just to check in.</p>
+              <div class="t-person">
+                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100&q=80" alt="" loading="lazy" decoding="async">
+                <div><div class="t-name">Priya Nair</div><div class="t-context">Preventive care patient</div></div>
+              </div>
+            </div>
+          </div>
+          <div class="t-slide">
+            <div class="t-card">
+              <i class="fa-solid fa-quote-left t-quote-icon" aria-hidden="true"></i>
+              <div class="t-stars" aria-hidden="true">★★★★★</div>
+              <p class="t-text">Clean, modern facility and a front desk team that actually remembers who you are.</p>
+              <div class="t-person">
+                <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?auto=format&fit=crop&w=100&q=80" alt="" loading="lazy" decoding="async">
+                <div><div class="t-name">Daniel Osei</div><div class="t-context">New patient</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-arrow" id="carPrev" aria-label="Previous testimonials"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+      <button class="carousel-arrow" id="carNext" aria-label="Next testimonials"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= -->
+<!-- 19. FAQ -->
+<!-- ============================= -->
+<section class="section faq-section" id="faq">
+  <div class="container">
+    <div class="section-head center">
+      <div class="eyebrow" style="justify-content:center;">COMMON INQUIRIES</div>
+      <h2 class="heading">Frequently Asked Questions</h2>
+      <p class="lede" style="margin:16px auto 0;">Have a question about your visit, insurance coverage, or medical records? Find answers below or speak directly with our team.</p>
+    </div>
+
+    <div class="faq-grid">
+      <!-- Left: Interactive Showcase Card -->
+      <div class="faq-showcase reveal">
+        <div class="faq-showcase-img">
+          <img src="faq_patient_support.jpg" alt="Carewell patient coordinator assisting visitor at reception desk" loading="lazy" decoding="async">
+          <div class="faq-showcase-badge">
+            <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+            <span>Patient Support · Helpful & Friendly</span>
+          </div>
+        </div>
+        <div class="faq-showcase-body">
+          <h3>Still Have Questions?</h3>
+          <p>Our patient care coordination desk is here to guide you with any questions before, during, or after your visit.</p>
+          <div class="faq-contact-pills">
+            <div class="faq-contact-pill">
+              <i class="fa-solid fa-phone" aria-hidden="true"></i>
+              <span>Call Us: (000) 123-4567</span>
+            </div>
+            <div class="faq-contact-pill">
+              <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+              <span>Email: hello@carewellclinic.example</span>
+            </div>
+          </div>
+          <a href="#contact" class="btn btn-primary" style="width:100%;">Message Support Team</a>
+        </div>
+      </div>
+
+      <!-- Right: Category Filters & Modern Accordion -->
+      <div class="faq-content-col reveal">
+        <!-- Filter Tabs -->
+        <div class="faq-filter-bar" role="tablist" aria-label="FAQ Categories">
+          <button class="faq-filter-btn active" data-faq-cat="all">All Questions</button>
+          <button class="faq-filter-btn" data-faq-cat="appointments">Appointments</button>
+          <button class="faq-filter-btn" data-faq-cat="billing">Insurance & Billing</button>
+          <button class="faq-filter-btn" data-faq-cat="records">Medical Records</button>
+        </div>
+
+        <div class="faq-list" id="faqList">
+          <div class="faq-item" data-category="appointments">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-title">
+                <span class="faq-tag">Appointments</span>
+                <span>What should I bring to my first appointment?</span>
+              </span>
+              <i class="fa-solid fa-plus" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Please bring a government-issued photo ID, your insurance card, and an updated list of any current medications, supplements, or past relevant surgical records. Arriving 10 minutes early allows our reception team to complete your digital check-in smoothly.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item" data-category="appointments">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-title">
+                <span class="faq-tag">Appointments</span>
+                <span>Do you accept same-day or walk-in patients?</span>
+              </span>
+              <i class="fa-solid fa-plus" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Yes! We reserve designated urgent and same-day consultation slots every morning and afternoon. We recommend calling ahead at <strong>(000) 123-4567</strong> or submitting an appointment request online so our triage desk can immediately match you with an available physician.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item" data-category="billing">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-title">
+                <span class="faq-tag">Billing</span>
+                <span>What insurance plans and payment methods do you accept?</span>
+              </span>
+              <i class="fa-solid fa-plus" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Carewell Clinic is in-network with most major private insurers, Medicare, and regional provider networks. We also provide clear, upfront self-pay pricing schedules with HSA/FSA card acceptance for patients without insurance.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item" data-category="appointments">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-title">
+                <span class="faq-tag">Appointments</span>
+                <span>How can I reschedule or cancel my appointment?</span>
+              </span>
+              <i class="fa-solid fa-plus" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                You can easily reschedule through your booking confirmation link or by calling our desk. We kindly request at least 24 hours' advance notice so that another patient in need may utilize the consultation slot.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item" data-category="billing">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-title">
+                <span class="faq-tag">Billing</span>
+                <span>How do prescription refills work?</span>
+              </span>
+              <i class="fa-solid fa-plus" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Refill requests can be sent directly by your preferred pharmacy via electronic health record (EHR) transmission or by calling our office. Please allow 24–48 business hours for routine non-urgent prescription authorizations.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item" data-category="records">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-title">
+                <span class="faq-tag">Records</span>
+                <span>How are my medical records protected and transferred?</span>
+              </span>
+              <i class="fa-solid fa-plus" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                All patient health records are encrypted in strict compliance with HIPAA and healthcare privacy regulations. Records are released or shared with outside specialists only with your explicit signed authorization.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ============================= -->
+<!-- 21. Contact -->
+<!-- ============================= -->
+<section class="section" id="contact">
+  <div class="container contact-grid">
+    <div class="reveal">
+      <div class="eyebrow">GET IN TOUCH</div>
+      <h2 class="heading">Let's Stay Connected</h2>
+      <p class="lede" style="margin-top:14px;">Reach out with any question, big or small — our patient care team responds during business hours.</p>
+      <div class="contact-info-list">
+        <div class="contact-info-item"><i class="fa-solid fa-location-dot" aria-hidden="true"></i><div><h4>Address</h4><p>450 Health Avenue, Suite 300, Medical Plaza, Metro City</p></div></div>
+        <div class="contact-info-item"><i class="fa-solid fa-phone" aria-hidden="true"></i><div><h4>Phone</h4><p><a href="tel:+10001234567">(000) 123-4567</a></p></div></div>
+        <div class="contact-info-item"><i class="fa-solid fa-envelope" aria-hidden="true"></i><div><h4>Email</h4><p><a href="mailto:hello@carewellclinic.example">hello@carewellclinic.example</a></p></div></div>
+        <div class="contact-info-item"><i class="fa-solid fa-clock" aria-hidden="true"></i><div><h4>Opening Hours</h4><p>Mon–Fri: 8:00 AM – 6:00 PM<br>Sat: 9:00 AM – 2:00 PM</p></div></div>
+      </div>
+      <div class="map-placeholder">
+        <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i>
+        <span>Carewell Health Clinic · 450 Health Avenue, Suite 300</span>
+      </div>
+    </div>
+
+    <form class="contact-form-card reveal" id="contactForm" novalidate>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="contactName">Name</label>
+          <div class="input-wrap"><i class="fa-solid fa-user" aria-hidden="true"></i><input type="text" id="contactName" name="name" required></div>
+          <div class="field-error">Please enter your name.</div>
+        </div>
+        <div class="form-group">
+          <label for="contactEmail">Email</label>
+          <div class="input-wrap"><i class="fa-solid fa-envelope" aria-hidden="true"></i><input type="email" id="contactEmail" name="email" required></div>
+          <div class="field-error">Please enter a valid email address.</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="contactPhone">Phone</label>
+        <div class="input-wrap"><i class="fa-solid fa-phone" aria-hidden="true"></i><input type="tel" id="contactPhone" name="phone"></div>
+        <div class="field-error">Please enter a valid phone number.</div>
+      </div>
+      <div class="form-group full">
+        <label for="contactMessage">Message</label>
+        <textarea id="contactMessage" name="message" required placeholder="How can our care team help you today?"></textarea>
+        <div class="field-error">Please enter a message.</div>
+      </div>
+      <button type="submit" class="btn btn-primary" style="width:100%;">Send Message</button>
+      <div class="form-msg success" role="status"><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>Thanks for reaching out — our team will get back to you shortly.</span></div>
+      <div class="form-msg error" role="alert"><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i><span>Please correct the highlighted fields and try again.</span></div>
+    </form>
+  </div>
+</section>
+
+<!-- ============================= -->
+<!-- 22. Final CTA Panel -->
+<!-- ============================= -->
+<section class="cta-panel-wrap">
+  <div class="container">
+    <div class="cta-panel reveal">
+      <h2>Ready to Prioritize Your Health and Wellbeing?</h2>
+      <p>Schedule your personalized clinical consultation today or speak with our care coordination team to explore the right healthcare program for you and your family.</p>
+      <div class="cta-actions">
+        <a href="#appointment" class="btn btn-primary"><i class="fa-solid fa-calendar-check"></i> Book an Appointment</a>
+        <a href="tel:+10001234567" class="btn btn-outline"><i class="fa-solid fa-phone"></i> Call (000) 123-4567</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================= -->
+<!-- 23. Footer -->
+<!-- ============================= -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <!-- 1. Brand -->
+      <div class="footer-brand">
+        <a href="clinic.html.html" class="footer-logo" aria-label="Carewell Clinic home">
+          <span class="footer-logo-icon"><i class="fa-solid fa-plus" aria-hidden="true"></i></span>
+          <div class="footer-logo-text">
+            <span class="footer-logo-name">Carewell</span>
+            <span class="footer-logo-subtitle">HEALTH CLINIC</span>
+          </div>
+        </a>
+        <p>Compassionate Care. Better Health. Patient-centered medical excellence designed around your life.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Carewell Clinic on Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Carewell Clinic on Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Carewell Clinic on LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Carewell Clinic on Twitter"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <!-- 2. Explore -->
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="clinic.html.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="doctors.html">Our Doctors</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- 3. Clinic Hours -->
+      <div class="footer-col">
+        <h4>Clinic Hours</h4>
+        <ul class="footer-hours-list">
+          <li><span>Mon – Fri:</span> <strong>8:00 AM – 6:00 PM</strong></li>
+          <li><span>Wednesday:</span> <strong>8:00 AM – 7:00 PM</strong></li>
+          <li><span>Saturday:</span> <strong>9:00 AM – 2:00 PM</strong></li>
+          <li><span>Sunday:</span> <strong style="color:var(--accent);">Closed (Emergency On-Call)</strong></li>
+        </ul>
+      </div>
+
+      <!-- 4. Contact & Visits -->
+      <div class="footer-col">
+        <h4>Contact & Visits</h4>
+        <address class="footer-contact-info">
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+            <span>450 Health Avenue, Suite 300<br>Medical Plaza, Metro City</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-phone" aria-hidden="true"></i>
+            <a href="tel:+10001234567">(000) 123-4567</a>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+            <a href="mailto:hello@carewellclinic.example">hello@carewellclinic.example</a>
+          </div>
+        </address>
+        <a href="#appointment" class="btn btn-primary btn-sm" style="margin-top:16px;">Book an Appointment</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Carewell Health Clinic. All rights reserved.</span>
+      <div class="footer-bottom-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="accessibility.html">Accessibility Statement</a>
+        <a href="patient-rights.html">Patient Rights</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></button>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- Image fallback system ---------- */
+  var FALLBACK_IMAGE = "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=900&q=80";
+  document.querySelectorAll('img').forEach(function(img){
+    img.addEventListener('error', function(){
+      if(!this.dataset.fallback){
+        this.dataset.fallback = "true";
+        this.src = FALLBACK_IMAGE;
+      }
+    });
+  });
+
+  /* ---------- Sticky header shadow ---------- */
+  var header = document.getElementById('siteHeader');
+  function onScroll(){
+    if(window.scrollY > 12){ header.classList.add('scrolled'); }
+    else{ header.classList.remove('scrolled'); }
+    toggleScrollTop();
+    updateActiveNav();
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+
+  /* ---------- Mobile menu ---------- */
+  var hamburger = document.getElementById('hamburgerBtn');
+  var mainNav = document.getElementById('mainNav');
+  var overlay = document.getElementById('navOverlay');
+
+  function openMenu(){
+    mainNav.classList.add('is-open');
+    overlay.classList.add('is-active');
+    hamburger.setAttribute('aria-expanded','true');
+    hamburger.setAttribute('aria-label','Close menu');
+    document.body.style.overflow='hidden';
+  }
+  function closeMenu(){
+    mainNav.classList.remove('is-open');
+    overlay.classList.remove('is-active');
+    hamburger.setAttribute('aria-expanded','false');
+    hamburger.setAttribute('aria-label','Open menu');
+    document.body.style.overflow='';
+  }
+  hamburger.addEventListener('click', function(){
+    if(mainNav.classList.contains('is-open')){ closeMenu(); } else { openMenu(); }
+  });
+  overlay.addEventListener('click', closeMenu);
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && mainNav.classList.contains('is-open')){ closeMenu(); }
+  });
+  mainNav.querySelectorAll('a').forEach(function(link){
+    link.addEventListener('click', closeMenu);
+  });
+
+  /* ---------- Active nav on scroll ---------- */
+  var navLinks = Array.prototype.slice.call(mainNav.querySelectorAll('a[href^="#"]'));
+  var navSections = navLinks.map(function(l){
+    var id = l.getAttribute('href').slice(1);
+    return document.getElementById(id);
+  }).filter(Boolean);
+
+  function updateActiveNav(){
+    if(navSections.length === 0) return;
+    var scrollPos = window.scrollY + 140;
+    var current = null;
+    navSections.forEach(function(sec){
+      if(sec.offsetTop <= scrollPos){ current = sec; }
+    });
+    navLinks.forEach(function(l){ l.classList.remove('active'); });
+    if(current){
+      var match = navLinks.find(function(l){ return l.getAttribute('href') === '#' + current.id; });
+      if(match){ match.classList.add('active'); }
+    } else {
+      var homeLink = mainNav.querySelector('a[href="clinic.html.html"]');
+      if(homeLink){ homeLink.classList.add('active'); }
+    }
+  }
+
+  /* ---------- Smooth scroll for internal links ---------- */
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var id = a.getAttribute('href');
+      if(id.length > 1){
+        var target = document.querySelector(id);
+        if(target){
+          e.preventDefault();
+          var offset = 90;
+          var top = target.getBoundingClientRect().top + window.scrollY - offset;
+          window.scrollTo({top: top, behavior:'smooth'});
+        }
+      }
+    });
+  });
+
+  /* ---------- Scroll reveal ---------- */
+  var revealEls = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var revealObserver = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {threshold:.15});
+    revealEls.forEach(function(el){ revealObserver.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add('is-visible'); });
+  }
+
+
+  /* ---------- FAQ Category Filter & Accordion ---------- */
+  var faqFilterBtns = document.querySelectorAll('.faq-filter-btn');
+  var faqItems = document.querySelectorAll('.faq-item');
+
+  faqFilterBtns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      faqFilterBtns.forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      var cat = btn.getAttribute('data-faq-cat') || btn.getAttribute('data-filter');
+
+      faqItems.forEach(function(item){
+        var itemCat = item.getAttribute('data-category');
+        if(cat === 'all' || itemCat === cat){
+          item.style.display = '';
+        } else {
+          item.style.display = 'none';
+          item.classList.remove('open');
+          var qBtn = item.querySelector('.faq-question');
+          if(qBtn) qBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+  });
+
+  faqItems.forEach(function(item){
+    var btn = item.querySelector('.faq-question');
+    if(!btn) return;
+    btn.addEventListener('click', function(){
+      var isOpen = item.classList.contains('open');
+      faqItems.forEach(function(openItem){
+        if(openItem !== item){
+          openItem.classList.remove('open');
+          var ob = openItem.querySelector('.faq-question');
+          if(ob) ob.setAttribute('aria-expanded','false');
+        }
+      });
+      item.classList.toggle('open', !isOpen);
+      btn.setAttribute('aria-expanded', String(!isOpen));
+    });
+  });
+
+  /* ---------- Team Slider Carousel ---------- */
+  var teamTrack = document.getElementById('teamSliderTrack');
+  var teamPrev = document.getElementById('teamPrev');
+  var teamNext = document.getElementById('teamNext');
+  var teamCurrentIndex = 0;
+
+  if(teamTrack && teamPrev && teamNext){
+    var teamSlides = Array.prototype.slice.call(teamTrack.children);
+
+    function getTeamPerView(){
+      if(window.innerWidth <= 560) return 1;
+      if(window.innerWidth <= 860) return 2;
+      if(window.innerWidth <= 1200) return 3;
+      return 4;
+    }
+
+    function getTeamMaxIndex(){
+      return Math.max(0, teamSlides.length - getTeamPerView());
+    }
+
+    function updateTeamButtons(){
+      teamPrev.disabled = (teamCurrentIndex <= 0);
+      teamNext.disabled = (teamCurrentIndex >= getTeamMaxIndex());
+      teamPrev.style.opacity = teamCurrentIndex <= 0 ? '0.35' : '1';
+      teamPrev.style.cursor = teamCurrentIndex <= 0 ? 'not-allowed' : 'pointer';
+      teamNext.style.opacity = teamCurrentIndex >= getTeamMaxIndex() ? '0.35' : '1';
+      teamNext.style.cursor = teamCurrentIndex >= getTeamMaxIndex() ? 'not-allowed' : 'pointer';
+    }
+
+    function goTeam(idx){
+      teamCurrentIndex = Math.max(0, Math.min(idx, getTeamMaxIndex()));
+      var pct = (100 / getTeamPerView()) * teamCurrentIndex;
+      teamTrack.style.transform = 'translateX(-' + pct + '%)';
+      updateTeamButtons();
+    }
+
+    teamPrev.addEventListener('click', function(){ goTeam(teamCurrentIndex - 1); });
+    teamNext.addEventListener('click', function(){ goTeam(teamCurrentIndex + 1); });
+
+    window.addEventListener('resize', function(){
+      goTeam(Math.min(teamCurrentIndex, getTeamMaxIndex()));
+    });
+
+    updateTeamButtons();
+  }
+
+  /* ---------- Testimonial carousel ---------- */
+  var track = document.getElementById('carouselTrack');
+  var prevBtn = document.getElementById('carPrev');
+  var nextBtn = document.getElementById('carNext');
+  var currentIndex = 0;
+
+  if(track && prevBtn && nextBtn){
+    var slides = Array.prototype.slice.call(track.children);
+
+    function slidesPerView(){
+      if(window.innerWidth <= 640) return 1;
+      if(window.innerWidth <= 960) return 2;
+      return 3;
+    }
+    function maxIndex(){
+      return Math.max(0, slides.length - slidesPerView());
+    }
+    function updateTestimonialButtons(){
+      prevBtn.disabled = (currentIndex <= 0);
+      nextBtn.disabled = (currentIndex >= maxIndex());
+      prevBtn.style.opacity = currentIndex <= 0 ? '0.35' : '1';
+      prevBtn.style.cursor = currentIndex <= 0 ? 'not-allowed' : 'pointer';
+      nextBtn.style.opacity = currentIndex >= maxIndex() ? '0.35' : '1';
+      nextBtn.style.cursor = currentIndex >= maxIndex() ? 'not-allowed' : 'pointer';
+    }
+    function goTo(index){
+      currentIndex = Math.max(0, Math.min(index, maxIndex()));
+      var pct = (100 / slidesPerView()) * currentIndex;
+      track.style.transform = 'translateX(-' + pct + '%)';
+      updateTestimonialButtons();
+    }
+    prevBtn.addEventListener('click', function(){ goTo(currentIndex - 1); });
+    nextBtn.addEventListener('click', function(){ goTo(currentIndex + 1); });
+    track.setAttribute('tabindex','0');
+    track.addEventListener('keydown', function(e){
+      if(e.key === 'ArrowLeft'){ goTo(currentIndex - 1); }
+      if(e.key === 'ArrowRight'){ goTo(currentIndex + 1); }
+    });
+    window.addEventListener('resize', function(){
+      goTo(Math.min(currentIndex, maxIndex()));
+    });
+    updateTestimonialButtons();
+  }
+
+  /* ---------- Form validation helper ---------- */
+  function validateEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
+  function validatePhone(v){ return /^[0-9+()\-\s]{7,}$/.test(v); }
+
+  function setFieldState(group, valid){
+    group.classList.toggle('has-error', !valid);
+  }
+
+  function handleFormSubmit(form, options){
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var valid = true;
+      var successMsg = form.querySelector('.form-msg.success');
+      var errorMsg = form.querySelector('.form-msg.error');
+      if(successMsg) successMsg.style.display = 'none';
+      if(errorMsg) errorMsg.style.display = 'none';
+
+      options.requiredFields.forEach(function(fieldName){
+        var field = form.querySelector('[name="' + fieldName + '"]');
+        if(!field) return;
+        var group = field.closest('.form-group');
+        var fieldValid = true;
+        if(field.hasAttribute('required') && !field.value.trim()){ fieldValid = false; }
+        if(fieldName === 'email' && field.value.trim() && !validateEmail(field.value.trim())){ fieldValid = false; }
+        if(fieldName === 'phone' && field.value.trim() && !validatePhone(field.value.trim())){ fieldValid = false; }
+        if(fieldName === 'date' && field.value){
+          var chosen = new Date(field.value + 'T00:00:00');
+          var today = new Date(); today.setHours(0,0,0,0);
+          if(chosen < today){ fieldValid = false; }
+        }
+        if(group){ setFieldState(group, fieldValid); }
+        if(!fieldValid){ valid = false; }
+      });
+
+      if(valid){
+        if(successMsg){ successMsg.style.display = 'flex'; }
+        var submitBtn = form.querySelector('button[type="submit"]');
+        if(submitBtn){
+          var origHtml = submitBtn.innerHTML;
+          submitBtn.innerHTML = '<i class="fa-solid fa-circle-check"></i> Request Received! We Will Call You';
+          submitBtn.style.background = '#004636';
+          submitBtn.style.color = '#c7e446';
+          setTimeout(function(){
+            submitBtn.innerHTML = origHtml;
+            submitBtn.style.background = '';
+            submitBtn.style.color = '';
+          }, 4500);
+        }
+        form.reset();
+        form.querySelectorAll('.form-group.has-error').forEach(function(g){ g.classList.remove('has-error'); });
+      } else {
+        if(errorMsg){ errorMsg.style.display = 'flex'; }
+      }
+    });
+  }
+
+  var apptForm = document.getElementById('appointmentForm');
+  if(apptForm){
+    handleFormSubmit(apptForm, {requiredFields:['name','email','phone','date','time','service']});
+  }
+  var contactForm = document.getElementById('contactForm');
+  if(contactForm){
+    handleFormSubmit(contactForm, {requiredFields:['name','email','message']});
+  }
+
+  /* ---------- Scroll to top ---------- */
+  var scrollTopBtn = document.getElementById('scrollTopBtn');
+  function toggleScrollTop(){
+    scrollTopBtn.classList.toggle('is-visible', window.scrollY > 500);
+  }
+  scrollTopBtn.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+
+  onScroll();
+})();
+</script>
+</body>
+</html>
