@@ -41,7 +41,7 @@ const timeline = [
   {
     year: '2013',
     title: 'Expanded Services',
-    desc: 'Added pediatrics, women's health, and on-site diagnostics to serve families under one roof.',
+    desc: "Added pediatrics, women's health, and on-site diagnostics to serve families under one roof.",
   },
   {
     year: '2017',
