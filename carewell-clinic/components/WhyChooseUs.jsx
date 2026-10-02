@@ -8,8 +8,8 @@ export default function WhyChooseUs() {
       <div className="container split-grid reverse">
         <Reveal className="split-image">
           <Image
-            src="https://images.unsplash.com/photo-1666887360742-974c8fce8e6b?auto=format&fit=crop&w=900&q=80"
-            alt="Care team consulting together in a modern clinic hallway"
+            src="/why_choose_us_clinic.jpg"
+            alt="Carewell clinical team walking through state-of-the-art clinic facility"
             width={900}
             height={675}
             sizes="(max-width: 900px) 100vw, 50vw"

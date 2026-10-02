@@ -48,8 +48,8 @@ export default function Hero() {
         <div className="hero-visual">
           <div className="hero-visual-frame">
             <Image
-              src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=900&q=80"
-              alt="Doctor reviewing a patient's chart in a bright, modern clinic room"
+              src="/hero_doctor_welcome.jpg"
+              alt="Compassionate Carewell doctor warmly welcoming patient in modern clinic"
               width={900}
               height={1125}
               priority

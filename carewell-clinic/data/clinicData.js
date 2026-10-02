@@ -14,11 +14,11 @@ export const announcements = [
 
 // --- Navigation ---
 export const navLinks = [
-  { label: "Home", href: "#home" },
+  { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
   { label: "Services", href: "/services" },
-  { label: "Doctors", href: "#doctors" },
-  { label: "Contact", href: "#contact" },
+  { label: "Doctors", href: "/doctors" },
+  { label: "Contact", href: "/contact" },
 ];
 
 // --- Trust Strip ---
