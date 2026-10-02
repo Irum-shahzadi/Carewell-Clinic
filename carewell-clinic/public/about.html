@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us — Carewell Clinic</title>
+<meta name="description" content="Learn about Carewell Clinic's mission, values, experienced healthcare team, and modern facilities. Compassionate, patient-centered care since 2011.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Golos+Text:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+/* ============================= */
+/* 1. ROOT VARIABLES              */
+/* ============================= */
+:root{
+  --primary:#004636;
+  --accent:#D2B168;
+  --white:#FFFFFF;
+  --black:#000000;
+
+  --primary-08:rgba(0,70,54,.08);
+  --primary-12:rgba(0,70,54,.12);
+  --primary-30:rgba(0,70,54,.30);
+  --primary-60:rgba(0,70,54,.60);
+  --primary-85:rgba(0,70,54,.85);
+  --primary-92:rgba(0,70,54,.92);
+
+  --accent-10:rgba(210,177,104,.10);
+  --accent-15:rgba(210,177,104,.15);
+  --accent-25:rgba(210,177,104,.25);
+  --accent-40:rgba(210,177,104,.40);
+  --accent-60:rgba(210,177,104,.60);
+
+  --white-70:rgba(255,255,255,.70);
+  --white-85:rgba(255,255,255,.85);
+  --white-92:rgba(255,255,255,.92);
+
+  --black-08:rgba(0,0,0,.08);
+  --black-12:rgba(0,0,0,.12);
+  --black-30:rgba(0,0,0,.30);
+
+  --font-heading:"Gloock", serif;
+  --font-body:"Golos Text", sans-serif;
+
+  --container:1240px;
+  --radius-sm:6px;
+  --radius-md:14px;
+  --radius-lg:28px;
+  --radius-full:9999px;
+
+  --shadow-soft:0 20px 50px var(--black-08);
+  --shadow-lift:0 26px 60px var(--primary-30);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+html,body{width:100%;max-width:100%;overflow-x:clip;}
+body{
+  font-family:var(--font-body);
+  color:var(--primary);
+  background:var(--white);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+ul{list-style:none;}
+button{font-family:var(--font-body);cursor:pointer;border:none;background:none;}
+input,select,textarea{font-family:var(--font-body);}
+h1,h2,h3,h4{font-family:var(--font-heading);font-weight:400;color:var(--primary);line-height:1.15;}
+
+.container{max-width:var(--container);margin:0 auto;padding:0 24px;}
+.section{padding:100px 0;}
+.section-tight{padding:70px 0;}
+
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;scroll-behavior:auto !important;}
+}
+
+/* ============================= */
+/* Shared components               */
+/* ============================= */
+.eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:.78rem;font-weight:600;letter-spacing:.04em;
+  color:var(--accent);
+  margin-bottom:16px;
+}
+.eyebrow::before{
+  content:"";width:26px;height:2px;background:var(--accent);display:inline-block;
+}
+h2.heading{font-size:clamp(2rem,3.6vw,2.75rem);max-width:640px;}
+.section-head{margin-bottom:52px;}
+.section-head.center{text-align:center;margin-left:auto;margin-right:auto;}
+.section-head.center h2{margin-left:auto;margin-right:auto;}
+.lede{color:var(--primary-85);max-width:560px;font-size:1.02rem;}
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  font-family:var(--font-body);font-weight:600;font-size:.96rem;
+  padding:15px 30px;border-radius:100px;
+  transition:transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease, border-color .25s ease;
+  white-space:nowrap;
+}
+.btn-primary{
+  background:var(--accent);color:var(--primary);border:1px solid var(--accent);
+}
+.btn-primary:hover{background:var(--white);border-color:var(--accent);transform:translateY(-2px);box-shadow:0 14px 30px var(--accent-40);}
+.btn-primary:active{transform:translateY(0);box-shadow:none;}
+.btn-primary:visited{color:var(--primary);}
+
+.btn-outline{
+  background:transparent;color:var(--white);border:1px solid var(--white-70);
+}
+.btn-outline:hover{background:var(--white);color:var(--primary);border-color:var(--white);transform:translateY(-2px);}
+.btn-outline:active{transform:translateY(0);}
+
+.btn-dark{
+  background:var(--primary);color:var(--white);border:1px solid var(--primary);
+}
+.btn-dark:hover{background:transparent;color:var(--primary);transform:translateY(-2px);}
+.btn-dark:active{transform:translateY(0);}
+
+.btn-ghost-dark{
+  background:transparent;color:var(--primary);border:1px solid var(--primary-30);
+}
+.btn-ghost-dark:hover{border-color:var(--primary);background:var(--primary-08);}
+
+/* reveal-on-scroll */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease, transform .7s ease;}
+.reveal.is-visible{opacity:1;transform:translateY(0);}
+
+/* ============================= */
+/* Announcement Marquee Bar      */
+/* ============================= */
+.announcement{
+  background:var(--primary);color:var(--accent);font-size:.84rem;
+  padding:10px 0;overflow:hidden;position:relative;white-space:nowrap;
+  border-bottom:1px solid var(--accent-25);z-index:101;
+}
+.announcement-marquee{
+  display:flex;width:max-content;animation:marqueeScroll 28s linear infinite;will-change:transform;
+}
+.announcement:hover .announcement-marquee{animation-play-state:paused;}
+.marquee-group{
+  display:flex;align-items:center;gap:36px;padding-right:36px;flex-shrink:0;
+}
+.marquee-item{
+  display:inline-flex;align-items:center;gap:10px;color:var(--white);font-weight:500;letter-spacing:.02em;
+}
+.marquee-item i{color:var(--accent);font-size:.88rem;}
+.marquee-item a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;font-weight:600;margin-left:4px;}
+.marquee-item a:hover{color:var(--white);}
+.marquee-separator{color:var(--accent-40);font-size:.65rem;}
+@keyframes marqueeScroll{
+  0%{transform:translateX(0);}
+  100%{transform:translateX(-50%);}
+}
+
+/* ============================= */
+/* Header / Navigation         */
+/* ============================= */
+.site-header{
+  position:sticky;top:0;z-index:500;
+  background:var(--white);
+  border-bottom:1px solid var(--black-08);
+  transition:box-shadow .3s ease, padding .3s ease;
+}
+.site-header.scrolled{box-shadow:0 12px 30px var(--black-08);}
+.nav-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px 0;
+}
+.logo{display:flex;align-items:center;gap:12px;font-family:var(--font-heading);}
+.logo-icon{
+  width:44px;height:44px;border-radius:50%;
+  background:var(--primary);color:var(--accent);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.1rem;flex-shrink:0;
+}
+.logo-text{display:flex;flex-direction:column;line-height:1.1;}
+.logo-name{font-size:1.35rem;color:var(--primary);white-space:nowrap;}
+.logo-sub{font-family:var(--font-body);font-size:.6rem;letter-spacing:.16em;color:var(--accent);font-weight:600;white-space:nowrap;}
+
+.main-nav{display:flex;align-items:center;gap:36px;}
+.main-nav a{
+  font-size:.94rem;font-weight:500;color:var(--primary-85);
+  position:relative;padding:6px 0;
+}
+.main-nav a::after{
+  content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--accent);
+  transition:width .25s ease;
+}
+.main-nav a:hover::after,.main-nav a.active::after{width:100%;}
+.main-nav a.active{color:var(--primary);}
+
+.nav-right{display:flex;align-items:center;gap:22px;}
+.nav-phone{display:flex;align-items:center;gap:8px;font-weight:600;font-size:.92rem;color:var(--primary);}
+.nav-phone i{color:var(--accent);}
+.hamburger{
+  display:none;flex-direction:column;gap:5px;width:26px;background:none;border:none;
+  padding:4px;
+}
+.hamburger span{display:block;width:100%;height:2px;background:var(--primary);transition:transform .3s ease, opacity .3s ease;}
+.hamburger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hamburger[aria-expanded="true"] span:nth-child(2){opacity:0;}
+.hamburger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+.nav-overlay{
+  position:fixed;inset:0;background:var(--primary-60);z-index:490;
+  opacity:0;pointer-events:none;transition:opacity .3s ease;
+}
+.nav-overlay.is-active{opacity:1;pointer-events:auto;}
+
+@media (max-width:960px){
+  .main-nav{
+    position:fixed;top:0;right:0;height:100vh;width:min(340px,85vw);
+    background:var(--white);flex-direction:column;align-items:flex-start;
+    padding:100px 32px 32px;gap:26px;z-index:495;
+    transform:translateX(100%);transition:transform .35s ease;
+    box-shadow:-20px 0 50px var(--black-12);
+  }
+  .main-nav.is-open{transform:translateX(0);}
+  .nav-phone{display:none;}
+  .hamburger{display:flex;}
+  .book-btn-header{display:none;}
+}
+
+/* ==========================================================================
+   PAGE TITLE BANNER (UNIFIED HERO - MATCHING CONTACT PAGE)
+   ========================================================================== */
+.page-title-banner {
+  background: linear-gradient(135deg, var(--primary) 0%, #002e23 100%);
+  color: var(--white);
+  padding: 72px 0 68px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.page-title-banner::before {
+  content: "";
+  position: absolute;
+  top: -120px;
+  right: -100px;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--accent-15) 0%, transparent 70%);
+  pointer-events: none;
+}
+.page-title-banner::after {
+  content: "";
+  position: absolute;
+  bottom: -150px;
+  left: -80px;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--accent-10) 0%, transparent 70%);
+  pointer-events: none;
+}
+.page-title-banner .container {
+  position: relative;
+  z-index: 2;
+  max-width: 820px;
+  margin: 0 auto;
+}
+.breadcrumb-nav {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.breadcrumb-list {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+  font-size: 0.88rem;
+  color: var(--accent-40);
+  background: rgba(255, 255, 255, 0.06);
+  padding: 6px 18px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.breadcrumb-list li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.breadcrumb-list li+li::before {
+  content: "/";
+  color: var(--accent-40);
+}
+.breadcrumb-list a {
+  color: var(--white-85);
+  transition: color 0.2s ease;
+}
+.breadcrumb-list a:hover {
+  color: var(--accent);
+}
+.breadcrumb-list [aria-current="page"] {
+  color: var(--accent);
+  font-weight: 600;
+}
+.page-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.4rem, 4.5vw, 3.4rem);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--white);
+  margin-bottom: 14px;
+  letter-spacing: -0.01em;
+}
+.page-lead {
+  font-size: clamp(1.02rem, 1.8vw, 1.15rem);
+  color: var(--white-85);
+  line-height: 1.65;
+  margin: 0 auto;
+  max-width: 680px;
+}
+
+/* ============================= */
+/* About Section (Shared)        */
+/* ============================= */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+.about-visual{position:relative;}
+.about-visual img{
+  border-radius:var(--radius-lg);aspect-ratio:4/3.2;object-fit:cover;object-position:center 12%;box-shadow:var(--shadow-soft);width:100%;
+}
+.about-badge{
+  position:absolute;bottom:-24px;right:-18px;background:var(--primary);color:var(--white);
+  border-radius:var(--radius-md);padding:18px 24px;box-shadow:0 20px 40px var(--primary-30);
+  display:flex;align-items:center;gap:12px;max-width:220px;
+}
+.about-badge i{color:var(--accent);font-size:1.4rem;flex-shrink:0;}
+.about-badge span{font-family:var(--font-heading);font-size:1.02rem;line-height:1.3;}
+.about-points{margin-top:28px;display:grid;gap:16px;}
+.about-point{display:flex;gap:14px;align-items:flex-start;}
+.about-point i{
+  width:38px;height:38px;border-radius:50%;background:var(--primary-08);color:var(--primary);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.95rem;
+}
+.about-point h4{font-family:var(--font-body);font-size:1rem;font-weight:600;margin-bottom:3px;}
+.about-point p{color:var(--primary-85);font-size:.92rem;}
+@media (max-width:900px){
+  .about-grid{grid-template-columns:1fr;}
+  .about-badge{position:static;margin-top:-30px;margin-left:20px;width:fit-content;}
+}
+
+/* ============================= */
+/* Mission / Vision / Values      */
+/* ============================= */
+.mvv-section{background:var(--primary-08);}
+.mvv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+.mvv-card{
+  background:var(--white);border:1px solid var(--black-08);border-radius:var(--radius-md);
+  padding:40px 32px;text-align:center;position:relative;overflow:hidden;
+  transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+}
+.mvv-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-soft);border-color:var(--accent-40);}
+.mvv-card::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:4px;
+  background:linear-gradient(90deg, var(--primary), var(--accent));
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .4s ease;
+}
+.mvv-card:hover::before{transform:scaleX(1);}
+.mvv-icon{
+  width:68px;height:68px;border-radius:50%;background:var(--primary);color:var(--accent);
+  display:flex;align-items:center;justify-content:center;font-size:1.4rem;
+  margin:0 auto 22px;transition:transform .3s ease;
+}
+.mvv-card:hover .mvv-icon{transform:scale(1.08);}
+.mvv-card h3{font-size:1.2rem;margin-bottom:12px;}
+.mvv-card p{color:var(--primary-85);font-size:.94rem;line-height:1.7;}
+@media (max-width:900px){.mvv-grid{grid-template-columns:1fr;}}
+
+/* Statistics section removed */
+
+/* ============================= */
+/* Core Values Grid               */
+/* ============================= */
+.values-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+.value-card{
+  border:1px solid var(--black-08);border-radius:var(--radius-md);padding:32px 24px;
+  text-align:center;transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+}
+.value-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-soft);border-color:var(--accent-40);}
+.value-icon{
+  width:56px;height:56px;border-radius:50%;background:var(--primary-08);color:var(--primary);
+  display:flex;align-items:center;justify-content:center;font-size:1.3rem;
+  margin:0 auto 18px;transition:background .3s ease, color .3s ease;
+}
+.value-card:hover .value-icon{background:var(--primary);color:var(--accent);}
+.value-card h4{font-size:1.02rem;margin-bottom:8px;}
+.value-card p{color:var(--primary-85);font-size:.88rem;}
+@media (max-width:900px){.values-grid{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:560px){.values-grid{grid-template-columns:1fr;}}
+
+/* ============================= */
+/* Team Overview                  */
+/* ============================= */
+#team.section{padding:54px 0;}
+.team-overview-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:stretch;
+}
+.team-image{display:flex;height:100%;width:100%;}
+.team-image img{
+  border-radius:var(--radius-lg);width:100%;height:100%;min-height:440px;object-fit:cover;box-shadow:var(--shadow-soft);
+}
+.team-copy{
+  display:flex;flex-direction:column;justify-content:center;height:100%;
+}
+.team-stats{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px;}
+.team-stat{
+  background:var(--primary-08);border-radius:var(--radius-md);padding:18px 16px;text-align:center;
+}
+.team-stat .stat-val{font-family:var(--font-heading);font-size:1.55rem;color:var(--primary);}
+.team-stat .stat-lbl{font-size:.82rem;color:var(--primary-85);margin-top:3px;}
+@media (max-width:900px){
+  #team.section{padding:40px 0;}
+  .team-overview-grid{grid-template-columns:1fr;gap:36px;align-items:start;}
+  .team-image img{min-height:280px;height:auto;aspect-ratio:16/10;}
+}
+
+/* ============================= */
+/* Facility Showcase              */
+/* ============================= */
+.facility-section{background:var(--primary-08);}
+.facility-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;
+}
+.facility-grid.reverse .facility-image{order:2;}
+.facility-grid.reverse .facility-copy{order:1;}
+.facility-image img{border-radius:var(--radius-lg);aspect-ratio:4/3;object-fit:cover;box-shadow:var(--shadow-soft);}
+.facility-features{margin-top:24px;display:grid;gap:14px;}
+.facility-features li{display:flex;gap:12px;align-items:flex-start;font-size:.95rem;color:var(--primary-85);}
+.facility-features li i{color:var(--accent);margin-top:4px;flex-shrink:0;}
+@media (max-width:900px){
+  .facility-grid{grid-template-columns:1fr;gap:40px;}
+  .facility-grid.reverse .facility-image,.facility-grid.reverse .facility-copy{order:0;}
+}
+
+/* ============================= */
+/* Balanced Timeline             */
+/* ============================= */
+.timeline{position:relative;max-width:860px;margin:0 auto;}
+.timeline::before{
+  content:"";position:absolute;left:50%;top:10px;bottom:10px;width:2px;
+  background:var(--primary-12);transform:translateX(-50%);
+}
+.timeline-item{
+  display:grid;grid-template-columns:1fr 50px 1fr;align-items:center;
+  gap:24px;margin-bottom:44px;position:relative;
+}
+.timeline-item:last-child{margin-bottom:0;}
+.timeline-item.left .timeline-content{grid-column:1;text-align:right;}
+.timeline-item.left .timeline-dot{grid-column:2;justify-self:center;}
+.timeline-item.left .timeline-spacer{grid-column:3;}
+.timeline-item.right .timeline-spacer{grid-column:1;}
+.timeline-item.right .timeline-dot{grid-column:2;justify-self:center;}
+.timeline-item.right .timeline-content{grid-column:3;text-align:left;}
+
+.timeline-content{
+  background:var(--white);padding:24px 28px;border-radius:var(--radius-md);
+  border:1px solid var(--black-08);box-shadow:0 6px 20px rgba(0,0,0,0.04);
+  transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease;
+}
+.timeline-content:hover{
+  transform:translateY(-3px);border-color:var(--accent);
+  box-shadow:0 12px 30px var(--black-08);
+}
+.timeline-year{
+  font-family:var(--font-heading);color:var(--accent);font-size:1.2rem;margin-bottom:4px;
+}
+.timeline-content h4{font-family:var(--font-body);font-size:1.02rem;font-weight:600;margin-bottom:6px;}
+.timeline-content p{color:var(--primary-85);font-size:.9rem;line-height:1.6;}
+.timeline-dot{
+  width:44px;height:44px;border-radius:50%;background:var(--primary);color:var(--accent);
+  display:flex;align-items:center;justify-content:center;font-size:.95rem;
+  border:4px solid var(--white);box-shadow:0 4px 14px var(--primary-30);z-index:2;
+}
+@media (max-width:768px){
+  .timeline::before{left:24px;}
+  .timeline-item{display:flex;align-items:flex-start;gap:18px;margin-bottom:32px;}
+  .timeline-spacer{display:none;}
+  .timeline-dot{flex-shrink:0;}
+  .timeline-item.left .timeline-content,
+  .timeline-item.right .timeline-content{text-align:left;width:100%;}
+}
+
+/* ============================= */
+/* Clinical Schedule Table       */
+/* ============================= */
+.schedule-table-wrap{
+  max-width:820px;margin:0 auto;border:1px solid var(--black-08);
+  border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-soft);
+}
+.schedule-table{width:100%;border-collapse:collapse;text-align:left;}
+.schedule-table th,.schedule-table td{padding:18px 24px;border-bottom:1px solid var(--black-08);font-size:.94rem;}
+.schedule-table th{background:var(--primary);color:var(--white);font-weight:600;}
+.schedule-table tr:last-child td{border-bottom:none;}
+.schedule-table tr:nth-child(even) td{background:var(--primary-08);}
+.schedule-table td strong{color:var(--primary);}
+.schedule-table .status-open{
+  display:inline-flex;align-items:center;gap:6px;color:var(--primary);font-weight:600;font-size:.86rem;
+}
+.schedule-table .status-open i{color:var(--accent);font-size:.7rem;}
+.schedule-table .status-closed{color:var(--primary-60);font-style:italic;}
+.schedule-note{text-align:center;font-size:.82rem;color:var(--primary-60);margin-top:16px;}
+
+/* ============================= */
+/* Enhanced CTA Panel            */
+/* ============================= */
+.cta-panel-wrap{padding:100px 0;}
+.cta-panel{
+  background:linear-gradient(135deg, #003629 0%, #004636 50%, #00241b 100%);
+  border-radius:var(--radius-xl, 28px);
+  border:1px solid rgba(199,228,70,0.30);
+  box-shadow:0 24px 60px -12px rgba(0,70,54,0.35), 0 0 0 1px rgba(255,255,255,0.08) inset;
+  padding:72px 48px;
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  position:relative;
+  overflow:hidden;
+}
+.cta-panel::before{
+  content:"";position:absolute;top:-50%;left:50%;transform:translateX(-50%);
+  width:600px;height:400px;
+  background:radial-gradient(circle, rgba(199,228,70,0.18) 0%, transparent 70%);
+  filter:blur(50px);pointer-events:none;
+}
+.cta-pill{
+  display:inline-flex;align-items:center;gap:10px;
+  background:rgba(255,255,255,0.08);border:1px solid rgba(199,228,70,0.40);
+  border-radius:100px;padding:8px 20px;color:var(--accent);
+  font-size:.82rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  margin-bottom:24px;backdrop-filter:blur(8px);
+}
+.cta-pill .pulse-dot{
+  width:8px;height:8px;border-radius:50%;background:var(--accent);
+  box-shadow:0 0 0 0 rgba(199,228,70,0.7);animation:pulseDot 2s infinite;
+}
+@keyframes pulseDot{
+  0%{box-shadow:0 0 0 0 rgba(199,228,70,0.7);}
+  70%{box-shadow:0 0 0 10px rgba(199,228,70,0);}
+  100%{box-shadow:0 0 0 0 rgba(199,228,70,0);}
+}
+.cta-panel h2{
+  color:var(--white);font-size:clamp(1.9rem,3.6vw,2.7rem);
+  font-family:var(--font-heading);line-height:1.2;max-width:760px;
+  position:relative;z-index:1;
+}
+.cta-panel p{
+  color:rgba(255,255,255,0.88);margin-top:18px;max-width:640px;
+  font-size:1.02rem;line-height:1.65;position:relative;z-index:1;
+}
+.cta-btn-group{
+  display:flex;align-items:center;justify-content:center;
+  gap:18px;margin-top:34px;flex-wrap:wrap;position:relative;z-index:1;
+}
+.cta-btn-main{
+  background:var(--accent);color:var(--primary);font-weight:700;
+  padding:15px 32px;border-radius:100px;display:inline-flex;
+  align-items:center;gap:10px;box-shadow:0 10px 24px -4px rgba(199,228,70,0.4);
+  transition:all .25s ease;
+}
+.cta-btn-main:hover{
+  background:var(--white);color:var(--primary);transform:translateY(-2px);
+  box-shadow:0 14px 30px -4px rgba(255,255,255,0.4);
+}
+.cta-btn-secondary{
+  background:rgba(255,255,255,0.12);color:var(--white);font-weight:600;
+  padding:15px 28px;border-radius:100px;border:1px solid rgba(255,255,255,0.25);
+  display:inline-flex;align-items:center;gap:10px;transition:all .25s ease;
+}
+.cta-btn-secondary:hover{
+  background:rgba(255,255,255,0.22);color:var(--white);border-color:var(--white);
+  transform:translateY(-2px);
+}
+.cta-trust-bar{
+  display:flex;align-items:center;justify-content:center;gap:32px;
+  margin-top:40px;padding-top:28px;border-top:1px solid rgba(255,255,255,0.12);
+  width:100%;max-width:680px;flex-wrap:wrap;position:relative;z-index:1;
+}
+.cta-trust-bar span{
+  display:inline-flex;align-items:center;gap:8px;
+  color:rgba(255,255,255,0.85);font-size:.86rem;font-weight:500;
+}
+.cta-trust-bar span i{color:var(--accent);}
+@media (max-width:600px){
+  .cta-panel{padding:48px 24px;}
+  .cta-btn-group{flex-direction:column;width:100%;}
+  .cta-btn-main,.cta-btn-secondary{width:100%;justify-content:center;}
+  .cta-trust-bar{gap:16px;}
+}
+
+/* ============================= */
+/* Footer                        */
+/* ============================= */
+.site-footer{background:var(--primary);color:var(--white-85);padding-top:80px;position:relative;}
+.footer-grid{
+  display:grid;grid-template-columns:1.3fr .85fr 1fr 1.15fr;gap:44px;padding-bottom:56px;
+  border-bottom:1px solid rgba(255,255,255,.14);
+}
+.footer-brand p{margin-top:16px;color:var(--white-70);font-size:.9rem;line-height:1.6;max-width:300px;}
+.footer-logo{display:flex;align-items:center;gap:12px;flex-wrap:nowrap;}
+.footer-logo-icon{
+  width:42px;height:42px;border-radius:50%;background:var(--accent);color:var(--primary);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1rem;
+}
+.footer-logo-text{display:flex;flex-direction:column;gap:2px;}
+.footer-logo-name{font-family:var(--font-heading);font-size:1.4rem;line-height:1.1;color:var(--white);white-space:nowrap;}
+.footer-logo-subtitle{font-family:var(--font-body);font-size:.62rem;letter-spacing:.16em;color:var(--accent);white-space:nowrap;font-weight:600;}
+.footer-social{display:flex;gap:10px;margin-top:22px;}
+.footer-social a{
+  width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.10);color:var(--white);
+  display:flex;align-items:center;justify-content:center;font-size:.9rem;
+  transition:background .25s ease,color .25s ease,transform .25s ease;
+}
+.footer-social a:hover{background:var(--accent);color:var(--primary);transform:translateY(-3px);}
+
+.footer-col h4{
+  font-family:var(--font-body);font-size:1rem;font-weight:600;color:var(--white);
+  margin-bottom:20px;letter-spacing:.02em;position:relative;padding-bottom:8px;
+}
+.footer-col h4::after{
+  content:"";position:absolute;left:0;bottom:0;width:24px;height:2px;background:var(--accent);
+}
+.footer-col ul{display:grid;gap:11px;}
+.footer-col ul a{
+  color:var(--white-70);font-size:.9rem;transition:color .2s ease,padding-left .2s ease;
+  display:inline-block;
+}
+.footer-col ul a:hover{color:var(--accent);padding-left:4px;}
+.footer-hours-list li{
+  display:flex;justify-content:space-between;gap:12px;font-size:.88rem;color:var(--white-85);
+  padding-bottom:6px;border-bottom:1px dashed rgba(255,255,255,.12);
+}
+.footer-hours-list li:last-child{border-bottom:none;}
+.footer-contact-info{font-style:normal;display:grid;gap:12px;}
+.footer-contact-item{display:flex;gap:12px;align-items:flex-start;font-size:.9rem;color:var(--white-85);}
+.footer-contact-item i{color:var(--accent);margin-top:4px;flex-shrink:0;}
+.footer-contact-item a{color:var(--white-85);transition:color .2s ease;}
+.footer-contact-item a:hover{color:var(--accent);}
+
+.footer-bottom{
+  padding:26px 0;display:flex;align-items:center;justify-content:space-between;
+  gap:20px;font-size:.84rem;color:var(--white-70);flex-wrap:wrap;
+}
+.footer-bottom-links{display:flex;gap:20px;flex-wrap:wrap;}
+.footer-bottom-links a{color:var(--white-70);transition:color .2s ease;}
+.footer-bottom-links a:hover{color:var(--accent);}
+
+@media (max-width:960px){
+  .footer-grid{grid-template-columns:1fr 1fr;gap:36px;}
+}
+@media (max-width:560px){
+  .footer-grid{grid-template-columns:1fr;}
+}
+
+/* ============================= */
+/* Scroll to top                 */
+/* ============================= */
+.scroll-top{
+  position:fixed;bottom:26px;right:26px;width:48px;height:48px;border-radius:50%;
+  background:var(--primary);color:var(--accent);display:flex;align-items:center;justify-content:center;
+  box-shadow:0 14px 30px var(--black-30);opacity:0;pointer-events:none;transform:translateY(10px);
+  transition:opacity .3s ease, transform .3s ease;z-index:400;
+}
+.scroll-top.is-visible{opacity:1;pointer-events:auto;transform:translateY(0);}
+.scroll-top:hover{background:var(--accent);color:var(--primary);}
+
+.sr-only{
+  position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+  clip:rect(0,0,0,0);white-space:nowrap;border:0;
+}
+.skip-link{
+  position:absolute;left:-999px;top:auto;background:var(--accent);color:var(--primary);
+  padding:12px 20px;z-index:1000;font-weight:600;border-radius:0 0 8px 0;
+}
+.skip-link:focus{left:0;top:0;}
+</style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- ============================= -->
+<!-- Announcement Bar -->
+<!-- ============================= -->
+<div class="announcement">
+  <div class="announcement-marquee" aria-label="Clinic announcements">
+    <div class="marquee-group">
+      <span class="marquee-item"><i class="fa-solid fa-bolt" aria-hidden="true"></i> Same-Day Appointments Available</span>
+      <span class="marquee-separator">✦</span>
+      <span class="marquee-item"><i class="fa-solid fa-stethoscope" aria-hidden="true"></i> Free Initial Consultation for New Patients</span>
+      <span class="marquee-separator">✦</span>
+      <span class="marquee-item"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i> Preventive Health Checkups Available</span>
+      <span class="marquee-separator">✦</span>
+      <span class="marquee-item"><i class="fa-solid fa-user-doctor" aria-hidden="true"></i> Consult with Board-Certified Specialists</span>
+      <span class="marquee-separator">✦</span>
+      <span class="marquee-item"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i> Schedule Online Today <a href="index.html#appointment">Book Now &rarr;</a></span>
+      <span class="marquee-separator">✦</span>
+      <span class="marquee-item"><i class="fa-solid fa-phone" aria-hidden="true"></i> Urgent Care Line: (000) 123-4567</span>
+      <span class="marquee-separator">✦</span>
+    </div>
+    <div class="marquee-group" aria-hidden="true">
+      <span class="marquee-item"><i class="fa-solid fa-bolt" aria-hidden="true"></i> Same-Day Appointments Available</span>
+      <span class="marquee-separator">✦</span>
+      <span class="marquee-item"><i class="fa-solid fa-stethoscope" aria-hidden="true"></i> Free Initial Consultation for New Patients</span>
+      <span class="marquee-separator">✦</span>
+      <span class="marquee-item"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i> Preventive Health Checkups Available</span>
+      <span class="marquee-separator">✦</span>
+      <span class="marquee-item"><i class="fa-solid fa-user-doctor" aria-hidden="true"></i> Consult with Board-Certified Specialists</span>
+      <span class="marquee-separator">✦</span>
+      <span class="marquee-item"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i> Schedule Online Today <a href="index.html#appointment">Book Now &rarr;</a></span>
+      <span class="marquee-separator">✦</span>
+      <span class="marquee-item"><i class="fa-solid fa-phone" aria-hidden="true"></i> Urgent Care Line: (000) 123-4567</span>
+      <span class="marquee-separator">✦</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============================= -->
+<!-- Header / Navigation -->
+<!-- ============================= -->
+<header class="site-header" id="siteHeader">
+  <div class="container nav-inner">
+    <a href="index.html" class="logo" aria-label="Carewell Clinic home">
+      <span class="logo-icon"><i class="fa-solid fa-plus" aria-hidden="true"></i></span>
+      <span class="logo-text">
+        <span class="logo-name">Carewell</span>
+        <span class="logo-sub">HEALTH CLINIC</span>
+      </span>
+    </a>
+
+    <nav class="main-nav" id="mainNav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active" aria-current="page">About</a>
+      <a href="services.html">Services</a>
+      <a href="doctors.html">Doctors</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="nav-right">
+      <a href="tel:+10001234567" class="nav-phone"><i class="fa-solid fa-phone" aria-hidden="true"></i> (000) 123-4567</a>
+      <a href="index.html#appointment" class="btn btn-dark book-btn-header">Book Appointment</a>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="nav-overlay" id="navOverlay"></div>
+
+<main id="main-content">
+
+<!-- ==========================================================================
+     SECTION 1: ABOUT HERO (PAGE TITLE BANNER)
+     ========================================================================== -->
+<section class="page-title-banner" id="about-hero">
+  <div class="container">
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+      <ol class="breadcrumb-list">
+        <li><a href="index.html"><i class="fa-solid fa-house" aria-hidden="true"></i> Home</a></li>
+        <li aria-current="page">About Us</li>
+      </ol>
+    </nav>
+    <h1 class="page-title">About Us</h1>
+    <p class="page-lead">Learn about Carewell Clinic's mission, values, experienced healthcare team, and modern facilities.</p>
+  </div>
+</section>
+
+<!-- ============================= -->
+<!-- About Carewell (Home Match) -->
+<!-- ============================= -->
+<section class="section" id="about">
+  <div class="container about-grid">
+    <div class="about-visual reveal">
+      <img src="https://images.unsplash.com/photo-1550831107-1553da8c8464?auto=format&w=1200&q=85" alt="Nurse and elderly patient sharing a warm conversation during a check-up" loading="lazy" decoding="async">
+      <div class="about-badge">
+        <i class="fa-solid fa-hand-holding-heart" aria-hidden="true"></i>
+        <span>Care With Compassion</span>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="eyebrow">ABOUT CAREWELL</div>
+      <h2 class="heading">Healthcare Built Around People</h2>
+      <p class="lede" style="margin-top:18px;">Carewell Clinic was founded on a simple idea: healthcare works best when it starts with the person, not the paperwork. Our multidisciplinary team takes the time to understand your history, your goals, and your concerns before recommending a path forward.</p>
+      <div class="about-points">
+        <div class="about-point">
+          <i class="fa-solid fa-list-check" aria-hidden="true"></i>
+          <div><h4>Personalized treatment</h4><p>Care plans shaped around your health history and daily life.</p></div>
+        </div>
+        <div class="about-point">
+          <i class="fa-solid fa-user-doctor" aria-hidden="true"></i>
+          <div><h4>Experienced healthcare professionals</h4><p>Board-certified physicians and specialists across key disciplines.</p></div>
+        </div>
+        <div class="about-point">
+          <i class="fa-solid fa-hospital" aria-hidden="true"></i>
+          <div><h4>Modern facilities</h4><p>Comfortable, well-equipped spaces designed with patients in mind.</p></div>
+        </div>
+        <div class="about-point">
+          <i class="fa-solid fa-heart" aria-hidden="true"></i>
+          <div><h4>Patient-first approach</h4><p>Clear communication and shared decision-making at every step.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= -->
+<!-- Mission / Vision / Values -->
+<!-- ============================= -->
+<section class="section mvv-section">
+  <div class="container">
+    <div class="section-head center">
+      <div class="eyebrow" style="justify-content:center;">WHO WE ARE</div>
+      <h2 class="heading">Our Mission, Vision & Values</h2>
+    </div>
+    <div class="mvv-grid">
+      <div class="mvv-card reveal">
+        <div class="mvv-icon"><i class="fa-solid fa-bullseye" aria-hidden="true"></i></div>
+        <h3>Our Mission</h3>
+        <p>To provide accessible, high-quality healthcare that treats the whole person — body, mind, and spirit — with compassion, transparency, and clinical excellence at every step.</p>
+      </div>
+      <div class="mvv-card reveal">
+        <div class="mvv-icon"><i class="fa-solid fa-eye" aria-hidden="true"></i></div>
+        <h3>Our Vision</h3>
+        <p>To be the most trusted healthcare partner in our community, recognized for clinical outcomes, patient satisfaction, and a care model that puts people first, always.</p>
+      </div>
+      <div class="mvv-card reveal">
+        <div class="mvv-icon"><i class="fa-solid fa-gem" aria-hidden="true"></i></div>
+        <h3>Our Values</h3>
+        <p>Compassion guides every interaction. Integrity builds every relationship. Excellence drives every outcome. Respect honors every individual who walks through our doors.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<!-- ============================= -->
+<!-- Our Team Overview -->
+<!-- ============================= -->
+<section class="section facility-section" id="team">
+  <div class="container">
+    <div class="team-overview-grid">
+      <div class="team-image reveal">
+        <img src="clinic_team.jpg" alt="The Carewell Clinic healthcare team in the lobby" loading="lazy" decoding="async">
+      </div>
+      <div class="team-copy reveal">
+        <div class="eyebrow">OUR TEAM</div>
+        <h2 class="heading">Experienced, Dedicated Professionals</h2>
+        <p class="lede" style="margin-top:18px;">Our multidisciplinary team brings decades of combined expertise across general medicine, family care, pediatrics, women's health, diagnostics, and preventive care. Every member is committed to continuous learning and compassionate practice.</p>
+        <div class="team-stats">
+          <div class="team-stat">
+            <div class="stat-val">25+</div>
+            <div class="stat-lbl">Team Members</div>
+          </div>
+          <div class="team-stat">
+            <div class="stat-val">8</div>
+            <div class="stat-lbl">Specialties</div>
+          </div>
+          <div class="team-stat">
+            <div class="stat-val">100%</div>
+            <div class="stat-lbl">Board Certified</div>
+          </div>
+          <div class="team-stat">
+            <div class="stat-val">4.9★</div>
+            <div class="stat-lbl">Patient Rating</div>
+          </div>
+        </div>
+        <a href="index.html#doctors" class="btn btn-dark" style="margin-top:28px;">Meet Our Doctors</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= -->
+<!-- Facility Showcase -->
+<!-- ============================= -->
+<section class="section" id="facility">
+  <div class="container facility-grid reverse">
+    <div class="facility-image reveal">
+      <img src="clinic_facility.jpg" alt="Modern Carewell Clinic reception and waiting area" loading="lazy" decoding="async">
+    </div>
+    <div class="facility-copy reveal">
+      <div class="eyebrow">OUR FACILITIES</div>
+      <h2 class="heading">Modern Spaces Designed for Comfort</h2>
+      <p class="lede" style="margin-top:18px;">Our clinic features state-of-the-art medical equipment and spaces designed to put you at ease from the moment you walk in. Every detail — from natural lighting to private consultation rooms — reflects our commitment to patient comfort.</p>
+      <ul class="facility-features">
+        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Spacious, naturally lit waiting and reception areas</li>
+        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Private consultation rooms for confidential discussions</li>
+        <li><i class="fa-solid fa-check" aria-hidden="true"></i> On-site diagnostic lab and imaging center</li>
+        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Child-friendly pediatric suite</li>
+        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Wheelchair-accessible throughout the facility</li>
+        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Comfortable post-procedure recovery room</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= -->
+<!-- Our Journey Timeline -->
+<!-- ============================= -->
+<section class="section" id="journey" style="background:var(--primary-08);">
+  <div class="container">
+    <div class="section-head center">
+      <div class="eyebrow" style="justify-content:center;">OUR JOURNEY</div>
+      <h2 class="heading">Growing With Our Community</h2>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item left reveal">
+        <div class="timeline-content">
+          <div class="timeline-year">2011</div>
+          <h4>The Beginning</h4>
+          <p>Carewell Clinic opens its doors as a single-physician general practice, driven by a vision of personalized healthcare.</p>
+        </div>
+        <div class="timeline-dot"><i class="fa-solid fa-seedling" aria-hidden="true"></i></div>
+        <div class="timeline-spacer"></div>
+      </div>
+      <div class="timeline-item right reveal">
+        <div class="timeline-spacer"></div>
+        <div class="timeline-dot"><i class="fa-solid fa-people-group" aria-hidden="true"></i></div>
+        <div class="timeline-content">
+          <div class="timeline-year">2014</div>
+          <h4>Expanding the Team</h4>
+          <p>Added family medicine and pediatrics specialists, growing to serve patients of all ages under one roof.</p>
+        </div>
+      </div>
+      <div class="timeline-item left reveal">
+        <div class="timeline-content">
+          <div class="timeline-year">2017</div>
+          <h4>New Facility</h4>
+          <p>Moved to our current modern, purpose-built facility with expanded diagnostic capabilities and a dedicated lab.</p>
+        </div>
+        <div class="timeline-dot"><i class="fa-solid fa-hospital" aria-hidden="true"></i></div>
+        <div class="timeline-spacer"></div>
+      </div>
+      <div class="timeline-item right reveal">
+        <div class="timeline-spacer"></div>
+        <div class="timeline-dot"><i class="fa-solid fa-award" aria-hidden="true"></i></div>
+        <div class="timeline-content">
+          <div class="timeline-year">2020</div>
+          <h4>Community Recognition</h4>
+          <p>Reached 10,000+ patients served and earned community healthcare excellence recognition.</p>
+        </div>
+      </div>
+      <div class="timeline-item left reveal">
+        <div class="timeline-content">
+          <div class="timeline-year">2024</div>
+          <h4>Continuing to Grow</h4>
+          <p>Introduced women's health services, preventive care programs, and expanded our team to 25+ professionals.</p>
+        </div>
+        <div class="timeline-dot"><i class="fa-solid fa-rocket" aria-hidden="true"></i></div>
+        <div class="timeline-spacer"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= -->
+<!-- Clinical Schedule Section     -->
+<!-- ============================= -->
+<section class="section" id="schedule">
+  <div class="container">
+    <div class="section-head center">
+      <div class="eyebrow" style="justify-content:center;">CLINICAL SCHEDULE</div>
+      <h2 class="heading">Consultation & Care Hours</h2>
+      <p class="lede" style="margin:16px auto 0;">We offer daytime, early morning, and weekend consultation windows to fit your busy routine.</p>
+    </div>
+
+    <div class="schedule-table-wrap reveal">
+      <table class="schedule-table" aria-label="Carewell Clinic Weekly Consultation Hours">
+        <thead>
+          <tr>
+            <th scope="col">Day</th>
+            <th scope="col">Consultation Hours</th>
+            <th scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Monday</th>
+            <td>9:00 AM – 5:00 PM</td>
+            <td><span class="status-open"><i class="fa-solid fa-circle" aria-hidden="true"></i> Open</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Tuesday</th>
+            <td>9:00 AM – 5:00 PM</td>
+            <td><span class="status-open"><i class="fa-solid fa-circle" aria-hidden="true"></i> Open</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Wednesday</th>
+            <td>10:00 AM – 6:00 PM</td>
+            <td><span class="status-open"><i class="fa-solid fa-circle" aria-hidden="true"></i> Extended Hours</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Thursday</th>
+            <td>9:00 AM – 5:00 PM</td>
+            <td><span class="status-open"><i class="fa-solid fa-circle" aria-hidden="true"></i> Open</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Friday</th>
+            <td>9:00 AM – 1:00 PM</td>
+            <td><span class="status-open"><i class="fa-solid fa-circle" aria-hidden="true"></i> Morning Clinic</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Saturday</th>
+            <td>10:00 AM – 2:00 PM</td>
+            <td><span class="status-open"><i class="fa-solid fa-circle" aria-hidden="true"></i> Weekend Clinic</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Sunday</th>
+            <td>Closed</td>
+            <td><span class="status-closed">Urgent On-Call Only</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="schedule-note">Note: For specific doctor availability and same-day consultations, please call or submit an appointment request.</p>
+  </div>
+</section>
+
+<!-- ============================= -->
+<!-- CTA Panel -->
+<!-- ============================= -->
+<section class="cta-panel-wrap">
+  <div class="container">
+    <div class="cta-panel reveal">
+      <h2>Ready to Experience Compassionate, Modern Healthcare?</h2>
+      <p>Book your consultation in seconds or speak directly with our clinical coordinators. We offer same-day appointments, unhurried consultations, and comprehensive medical care tailored to you.</p>
+      <div class="cta-btn-group">
+        <a href="index.html#appointment" class="cta-btn-main"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i> Book an Appointment</a>
+        <a href="tel:+10001234567" class="cta-btn-secondary"><i class="fa-solid fa-phone" aria-hidden="true"></i> (000) 123-4567</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================= -->
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <!-- 1. Brand -->
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo" aria-label="Carewell Clinic home">
+          <span class="footer-logo-icon"><i class="fa-solid fa-plus" aria-hidden="true"></i></span>
+          <div class="footer-logo-text">
+            <span class="footer-logo-name">Carewell</span>
+            <span class="footer-logo-subtitle">HEALTH CLINIC</span>
+          </div>
+        </a>
+        <p>Compassionate Care. Better Health. Patient-centered medical excellence designed around your life.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Carewell Clinic on Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Carewell Clinic on Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Carewell Clinic on LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Carewell Clinic on Twitter"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <!-- 2. Explore -->
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="doctors.html">Our Doctors</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- 3. Clinic Hours -->
+      <div class="footer-col">
+        <h4>Clinic Hours</h4>
+        <ul class="footer-hours-list">
+          <li><span>Mon – Fri:</span> <strong>8:00 AM – 6:00 PM</strong></li>
+          <li><span>Wednesday:</span> <strong>8:00 AM – 7:00 PM</strong></li>
+          <li><span>Saturday:</span> <strong>9:00 AM – 2:00 PM</strong></li>
+          <li><span>Sunday:</span> <strong style="color:var(--accent);">Closed (Emergency On-Call)</strong></li>
+        </ul>
+      </div>
+
+      <!-- 4. Contact & Visits -->
+      <div class="footer-col">
+        <h4>Contact & Visits</h4>
+        <address class="footer-contact-info">
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+            <span>450 Health Avenue, Suite 300<br>Medical Plaza, Metro City</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-phone" aria-hidden="true"></i>
+            <a href="tel:+10001234567">(000) 123-4567</a>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+            <a href="mailto:hello@carewellclinic.example">hello@carewellclinic.example</a>
+          </div>
+        </address>
+        <a href="index.html#appointment" class="btn btn-primary btn-sm" style="margin-top:16px;">Book an Appointment</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Carewell Health Clinic. All rights reserved.</span>
+      <div class="footer-bottom-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="accessibility.html">Accessibility Statement</a>
+        <a href="patient-rights.html">Patient Rights</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></button>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- Image fallback system ---------- */
+  var FALLBACK_IMAGE = "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=900&q=80";
+  document.querySelectorAll('img').forEach(function(img){
+    img.addEventListener('error', function(){
+      if(!this.dataset.fallback){
+        this.dataset.fallback = "true";
+        this.src = FALLBACK_IMAGE;
+      }
+    });
+  });
+
+  /* ---------- Sticky header shadow ---------- */
+  var header = document.getElementById('siteHeader');
+  function onScroll(){
+    if(window.scrollY > 12){ header.classList.add('scrolled'); }
+    else{ header.classList.remove('scrolled'); }
+    toggleScrollTop();
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+
+  /* ---------- Mobile menu ---------- */
+  var hamburger = document.getElementById('hamburgerBtn');
+  var mainNav = document.getElementById('mainNav');
+  var overlay = document.getElementById('navOverlay');
+
+  function openMenu(){
+    mainNav.classList.add('is-open');
+    overlay.classList.add('is-active');
+    hamburger.setAttribute('aria-expanded','true');
+    hamburger.setAttribute('aria-label','Close menu');
+    document.body.style.overflow='hidden';
+  }
+  function closeMenu(){
+    mainNav.classList.remove('is-open');
+    overlay.classList.remove('is-active');
+    hamburger.setAttribute('aria-expanded','false');
+    hamburger.setAttribute('aria-label','Open menu');
+    document.body.style.overflow='';
+  }
+  hamburger.addEventListener('click', function(){
+    if(mainNav.classList.contains('is-open')){ closeMenu(); } else { openMenu(); }
+  });
+  overlay.addEventListener('click', closeMenu);
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && mainNav.classList.contains('is-open')){ closeMenu(); }
+  });
+  mainNav.querySelectorAll('a').forEach(function(link){
+    link.addEventListener('click', closeMenu);
+  });
+
+  /* ---------- Scroll reveal ---------- */
+  var revealEls = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var revealObserver = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {threshold:.15});
+    revealEls.forEach(function(el){ revealObserver.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add('is-visible'); });
+  }
+
+
+  /* ---------- Scroll to top ---------- */
+  var scrollTopBtn = document.getElementById('scrollTopBtn');
+  function toggleScrollTop(){
+    scrollTopBtn.classList.toggle('is-visible', window.scrollY > 500);
+  }
+  scrollTopBtn.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+
+  onScroll();
+})();
+</script>
+</body>
+</html>
+

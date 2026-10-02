@@ -1,0 +1,1724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Doctors & Medical Specialists — Carewell Clinic</title>
+<meta name="description" content="Meet the board-certified physicians and specialists at Carewell Clinic. Experienced professionals in General Medicine, Family Care, Pediatrics, Women's Health, Cardiology, and more.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Golos+Text:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+/* ============================= */
+/* 1. ROOT VARIABLES              */
+/* ============================= */
+:root{
+  --primary:#004636;
+  --accent:#D2B168;
+  --white:#FFFFFF;
+  --black:#000000;
+
+  --primary-08:rgba(0,70,54,.08);
+  --primary-12:rgba(0,70,54,.12);
+  --primary-30:rgba(0,70,54,.30);
+  --primary-60:rgba(0,70,54,.60);
+  --primary-85:rgba(0,70,54,.85);
+  --primary-92:rgba(0,70,54,.92);
+
+  --accent-10:rgba(210,177,104,.10);
+  --accent-15:rgba(210,177,104,.15);
+  --accent-25:rgba(210,177,104,.25);
+  --accent-40:rgba(210,177,104,.40);
+  --accent-60:rgba(210,177,104,.60);
+
+  --white-70:rgba(255,255,255,.70);
+  --white-85:rgba(255,255,255,.85);
+  --white-92:rgba(255,255,255,.92);
+
+  --black-08:rgba(0,0,0,.08);
+  --black-12:rgba(0,0,0,.12);
+  --black-30:rgba(0,0,0,.30);
+
+  --font-heading:"Gloock", serif;
+  --font-body:"Golos Text", sans-serif;
+
+  --container:1240px;
+  --radius-sm:6px;
+  --radius-md:14px;
+  --radius-lg:28px;
+  --radius-full:9999px;
+
+  --shadow-soft:0 20px 50px var(--black-08);
+  --shadow-lift:0 26px 60px var(--primary-30);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+html,body{width:100%;max-width:100%;overflow-x:clip;}
+body{
+  font-family:var(--font-body);
+  color:var(--primary);
+  background:var(--white);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+ul{list-style:none;}
+button{font-family:var(--font-body);cursor:pointer;border:none;background:none;}
+input,select,textarea{font-family:var(--font-body);}
+h1,h2,h3,h4{font-family:var(--font-heading);font-weight:400;color:var(--primary);line-height:1.15;}
+
+.container{max-width:var(--container);margin:0 auto;padding:0 24px;}
+.section{padding:100px 0;}
+.section-tight{padding:70px 0;}
+
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;scroll-behavior:auto !important;}
+}
+
+/* ============================= */
+/* Shared components               */
+/* ============================= */
+.eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:.78rem;font-weight:600;letter-spacing:.04em;
+  color:var(--accent);
+  margin-bottom:16px;
+}
+.eyebrow::before{
+  content:"";width:26px;height:2px;background:var(--accent);display:inline-block;
+}
+h2.heading{font-size:clamp(2rem,3.6vw,2.75rem);max-width:640px;}
+.section-head{margin-bottom:52px;}
+.section-head.center{text-align:center;margin-left:auto;margin-right:auto;}
+.section-head.center h2{margin-left:auto;margin-right:auto;}
+.lede{color:var(--primary-85);max-width:560px;font-size:1.02rem;}
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  font-family:var(--font-body);font-weight:600;font-size:.96rem;
+  padding:15px 30px;border-radius:100px;
+  transition:transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease, border-color .25s ease;
+  white-space:nowrap;
+}
+.btn-primary{
+  background:var(--accent);color:var(--primary);border:1px solid var(--accent);
+}
+.btn-primary:hover{background:var(--white);border-color:var(--accent);transform:translateY(-2px);box-shadow:0 14px 30px var(--accent-40);}
+.btn-primary:active{transform:translateY(0);box-shadow:none;}
+.btn-primary:visited{color:var(--primary);}
+
+.btn-outline{
+  background:transparent;color:var(--white);border:1px solid var(--white-70);
+}
+.btn-outline:hover{background:var(--white);color:var(--primary);border-color:var(--white);transform:translateY(-2px);}
+.btn-outline:active{transform:translateY(0);}
+
+.btn-dark{
+  background:var(--primary);color:var(--white);border:1px solid var(--primary);
+}
+.btn-dark:hover{background:transparent;color:var(--primary);transform:translateY(-2px);}
+.btn-dark:active{transform:translateY(0);}
+
+.btn-ghost-dark{
+  background:transparent;color:var(--primary);border:1px solid var(--primary-30);
+}
+.btn-ghost-dark:hover{border-color:var(--primary);background:var(--primary-08);}
+
+.btn-sm{
+  padding:9px 18px;font-size:.85rem;border-radius:100px;
+}
+
+/* reveal-on-scroll */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease, transform .7s ease;}
+.reveal.is-visible{opacity:1;transform:translateY(0);}
+
+/* ============================= */
+/* Announcement bar (Marquee)    */
+/* ============================= */
+.announcement{
+  background:var(--primary);color:var(--white-92);
+  font-size:.86rem;overflow:hidden;white-space:nowrap;
+  position:relative;border-bottom:1px solid var(--accent-25);
+}
+.announcement-marquee{
+  display:flex;width:max-content;
+  animation:announcementScroll 28s linear infinite;
+}
+.announcement-marquee:hover{animation-play-state:paused;}
+.announcement-track{
+  display:inline-flex;align-items:center;gap:36px;padding:10px 18px;
+}
+.announcement-item{
+  display:inline-flex;align-items:center;gap:10px;color:var(--white-92);
+}
+.announcement-item i{color:var(--accent);font-size:.85rem;flex-shrink:0;}
+.announcement-item a{
+  color:var(--accent);font-weight:600;border-bottom:1px solid transparent;
+  transition:border-color .2s ease;margin-left:4px;
+}
+.announcement-item a:hover{border-color:var(--accent);}
+.announcement-sep{color:var(--accent-40);font-size:.7rem;}
+@keyframes announcementScroll{
+  0%{transform:translateX(0);}
+  100%{transform:translateX(-50%);}
+}
+
+/* ============================= */
+/* Header / Navigation            */
+/* ============================= */
+.site-header{
+  position:sticky;top:0;z-index:500;
+  background:var(--white);
+  border-bottom:1px solid var(--black-08);
+  transition:box-shadow .3s ease, padding .3s ease;
+}
+.site-header.scrolled{box-shadow:0 12px 30px var(--black-08);}
+.nav-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px 0;
+}
+.logo{display:flex;align-items:center;gap:12px;font-family:var(--font-heading);}
+.logo-icon{
+  width:44px;height:44px;border-radius:50%;
+  background:var(--primary);color:var(--accent);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.1rem;flex-shrink:0;
+}
+.logo-text{display:flex;flex-direction:column;line-height:1.1;}
+.logo-name{font-size:1.35rem;color:var(--primary);white-space:nowrap;}
+.logo-sub{font-family:var(--font-body);font-size:.6rem;letter-spacing:.16em;color:var(--accent);font-weight:600;white-space:nowrap;}
+
+.main-nav{display:flex;align-items:center;gap:36px;}
+.main-nav a{
+  font-size:.94rem;font-weight:500;color:var(--primary-85);
+  position:relative;padding:6px 0;
+}
+.main-nav a::after{
+  content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--accent);
+  transition:width .25s ease;
+}
+.main-nav a:hover::after,.main-nav a.active::after{width:100%;}
+.main-nav a.active{color:var(--primary);}
+
+.nav-right{display:flex;align-items:center;gap:22px;}
+.nav-phone{display:flex;align-items:center;gap:8px;font-weight:600;font-size:.92rem;color:var(--primary);}
+.nav-phone i{color:var(--accent);}
+.hamburger{
+  display:none;flex-direction:column;gap:5px;width:26px;background:none;border:none;
+  padding:4px;
+}
+.hamburger span{display:block;width:100%;height:2px;background:var(--primary);transition:transform .3s ease, opacity .3s ease;}
+.hamburger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hamburger[aria-expanded="true"] span:nth-child(2){opacity:0;}
+.hamburger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+.nav-overlay{
+  position:fixed;inset:0;background:var(--primary-60);z-index:490;
+  opacity:0;pointer-events:none;transition:opacity .3s ease;
+}
+.nav-overlay.is-active{opacity:1;pointer-events:auto;}
+
+@media (max-width:960px){
+  .main-nav{
+    position:fixed;top:0;right:0;height:100vh;width:min(340px,85vw);
+    background:var(--white);flex-direction:column;align-items:flex-start;
+    padding:100px 32px 32px;gap:26px;z-index:495;
+    transform:translateX(100%);transition:transform .35s ease;
+    box-shadow:-20px 0 50px var(--black-12);
+  }
+  .main-nav.is-open{transform:translateX(0);}
+  .nav-phone{display:none;}
+  .hamburger{display:flex;}
+  .book-btn-header{display:none;}
+}
+
+/* ==========================================================================
+   PAGE TITLE BANNER (UNIFIED HERO - MATCHING CONTACT PAGE)
+   ========================================================================== */
+.page-title-banner {
+  background: linear-gradient(135deg, var(--primary) 0%, #002e23 100%);
+  color: var(--white);
+  padding: 72px 0 68px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.page-title-banner::before {
+  content: "";
+  position: absolute;
+  top: -120px;
+  right: -100px;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--accent-15) 0%, transparent 70%);
+  pointer-events: none;
+}
+.page-title-banner::after {
+  content: "";
+  position: absolute;
+  bottom: -150px;
+  left: -80px;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--accent-10) 0%, transparent 70%);
+  pointer-events: none;
+}
+.page-title-banner .container {
+  position: relative;
+  z-index: 2;
+  max-width: 820px;
+  margin: 0 auto;
+}
+.breadcrumb-nav {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.breadcrumb-list {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+  font-size: 0.88rem;
+  color: var(--accent-40);
+  background: rgba(255, 255, 255, 0.06);
+  padding: 6px 18px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.breadcrumb-list li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.breadcrumb-list li+li::before {
+  content: "/";
+  color: var(--accent-40);
+}
+.breadcrumb-list a {
+  color: var(--white-85);
+  transition: color 0.2s ease;
+}
+.breadcrumb-list a:hover {
+  color: var(--accent);
+}
+.breadcrumb-list [aria-current="page"] {
+  color: var(--accent);
+  font-weight: 600;
+}
+.page-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.4rem, 4.5vw, 3.4rem);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--white);
+  margin-bottom: 14px;
+  letter-spacing: -0.01em;
+}
+.page-lead {
+  font-size: clamp(1.02rem, 1.8vw, 1.15rem);
+  color: var(--white-85);
+  line-height: 1.65;
+  margin: 0 auto;
+  max-width: 680px;
+}
+
+/* ============================= */
+/* Balanced Introduction Section */
+/* ============================= */
+.intro-grid{
+  display:grid;grid-template-columns:1fr 1.08fr;gap:64px;align-items:stretch;
+}
+.intro-image{position:relative;display:flex;flex-direction:column;height:100%;}
+.intro-image img{
+  border-radius:var(--radius-lg);height:100%;min-height:500px;object-fit:cover;box-shadow:var(--shadow-soft);
+  width:100%;display:block;
+}
+.intro-float-badge{
+  position:absolute;bottom:24px;left:24px;right:24px;background:rgba(0,70,54,.92);color:var(--white);
+  border-radius:var(--radius-md);padding:18px 22px;box-shadow:0 14px 30px var(--primary-30);
+  display:flex;align-items:center;gap:14px;border:1px solid var(--accent-30);backdrop-filter:blur(8px);
+}
+.intro-float-badge i{font-size:1.5rem;color:var(--accent);flex-shrink:0;}
+.intro-float-badge span{font-family:var(--font-heading);font-size:.96rem;line-height:1.25;}
+.intro-points-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:28px;
+}
+.intro-point{
+  display:flex;gap:14px;align-items:flex-start;
+  padding:16px 18px;background:var(--primary-08);border-radius:var(--radius-sm);
+  transition:transform .25s ease, background .25s ease;
+}
+.intro-point:hover{transform:translateY(-2px);background:rgba(0,70,54,.12);}
+.intro-point i{
+  width:36px;height:36px;border-radius:50%;background:var(--primary);color:var(--accent);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.9rem;
+}
+.intro-point h4{font-family:var(--font-body);font-size:.95rem;font-weight:600;margin-bottom:2px;}
+.intro-point p{font-size:.84rem;color:var(--primary-85);line-height:1.4;}
+@media (max-width:960px){
+  .intro-grid{grid-template-columns:1fr;gap:44px;}
+  .intro-image img{min-height:360px;}
+  .intro-float-badge{position:static;margin-top:16px;}
+  .intro-points-grid{grid-template-columns:1fr;}
+}
+
+/* ============================= */
+/* Doctor Cards System            */
+/* ============================= */
+.doctors-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;}
+.doctor-card{
+  border-radius:var(--radius-md);overflow:hidden;border:1px solid var(--black-08);
+  transition:box-shadow .3s ease, transform .3s ease, border-color .3s ease;
+  background:var(--white);display:flex;flex-direction:column;
+}
+.doctor-card:hover{
+  box-shadow:var(--shadow-soft);transform:translateY(-6px);border-color:var(--accent-40);
+}
+.doctor-photo{
+  aspect-ratio:3/4;overflow:hidden;position:relative;background:var(--primary-08);
+}
+.doctor-photo img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.doctor-card:hover .doctor-photo img{
+  transform:scale(1.06);
+}
+.doctor-badge-overlay{
+  position:absolute;bottom:12px;left:12px;
+  background:rgba(0,70,54,0.88);backdrop-filter:blur(6px);color:var(--white);
+  font-size:.72rem;font-weight:600;padding:4px 10px;border-radius:100px;
+  border:1px solid var(--accent-25);letter-spacing:.04em;
+}
+.doctor-info{padding:20px 20px 24px;display:flex;flex-direction:column;flex-grow:1;}
+.doctor-info h3{font-size:1.1rem;margin-bottom:3px;color:var(--primary);}
+.doctor-specialty{color:var(--accent);font-weight:600;font-size:.84rem;margin-bottom:6px;}
+.doctor-meta{font-size:.8rem;color:var(--primary-85);margin-bottom:14px;display:flex;align-items:center;gap:6px;}
+.doctor-meta i{font-size:.78rem;color:var(--accent);}
+.doctor-bio{display:none;}
+.doctor-skills-tags{display:none;}
+.doctor-footer{
+  display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:14px;
+  border-top:1px solid var(--black-08);
+}
+.doctor-social{display:flex;gap:8px;}
+.doctor-social a{
+  width:32px;height:32px;border-radius:50%;border:1px solid var(--primary-12);
+  display:flex;align-items:center;justify-content:center;font-size:.78rem;color:var(--primary);
+  transition:background .25s ease, color .25s ease, border-color .25s ease;
+}
+.doctor-social a:hover{background:var(--primary);color:var(--accent);border-color:var(--primary);}
+.view-profile{
+  font-size:.82rem;font-weight:600;color:var(--primary);
+  display:inline-flex;align-items:center;gap:6px;cursor:pointer;
+  transition:color .2s ease;background:none;border:none;padding:0;
+}
+.view-profile:hover{color:var(--accent);}
+.view-profile i{transition:transform .2s ease;color:var(--accent);}
+.doctor-card:hover .view-profile i{transform:translateX(4px);}
+.demo-note{text-align:center;margin-top:40px;font-size:.8rem;color:var(--primary-60);}
+
+@media (max-width:1100px){.doctors-grid{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:560px){.doctors-grid{grid-template-columns:1fr;}}
+
+/* ============================= */
+/* Doctor Search & Filter Controls*/
+/* ============================= */
+.directory-controls{
+  max-width:860px;margin:0 auto 48px;display:flex;flex-direction:column;gap:24px;
+}
+.search-bar-wrap{
+  position:relative;width:100%;
+}
+.search-bar-wrap i.search-icon{
+  position:absolute;left:20px;top:50%;transform:translateY(-50%);
+  color:var(--primary-60);font-size:1.05rem;pointer-events:none;
+}
+.search-input{
+  width:100%;padding:16px 20px 16px 52px;
+  border:1px solid var(--primary-12);border-radius:100px;
+  font-size:1rem;color:var(--primary);background:var(--white);
+  box-shadow:0 6px 24px var(--black-08);
+  transition:border-color .25s ease, box-shadow .25s ease;
+}
+.search-input:focus{
+  border-color:var(--accent);box-shadow:0 0 0 4px var(--accent-15);outline:none;
+}
+.search-clear{
+  position:absolute;right:18px;top:50%;transform:translateY(-50%);
+  color:var(--primary-60);font-size:.9rem;padding:6px;cursor:pointer;display:none;
+}
+.search-clear:hover{color:var(--primary);}
+.search-clear.is-visible{display:block;}
+
+.filter-nav-wrap{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  flex-wrap:wrap;
+}
+.filter-btn{
+  background:var(--primary-08);color:var(--primary);
+  border:1px solid transparent;border-radius:100px;
+  padding:10px 20px;font-weight:600;font-size:.88rem;
+  transition:all .25s ease;display:inline-flex;align-items:center;gap:6px;
+}
+.filter-btn:hover{background:var(--primary);color:var(--accent);transform:translateY(-2px);}
+.filter-btn.active{
+  background:var(--primary);color:var(--white);border-color:var(--primary);
+  box-shadow:0 8px 20px var(--primary-30);
+}
+.filter-btn.active i{color:var(--accent);}
+
+.no-results{
+  text-align:center;padding:60px 20px;display:none;
+  background:var(--primary-08);border-radius:var(--radius-md);margin-top:20px;
+}
+.no-results i{font-size:2.4rem;color:var(--accent);margin-bottom:14px;}
+.no-results h3{font-size:1.3rem;margin-bottom:8px;}
+.no-results p{color:var(--primary-85);font-size:.96rem;}
+
+/* ============================= */
+/* Doctor Profile Modal           */
+/* ============================= */
+.modal-backdrop{
+  position:fixed;inset:0;background:rgba(0,40,30,.78);z-index:999;
+  display:flex;align-items:center;justify-content:center;padding:20px;
+  opacity:0;pointer-events:none;transition:opacity .3s ease;
+  backdrop-filter:blur(6px);
+}
+.modal-backdrop.is-open{
+  opacity:1;pointer-events:auto;
+}
+.doctor-modal{
+  background:var(--white);border-radius:var(--radius-lg);max-width:820px;width:100%;
+  max-height:90vh;overflow-y:auto;border:1px solid var(--accent-40);
+  box-shadow:0 30px 70px rgba(0,0,0,.35);position:relative;
+  transform:translateY(24px) scale(.98);transition:transform .3s ease;
+}
+.modal-backdrop.is-open .doctor-modal{
+  transform:translateY(0) scale(1);
+}
+.modal-close-btn{
+  position:absolute;top:20px;right:20px;width:40px;height:40px;border-radius:50%;
+  background:var(--white);color:var(--primary);display:flex;align-items:center;justify-content:center;
+  font-size:1.1rem;box-shadow:0 6px 18px var(--black-12);z-index:10;
+  transition:background .2s ease, transform .2s ease;border:1px solid var(--black-08);
+}
+.modal-close-btn:hover{
+  background:var(--primary);color:var(--accent);transform:rotate(90deg);
+}
+.modal-body{
+  display:grid;grid-template-columns:.9fr 1.1fr;
+}
+.modal-photo-wrap{
+  background:var(--primary-08);height:100%;min-height:360px;position:relative;
+}
+.modal-photo-wrap img{
+  width:100%;height:100%;object-fit:cover;display:block;
+}
+.modal-details{
+  padding:44px 38px;display:flex;flex-direction:column;
+}
+.modal-specialty{
+  color:var(--accent);font-weight:700;font-size:.85rem;letter-spacing:.05em;text-transform:uppercase;margin-bottom:6px;
+}
+.modal-details h2{
+  font-size:1.8rem;margin-bottom:4px;color:var(--primary);
+}
+.modal-credentials{
+  color:var(--primary-85);font-size:.9rem;font-weight:500;margin-bottom:18px;display:flex;align-items:center;gap:8px;
+}
+.modal-bio{
+  font-size:.92rem;color:var(--primary-85);margin-bottom:20px;line-height:1.6;
+}
+.modal-section-title{
+  font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--primary-60);margin-bottom:10px;
+}
+.modal-expertise-list{
+  display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px;
+}
+.modal-expertise-list span{
+  background:var(--primary-08);color:var(--primary);font-size:.8rem;font-weight:600;
+  padding:5px 12px;border-radius:100px;border:1px solid var(--primary-12);
+}
+.modal-consultation-info{
+  background:var(--primary-08);border-radius:var(--radius-sm);padding:14px 18px;margin-bottom:24px;
+}
+.modal-consultation-info div{
+  font-size:.85rem;color:var(--primary-85);display:flex;align-items:center;gap:10px;margin-bottom:6px;
+}
+.modal-consultation-info div:last-child{margin-bottom:0;}
+.modal-consultation-info i{color:var(--accent);width:16px;}
+.modal-actions{
+  display:flex;align-items:center;gap:16px;margin-top:auto;flex-wrap:wrap;
+}
+
+@media (max-width:768px){
+  .modal-body{grid-template-columns:1fr;}
+  .modal-photo-wrap{max-height:300px;min-height:220px;}
+  .modal-details{padding:28px 24px;}
+}
+
+/* ============================= */
+/* Areas of Expertise             */
+/* ============================= */
+.expertise-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:24px;
+}
+.expertise-card{
+  border:1px solid var(--black-08);border-radius:var(--radius-md);padding:32px 26px;
+  background:var(--white);transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+  display:flex;flex-direction:column;
+}
+.expertise-card:hover{
+  transform:translateY(-6px);box-shadow:var(--shadow-soft);border-color:var(--accent-40);
+}
+.expertise-icon{
+  width:54px;height:54px;border-radius:50%;background:var(--primary-08);color:var(--primary);
+  display:flex;align-items:center;justify-content:center;font-size:1.35rem;margin-bottom:20px;
+  transition:background .3s ease, color .3s ease, transform .3s ease;
+}
+.expertise-card:hover .expertise-icon{
+  background:var(--primary);color:var(--accent);transform:scale(1.08);
+}
+.expertise-card h4{font-size:1.08rem;margin-bottom:8px;}
+.expertise-card p{font-size:.88rem;color:var(--primary-85);line-height:1.5;}
+@media (max-width:1024px){.expertise-grid{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:560px){.expertise-grid{grid-template-columns:1fr;}}
+
+/* ============================= */
+/* How We Work Together (Steps)   */
+/* ============================= */
+.steps-wrap{position:relative;}
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;position:relative;}
+.steps-grid::before{
+  content:"";position:absolute;top:34px;left:12%;right:12%;height:1px;background:var(--primary-12);
+}
+.step-card{position:relative;text-align:center;}
+.step-icon{
+  width:68px;height:68px;border-radius:50%;background:var(--primary);color:var(--accent);
+  display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin:0 auto 20px;
+  position:relative;z-index:2;border:6px solid var(--white);
+  transition:transform .3s ease;
+}
+.step-card:hover .step-icon{transform:scale(1.1);}
+.step-tag{font-size:.72rem;font-weight:600;letter-spacing:.1em;color:var(--accent);margin-bottom:8px;}
+.step-card h4{font-size:1.02rem;margin-bottom:6px;}
+.step-card p{font-size:.86rem;color:var(--primary-85);}
+@media (max-width:900px){
+  .steps-grid{grid-template-columns:1fr;gap:36px;}
+  .steps-grid::before{display:none;}
+}
+
+/* ============================= */
+/* Meet Your Care Team            */
+/* ============================= */
+.careteam-grid{
+  display:grid;grid-template-columns:repeat(5,1fr);gap:20px;margin-top:40px;
+}
+.careteam-card{
+  background:var(--white);border:1px solid var(--black-08);border-radius:var(--radius-md);
+  padding:28px 20px;text-align:center;transition:transform .3s ease, box-shadow .3s ease;
+}
+.careteam-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-soft);}
+.careteam-icon{
+  width:52px;height:52px;border-radius:50%;background:var(--primary);color:var(--accent);
+  display:flex;align-items:center;justify-content:center;font-size:1.25rem;margin:0 auto 16px;
+}
+.careteam-card h4{font-size:.98rem;margin-bottom:6px;}
+.careteam-card p{font-size:.82rem;color:var(--primary-85);line-height:1.45;}
+@media (max-width:1100px){.careteam-grid{grid-template-columns:repeat(3,1fr);}}
+@media (max-width:680px){.careteam-grid{grid-template-columns:1fr;}}
+
+/* Doctor Availability Section removed */
+
+/* ============================= */
+/* Patient-First Care Section     */
+/* ============================= */
+.split-section{background:var(--primary-08);}
+.split-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;}
+.split-grid.reverse .split-image{order:2;}
+.split-grid.reverse .split-copy{order:1;}
+.split-image img{border-radius:var(--radius-lg);aspect-ratio:4/3;object-fit:cover;box-shadow:var(--shadow-soft);width:100%;}
+.split-copy ul{margin:24px 0 30px;display:grid;gap:14px;}
+.split-copy ul li{display:flex;gap:12px;align-items:flex-start;font-size:.95rem;color:var(--primary-85);}
+.split-copy ul li i{color:var(--accent);margin-top:4px;flex-shrink:0;}
+@media (max-width:900px){
+  .split-grid{grid-template-columns:1fr;gap:40px;}
+  .split-grid.reverse .split-image,.split-grid.reverse .split-copy{order:0;}
+}
+
+/* ============================= */
+/* Doctor Appointment CTA Card    */
+/* ============================= */
+.appt-cta-card{
+  background:linear-gradient(135deg, rgba(0,70,54,.06) 0%, rgba(210,177,104,.14) 100%);
+  border:1px solid var(--accent-40);border-radius:var(--radius-lg);padding:56px 44px;
+  display:flex;align-items:center;justify-content:space-between;gap:36px;flex-wrap:wrap;
+}
+.appt-cta-text{max-width:680px;}
+.appt-cta-text h3{font-size:clamp(1.6rem,2.8vw,2.2rem);margin-bottom:12px;}
+.appt-cta-text p{font-size:1.02rem;color:var(--primary-85);}
+@media (max-width:768px){
+  .appt-cta-card{padding:36px 26px;}
+}
+
+/* ============================= */
+/* FAQ Section                    */
+/* ============================= */
+.faq-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:70px;align-items:center;}
+.faq-image img{border-radius:var(--radius-lg);aspect-ratio:4/5;object-fit:cover;box-shadow:var(--shadow-soft);width:100%;}
+.faq-list{display:grid;gap:14px;}
+.faq-item{border:1px solid var(--black-08);border-radius:var(--radius-md);overflow:hidden;background:var(--white);}
+.faq-question{
+  width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:20px 24px;text-align:left;font-weight:600;font-size:.98rem;color:var(--primary);
+  background:none;transition:background .2s ease;
+}
+.faq-question:hover{background:var(--primary-08);}
+.faq-question i{
+  color:var(--accent);transition:transform .3s ease;flex-shrink:0;font-size:1rem;
+  width:28px;height:28px;border-radius:50%;background:var(--primary-08);
+  display:flex;align-items:center;justify-content:center;
+}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+.faq-answer-inner{padding:0 24px 22px;color:var(--primary-85);font-size:.92rem;line-height:1.6;}
+.faq-item.open .faq-answer{max-height:260px;}
+.faq-item.open .faq-question i{background:var(--primary);color:var(--accent);}
+@media (max-width:900px){.faq-grid{grid-template-columns:1fr;gap:40px;}}
+
+/* ============================= */
+/* Enhanced Final CTA Section    */
+/* ============================= */
+.cta-panel-wrap{padding:100px 0 110px;background:var(--primary-08);}
+.cta-panel{
+  background:linear-gradient(135deg, var(--primary) 0%, #002c21 60%, #001f17 100%);
+  border-radius:var(--radius-lg);border:1px solid var(--accent-30);
+  padding:72px 48px;text-align:center;display:flex;flex-direction:column;align-items:center;
+  max-width:100%;margin:0 auto;position:relative;overflow:hidden;
+  box-shadow:0 24px 60px rgba(0,70,54,.25);
+}
+.cta-panel::before{
+  content:"";position:absolute;top:-140px;right:-140px;width:420px;height:420px;
+  border-radius:50%;background:radial-gradient(circle, var(--accent-20), transparent 70%);pointer-events:none;
+}
+.cta-panel::after{
+  content:"";position:absolute;bottom:-160px;left:-140px;width:400px;height:400px;
+  border-radius:50%;background:radial-gradient(circle, rgba(210,177,104,.15), transparent 70%);pointer-events:none;
+}
+.cta-badge-pill{
+  display:inline-flex;align-items:center;gap:10px;padding:6px 18px;border-radius:100px;
+  background:rgba(210,177,104,.15);border:1px solid var(--accent-40);color:var(--accent);
+  font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px;
+  position:relative;z-index:2;
+}
+.cta-pulse-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 3px rgba(210,177,104,.35);animation:pulseDot 2s infinite;}
+@keyframes pulseDot{0%,100%{transform:scale(1);opacity:1;}50%{transform:scale(1.3);opacity:.6;}}
+.cta-panel h2{color:var(--white);font-size:clamp(1.9rem,3.4vw,2.7rem);max-width:760px;position:relative;z-index:2;line-height:1.25;margin:0 0 16px;}
+.cta-panel p{color:var(--white-85);max-width:620px;font-size:1.02rem;line-height:1.65;position:relative;z-index:2;margin:0 0 32px;}
+.cta-actions{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;position:relative;z-index:2;}
+.cta-trust-bar{
+  display:flex;align-items:center;justify-content:center;gap:28px;flex-wrap:wrap;
+  margin-top:40px;padding-top:28px;border-top:1px solid rgba(255,255,255,.12);
+  width:100%;max-width:680px;position:relative;z-index:2;
+}
+.cta-trust-item{display:inline-flex;align-items:center;gap:8px;color:var(--white-85);font-size:.84rem;font-weight:500;}
+.cta-trust-item i{color:var(--accent);font-size:.85rem;}
+@media (max-width:600px){
+  .cta-panel{padding:48px 24px;}
+  .cta-trust-bar{gap:14px;flex-direction:column;align-items:center;}
+}
+
+/* ============================= */
+/* Footer                         */
+/* ============================= */
+.site-footer{background:var(--primary);color:var(--white-85);padding-top:80px;position:relative;}
+.footer-grid{
+  display:grid;grid-template-columns:1.3fr .85fr 1fr 1.15fr;gap:44px;padding-bottom:56px;
+  border-bottom:1px solid rgba(255,255,255,.14);
+}
+.footer-brand p{margin-top:16px;color:var(--white-70);font-size:.9rem;line-height:1.6;max-width:300px;}
+.footer-logo{display:flex;align-items:center;gap:12px;flex-wrap:nowrap;}
+.footer-logo-icon{
+  width:42px;height:42px;border-radius:50%;background:var(--accent);color:var(--primary);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1rem;
+}
+.footer-logo-text{display:flex;flex-direction:column;gap:2px;}
+.footer-logo-name{font-family:var(--font-heading);font-size:1.4rem;line-height:1.1;color:var(--white);white-space:nowrap;}
+.footer-logo-subtitle{font-family:var(--font-body);font-size:.62rem;letter-spacing:.16em;color:var(--accent);white-space:nowrap;font-weight:600;}
+.footer-social{display:flex;gap:10px;margin-top:22px;}
+.footer-social a{
+  width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.10);color:var(--white);
+  display:flex;align-items:center;justify-content:center;font-size:.9rem;
+  transition:background .25s ease,color .25s ease,transform .25s ease;
+}
+.footer-social a:hover{background:var(--accent);color:var(--primary);transform:translateY(-3px);}
+
+.footer-col h4{
+  font-family:var(--font-body);font-size:1rem;font-weight:600;color:var(--white);
+  margin-bottom:20px;letter-spacing:.02em;position:relative;padding-bottom:8px;
+}
+.footer-col h4::after{
+  content:"";position:absolute;left:0;bottom:0;width:24px;height:2px;background:var(--accent);
+}
+.footer-col ul{display:grid;gap:11px;}
+.footer-col ul a{
+  color:var(--white-70);font-size:.9rem;transition:color .2s ease,padding-left .2s ease;
+  display:inline-block;
+}
+.footer-col ul a:hover{color:var(--accent);padding-left:4px;}
+.footer-hours-list li{
+  display:flex;justify-content:space-between;gap:12px;font-size:.88rem;color:var(--white-85);
+  padding-bottom:6px;border-bottom:1px dashed rgba(255,255,255,.12);
+}
+.footer-hours-list li:last-child{border-bottom:none;}
+.footer-contact-info{font-style:normal;display:grid;gap:12px;}
+.footer-contact-item{display:flex;gap:12px;align-items:flex-start;font-size:.9rem;color:var(--white-85);}
+.footer-contact-item i{color:var(--accent);margin-top:4px;flex-shrink:0;}
+.footer-contact-item a{color:var(--white-85);transition:color .2s ease;}
+.footer-contact-item a:hover{color:var(--accent);}
+
+.footer-bottom{
+  padding:26px 0;display:flex;align-items:center;justify-content:space-between;
+  gap:20px;font-size:.84rem;color:var(--white-70);flex-wrap:wrap;
+}
+.footer-bottom-links{display:flex;gap:20px;flex-wrap:wrap;}
+.footer-bottom-links a{color:var(--white-70);transition:color .2s ease;}
+.footer-bottom-links a:hover{color:var(--accent);}
+
+@media (max-width:960px){
+  .footer-grid{grid-template-columns:1fr 1fr;gap:36px;}
+}
+@media (max-width:560px){
+  .footer-grid{grid-template-columns:1fr;}
+}
+
+/* ============================= */
+/* Scroll to top                  */
+/* ============================= */
+.scroll-top{
+  position:fixed;bottom:26px;right:26px;width:48px;height:48px;border-radius:50%;
+  background:var(--primary);color:var(--accent);display:flex;align-items:center;justify-content:center;
+  box-shadow:0 14px 30px var(--black-30);opacity:0;pointer-events:none;transform:translateY(10px);
+  transition:opacity .3s ease, transform .3s ease;z-index:400;
+}
+.scroll-top.is-visible{opacity:1;pointer-events:auto;transform:translateY(0);}
+.scroll-top:hover{background:var(--accent);color:var(--primary);}
+
+.sr-only{
+  position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+  clip:rect(0,0,0,0);white-space:nowrap;border:0;
+}
+.skip-link{
+  position:absolute;left:-999px;top:auto;background:var(--accent);color:var(--primary);
+  padding:12px 20px;z-index:1000;font-weight:600;border-radius:0 0 8px 0;
+}
+.skip-link:focus{left:0;top:0;}
+</style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- ============================= -->
+<!-- Announcement Bar (Continuous Marquee) -->
+<!-- ============================= -->
+<div class="announcement" role="region" aria-label="Clinic Announcements">
+  <div class="announcement-marquee">
+    <div class="announcement-track">
+      <span class="announcement-item"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i> Same-Day Appointments Available</span>
+      <span class="announcement-sep">✦</span>
+      <span class="announcement-item"><i class="fa-solid fa-clock" aria-hidden="true"></i> Free Initial Consultation for New Patients</span>
+      <span class="announcement-sep">✦</span>
+      <span class="announcement-item"><i class="fa-solid fa-shield-heart" aria-hidden="true"></i> Preventive Health Checkups Available</span>
+      <span class="announcement-sep">✦</span>
+      <span class="announcement-item"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i> Book Online 24/7 <a href="index.html#appointment">Book Now</a></span>
+      <span class="announcement-sep">✦</span>
+      <span class="announcement-item"><i class="fa-solid fa-phone" aria-hidden="true"></i> Urgent Nurse Helpline: (000) 123-4567</span>
+      <span class="announcement-sep">✦</span>
+    </div>
+    <div class="announcement-track" aria-hidden="true">
+      <span class="announcement-item"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i> Same-Day Appointments Available</span>
+      <span class="announcement-sep">✦</span>
+      <span class="announcement-item"><i class="fa-solid fa-clock" aria-hidden="true"></i> Free Initial Consultation for New Patients</span>
+      <span class="announcement-sep">✦</span>
+      <span class="announcement-item"><i class="fa-solid fa-shield-heart" aria-hidden="true"></i> Preventive Health Checkups Available</span>
+      <span class="announcement-sep">✦</span>
+      <span class="announcement-item"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i> Book Online 24/7 <a href="index.html#appointment">Book Now</a></span>
+      <span class="announcement-sep">✦</span>
+      <span class="announcement-item"><i class="fa-solid fa-phone" aria-hidden="true"></i> Urgent Nurse Helpline: (000) 123-4567</span>
+      <span class="announcement-sep">✦</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============================= -->
+<!-- Header / Navigation            -->
+<!-- ============================= -->
+<header class="site-header" id="siteHeader">
+  <div class="container nav-inner">
+    <a href="index.html" class="logo" aria-label="Carewell Clinic home">
+      <span class="logo-icon"><i class="fa-solid fa-plus" aria-hidden="true"></i></span>
+      <span class="logo-text">
+        <span class="logo-name">Carewell</span>
+        <span class="logo-sub">HEALTH CLINIC</span>
+      </span>
+    </a>
+
+    <nav class="main-nav" id="mainNav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="doctors.html" class="active" aria-current="page">Doctors</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="nav-right">
+      <a href="tel:+10001234567" class="nav-phone"><i class="fa-solid fa-phone" aria-hidden="true"></i> (000) 123-4567</a>
+      <a href="index.html#appointment" class="btn btn-dark book-btn-header">Book Appointment</a>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="nav-overlay" id="navOverlay"></div>
+
+<main id="main-content">
+
+<!-- ==========================================================================
+     SECTION: DOCTORS HERO (PAGE TITLE BANNER)
+     ========================================================================== -->
+<section class="page-title-banner" id="doctors-hero">
+  <div class="container">
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+      <ol class="breadcrumb-list">
+        <li><a href="index.html"><i class="fa-solid fa-house" aria-hidden="true"></i> Home</a></li>
+        <li aria-current="page">Our Doctors</li>
+      </ol>
+    </nav>
+    <h1 class="page-title">Our Doctors</h1>
+    <p class="page-lead">Meet our dedicated team of board-certified physicians, specialists, and compassionate healthcare professionals committed to personalized, unhurried care.</p>
+  </div>
+</section>
+
+<!-- ============================= -->
+<!-- Section 8: Introduction       -->
+<!-- ============================= -->
+<section class="section">
+  <div class="container intro-grid">
+    <div class="intro-image reveal">
+      <img src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&w=900&q=80" alt="Carewell physicians collaborating on a comprehensive patient treatment plan" loading="lazy" decoding="async">
+      <div class="intro-float-badge">
+        <i class="fa-solid fa-stethoscope" aria-hidden="true"></i>
+        <span>Multidisciplinary Expertise, Centered on You</span>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <div class="eyebrow">EXPERIENCE & COMPASSION</div>
+      <h2 class="heading">Experienced Professionals. Personal Care.</h2>
+      <p class="lede" style="margin-top:16px;">We believe that great medicine begins with genuine listening. Our multidisciplinary care team collaborates across specialties to deliver integrated, evidence-based healthcare tailored to the unique rhythms of your life.</p>
+
+      <div class="intro-points-grid">
+        <div class="intro-point">
+          <i class="fa-solid fa-user-doctor" aria-hidden="true"></i>
+          <div>
+            <h4>Experienced Healthcare Professionals</h4>
+            <p>Clinicians with extensive hospital and private clinical backgrounds.</p>
+          </div>
+        </div>
+        <div class="intro-point">
+          <i class="fa-solid fa-hand-holding-heart" aria-hidden="true"></i>
+          <div>
+            <h4>Patient-Centered Approach</h4>
+            <p>Every care plan is shaped around your personal goals and lifestyle.</p>
+          </div>
+        </div>
+        <div class="intro-point">
+          <i class="fa-solid fa-users" aria-hidden="true"></i>
+          <div>
+            <h4>Clinical Collaboration</h4>
+            <p>Specialists confer with one another to ensure seamless continuity.</p>
+          </div>
+        </div>
+        <div class="intro-point">
+          <i class="fa-solid fa-clock" aria-hidden="true"></i>
+          <div>
+            <h4>Personalized Attention</h4>
+            <p>Unhurried visits allowing ample time for all your questions.</p>
+          </div>
+        </div>
+        <div class="intro-point">
+          <i class="fa-solid fa-comments" aria-hidden="true"></i>
+          <div>
+            <h4>Clear Communication</h4>
+            <p>Plain-language guidance without confusing medical jargon.</p>
+          </div>
+        </div>
+        <div class="intro-point">
+          <i class="fa-solid fa-heart-pulse" aria-hidden="true"></i>
+          <div>
+            <h4>Continued Care</h4>
+            <p>Dedicated post-visit follow-up and monitoring to keep health on track.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= -->
+<!-- Section 10, 11, 12, 13, 14:   -->
+<!-- Expanded Doctor Directory     -->
+<!-- ============================= -->
+<section class="section" id="doctor-directory">
+  <div class="container">
+    <div class="section-head center">
+      <div class="eyebrow" style="justify-content:center;">COMPLETE PHYSICIAN DIRECTORY</div>
+      <h2 class="heading">Find Your Specialist</h2>
+      <p class="lede" style="margin:16px auto 0;">Search our physicians by name or filter by clinical specialty to find the right partner for your care.</p>
+    </div>
+
+    <!-- Search & Filter Controls -->
+    <div class="directory-controls">
+      <div class="search-bar-wrap">
+        <i class="fa-solid fa-magnifying-glass search-icon" aria-hidden="true"></i>
+        <input type="search" id="doctorSearch" class="search-input" placeholder="Search doctors by name or specialty..." aria-label="Search doctors by name or specialty">
+        <button type="button" id="searchClear" class="search-clear" aria-label="Clear search"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+      </div>
+
+      <div class="filter-nav-wrap" role="toolbar" aria-label="Doctor specialty filters">
+        <button class="filter-btn active" data-filter="all" aria-pressed="true">
+          <i class="fa-solid fa-border-all" aria-hidden="true"></i> All Doctors
+        </button>
+        <button class="filter-btn" data-filter="general-medicine" aria-pressed="false">General Medicine</button>
+        <button class="filter-btn" data-filter="family-medicine" aria-pressed="false">Family Medicine</button>
+        <button class="filter-btn" data-filter="pediatrics" aria-pressed="false">Pediatrics</button>
+        <button class="filter-btn" data-filter="womens-health" aria-pressed="false">Women's Health</button>
+        <button class="filter-btn" data-filter="internal-medicine" aria-pressed="false">Internal Medicine</button>
+        <button class="filter-btn" data-filter="cardiology" aria-pressed="false">Cardiology</button>
+        <button class="filter-btn" data-filter="dermatology" aria-pressed="false">Dermatology</button>
+      </div>
+    </div>
+
+    <!-- Empty State Message -->
+    <div class="no-results" id="noResultsMessage" role="status" aria-live="polite">
+      <i class="fa-solid fa-user-slash" aria-hidden="true"></i>
+      <h3>No Doctors Found</h3>
+      <p>No doctors found matching your criteria. Try another name or specialty.</p>
+      <button type="button" id="resetFiltersBtn" class="btn btn-dark" style="margin-top:16px;">View All Doctors</button>
+    </div>
+
+    <!-- Expanded Doctor Grid (8 Profiles) -->
+    <div class="doctors-grid" id="expandedDoctorGrid">
+
+      <!-- 1. Dr. Sarah Ahmed -->
+      <article class="doctor-card reveal" data-specialty="general-medicine" data-name="sarah ahmed">
+        <div class="doctor-photo">
+          <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=600&q=80" alt="Dr. Sarah Ahmed" loading="lazy" decoding="async">
+          <span class="doctor-badge-overlay">General Medicine</span>
+        </div>
+        <div class="doctor-info">
+          <h3>Dr. Sarah Ahmed</h3>
+          <div class="doctor-specialty">General Medicine</div>
+          <div class="doctor-meta"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> MBBS, FCPS · 15+ Years Exp.</div>
+          <p class="doctor-bio">Specializing in comprehensive adult checkups, chronic ailment management, and preventive medical guidance.</p>
+          <div class="doctor-footer">
+            <button class="view-profile" data-doc="sarah" aria-haspopup="dialog">View Profile <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+            <a href="index.html#appointment" class="btn btn-primary btn-sm">Book</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2. Dr. James Wilson -->
+      <article class="doctor-card reveal" data-specialty="family-medicine" data-name="james wilson">
+        <div class="doctor-photo">
+          <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=600&q=80" alt="Dr. James Wilson" loading="lazy" decoding="async">
+          <span class="doctor-badge-overlay">Family Medicine</span>
+        </div>
+        <div class="doctor-info">
+          <h3>Dr. James Wilson</h3>
+          <div class="doctor-specialty">Family Medicine</div>
+          <div class="doctor-meta"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> MBBS, MD · 12+ Years Exp.</div>
+          <p class="doctor-bio">Providing holistic multi-generational family health services with an emphasis on preventive checkups and household wellness.</p>
+          <div class="doctor-footer">
+            <button class="view-profile" data-doc="james" aria-haspopup="dialog">View Profile <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+            <a href="index.html#appointment" class="btn btn-primary btn-sm">Book</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3. Dr. Emily Carter -->
+      <article class="doctor-card reveal" data-specialty="pediatrics" data-name="emily carter">
+        <div class="doctor-photo">
+          <img src="https://images.unsplash.com/photo-1651008376811-b90baee60c1f?auto=format&fit=crop&w=600&q=80" alt="Dr. Emily Carter" loading="lazy" decoding="async">
+          <span class="doctor-badge-overlay">Pediatrics</span>
+        </div>
+        <div class="doctor-info">
+          <h3>Dr. Emily Carter</h3>
+          <div class="doctor-specialty">Pediatrics</div>
+          <div class="doctor-meta"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> MBBS, DCH · 10+ Years Exp.</div>
+          <p class="doctor-bio">Dedicated to compassionate pediatric care, childhood immunizations, developmental screenings, and parent reassurance.</p>
+          <div class="doctor-footer">
+            <button class="view-profile" data-doc="emily" aria-haspopup="dialog">View Profile <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+            <a href="index.html#appointment" class="btn btn-primary btn-sm">Book</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 4. Dr. Daniel Khan -->
+      <article class="doctor-card reveal" data-specialty="internal-medicine" data-name="daniel khan">
+        <div class="doctor-photo">
+          <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=600&q=80" alt="Dr. Daniel Khan" loading="lazy" decoding="async">
+          <span class="doctor-badge-overlay">Internal Medicine</span>
+        </div>
+        <div class="doctor-info">
+          <h3>Dr. Daniel Khan</h3>
+          <div class="doctor-specialty">Internal Medicine</div>
+          <div class="doctor-meta"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> MBBS, FCPS · 14+ Years Exp.</div>
+          <p class="doctor-bio">Expert in diagnostic evaluations, complex symptom investigation, and evidence-grounded treatment planning.</p>
+          <div class="doctor-footer">
+            <button class="view-profile" data-doc="daniel" aria-haspopup="dialog">View Profile <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+            <a href="index.html#appointment" class="btn btn-primary btn-sm">Book</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 5. Dr. Ayesha Malik -->
+      <article class="doctor-card reveal" data-specialty="womens-health" data-name="ayesha malik">
+        <div class="doctor-photo">
+          <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80" alt="Dr. Ayesha Malik" loading="lazy" decoding="async">
+          <span class="doctor-badge-overlay">Women's Health</span>
+        </div>
+        <div class="doctor-info">
+          <h3>Dr. Ayesha Malik</h3>
+          <div class="doctor-specialty">Women's Health</div>
+          <div class="doctor-meta"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> MBBS, MRCOG · 13+ Years Exp.</div>
+          <p class="doctor-bio">Focusing on comprehensive women's healthcare, routine screenings, hormonal consultations, and preventive wellness.</p>
+          <div class="doctor-footer">
+            <button class="view-profile" data-doc="ayesha" aria-haspopup="dialog">View Profile <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+            <a href="index.html#appointment" class="btn btn-primary btn-sm">Book</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 6. Dr. Michael Brown -->
+      <article class="doctor-card reveal" data-specialty="cardiology" data-name="michael brown">
+        <div class="doctor-photo">
+          <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=600&q=80" alt="Dr. Michael Brown" loading="lazy" decoding="async">
+          <span class="doctor-badge-overlay">Cardiology</span>
+        </div>
+        <div class="doctor-info">
+          <h3>Dr. Michael Brown</h3>
+          <div class="doctor-specialty">Cardiology</div>
+          <div class="doctor-meta"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> MD, FACC · 16+ Years Exp.</div>
+          <p class="doctor-bio">Providing preventive cardiovascular risk assessments, hypertension control, ECG interpretations, and lifestyle cardiology.</p>
+          <div class="doctor-footer">
+            <button class="view-profile" data-doc="michael" aria-haspopup="dialog">View Profile <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+            <a href="index.html#appointment" class="btn btn-primary btn-sm">Book</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 7. Dr. Sophia Williams -->
+      <article class="doctor-card reveal" data-specialty="dermatology" data-name="sophia williams">
+        <div class="doctor-photo">
+          <img src="https://images.unsplash.com/photo-1591604021695-0c69b7c03381?auto=format&fit=crop&w=600&q=80" alt="Dr. Sophia Williams" loading="lazy" decoding="async">
+          <span class="doctor-badge-overlay">Dermatology</span>
+        </div>
+        <div class="doctor-info">
+          <h3>Dr. Sophia Williams</h3>
+          <div class="doctor-specialty">Dermatology</div>
+          <div class="doctor-meta"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> MD, FAAD · 11+ Years Exp.</div>
+          <p class="doctor-bio">Experienced in clinical dermatology, skin health screenings, chronic dermatitis management, and preventive skin checks.</p>
+          <div class="doctor-footer">
+            <button class="view-profile" data-doc="sophia" aria-haspopup="dialog">View Profile <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+            <a href="index.html#appointment" class="btn btn-primary btn-sm">Book</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 8. Dr. Hamza Ali -->
+      <article class="doctor-card reveal" data-specialty="general-medicine" data-name="hamza ali">
+        <div class="doctor-photo">
+          <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=600&q=80" alt="Dr. Hamza Ali" loading="lazy" decoding="async">
+          <span class="doctor-badge-overlay">Preventive Care</span>
+        </div>
+        <div class="doctor-info">
+          <h3>Dr. Hamza Ali</h3>
+          <div class="doctor-specialty">Preventive Medicine</div>
+          <div class="doctor-meta"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> MBBS, MPH · 9+ Years Exp.</div>
+          <p class="doctor-bio">Championing preventive medicine, health risk scorecards, biometric health coaching, and evidence-grounded longevity.</p>
+          <div class="doctor-footer">
+            <button class="view-profile" data-doc="hamza" aria-haspopup="dialog">View Profile <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+            <a href="index.html#appointment" class="btn btn-primary btn-sm">Book</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ============================= -->
+<!-- Section 17: How We Work       -->
+<!-- Together (Collaborative Steps)-->
+<!-- ============================= -->
+<section class="section">
+  <div class="container">
+    <div class="section-head center">
+      <div class="eyebrow" style="justify-content:center;">COLLABORATIVE PROCESS</div>
+      <h2 class="heading">How We Work Together</h2>
+      <p class="lede" style="margin:16px auto 0;">Healthcare is a relationship built on trust, clinical thoroughness, and continuous collaboration with every patient.</p>
+    </div>
+
+    <div class="steps-wrap">
+      <div class="steps-grid">
+        <div class="step-card reveal">
+          <div class="step-icon"><i class="fa-solid fa-ear-listen" aria-hidden="true"></i></div>
+          <div class="step-tag">STEP 01</div>
+          <h4>01 — LISTEN</h4>
+          <p>We begin by understanding your concerns, symptoms, and daily routine in an unhurried consultation.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-icon"><i class="fa-solid fa-stethoscope" aria-hidden="true"></i></div>
+          <div class="step-tag">STEP 02</div>
+          <h4>02 — ASSESS</h4>
+          <p>We review relevant health information, examine biometric vitals, and order diagnostics if necessary.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-icon"><i class="fa-solid fa-clipboard-check" aria-hidden="true"></i></div>
+          <div class="step-tag">STEP 03</div>
+          <h4>03 — PLAN</h4>
+          <p>We discuss appropriate care, agree on actionable next steps, and tailor the treatment plan to your life.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-icon"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i></div>
+          <div class="step-tag">STEP 04</div>
+          <h4>04 — SUPPORT</h4>
+          <p>We provide continuous follow-up, track your recovery, and keep lines of communication open.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ============================= -->
+<!-- Section 23: Enhanced Final CTA Panel -->
+<!-- ============================= -->
+<section class="cta-panel-wrap">
+  <div class="container">
+    <div class="cta-panel reveal">
+      <h2>Ready to Meet Your Dedicated Healthcare Team?</h2>
+      <p>Whether you need a routine health checkup or specialized consultation, our physicians are ready to listen, advise, and support your long-term health.</p>
+      <div class="cta-actions">
+        <a href="index.html#appointment" class="btn btn-primary"><i class="fa-solid fa-calendar-check"></i> Book an Appointment</a>
+        <a href="tel:+10001234567" class="btn btn-outline"><i class="fa-solid fa-phone"></i> Call (000) 123-4567</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= -->
+<!-- Section 15: Doctor Modal      -->
+<!-- ============================= -->
+<div class="modal-backdrop" id="doctorModalBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalDoctorName" aria-hidden="true">
+  <div class="doctor-modal" id="doctorModal">
+    <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close doctor profile modal"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+    <div class="modal-body">
+      <div class="modal-photo-wrap">
+        <img id="modalDoctorPhoto" src="" alt="Doctor photo">
+      </div>
+      <div class="modal-details">
+        <div class="modal-specialty" id="modalDoctorSpecialty">Specialty</div>
+        <h2 id="modalDoctorName">Doctor Name</h2>
+        <div class="modal-credentials" id="modalDoctorCredentials">Credentials</div>
+        <p class="modal-bio" id="modalDoctorBio">Biography description.</p>
+        
+        <div class="modal-section-title">Areas of Expertise</div>
+        <div class="modal-expertise-list" id="modalDoctorExpertise"></div>
+
+        <div class="modal-consultation-info">
+          <div><i class="fa-solid fa-calendar-days" aria-hidden="true"></i> <span id="modalDoctorDays">Monday – Thursday</span></div>
+          <div><i class="fa-solid fa-clock" aria-hidden="true"></i> <span id="modalDoctorHours">9:00 AM – 4:00 PM</span></div>
+          <div><i class="fa-solid fa-location-dot" aria-hidden="true"></i> <span>Main Medical Wing, Carewell Clinic</span></div>
+        </div>
+
+        <div class="modal-actions">
+          <a href="index.html#appointment" class="btn btn-primary btn-sm" id="modalBookBtn">Book Appointment</a>
+          <div class="doctor-social" style="margin:0;">
+            <a href="#" aria-label="LinkedIn profile"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+            <a href="#" aria-label="Email doctor"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================= -->
+<!-- Section 24: Footer            -->
+<!-- ============================= -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <!-- 1. Brand -->
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo" aria-label="Carewell Clinic home">
+          <span class="footer-logo-icon"><i class="fa-solid fa-plus" aria-hidden="true"></i></span>
+          <div class="footer-logo-text">
+            <span class="footer-logo-name">Carewell</span>
+            <span class="footer-logo-subtitle">HEALTH CLINIC</span>
+          </div>
+        </a>
+        <p>Compassionate Care. Better Health. Patient-centered medical excellence designed around your life.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Carewell Clinic on Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Carewell Clinic on Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Carewell Clinic on LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Carewell Clinic on Twitter"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <!-- 2. Explore -->
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="doctors.html">Our Doctors</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- 3. Clinic Hours -->
+      <div class="footer-col">
+        <h4>Clinic Hours</h4>
+        <ul class="footer-hours-list">
+          <li><span>Mon – Fri:</span> <strong>8:00 AM – 6:00 PM</strong></li>
+          <li><span>Wednesday:</span> <strong>8:00 AM – 7:00 PM</strong></li>
+          <li><span>Saturday:</span> <strong>9:00 AM – 2:00 PM</strong></li>
+          <li><span>Sunday:</span> <strong style="color:var(--accent);">Closed (Emergency On-Call)</strong></li>
+        </ul>
+      </div>
+
+      <!-- 4. Contact & Visits -->
+      <div class="footer-col">
+        <h4>Contact & Visits</h4>
+        <address class="footer-contact-info">
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+            <span>450 Health Avenue, Suite 300<br>Medical Plaza, Metro City</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-phone" aria-hidden="true"></i>
+            <a href="tel:+10001234567">(000) 123-4567</a>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+            <a href="mailto:hello@carewellclinic.example">hello@carewellclinic.example</a>
+          </div>
+        </address>
+        <a href="index.html#appointment" class="btn btn-primary btn-sm" style="margin-top:16px;">Book an Appointment</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Carewell Health Clinic. All rights reserved.</span>
+      <div class="footer-bottom-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="accessibility.html">Accessibility Statement</a>
+        <a href="patient-rights.html">Patient Rights</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></button>
+
+<!-- ============================= -->
+<!-- Scripts                       -->
+<!-- ============================= -->
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- Image fallback system ---------- */
+  var FALLBACK_IMAGE = "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=900&q=80";
+  document.querySelectorAll('img').forEach(function(img){
+    img.addEventListener('error', function(){
+      if(!this.dataset.fallback){
+        this.dataset.fallback = "true";
+        this.src = FALLBACK_IMAGE;
+      }
+    });
+  });
+
+  /* ---------- Sticky header shadow & scroll top ---------- */
+  var header = document.getElementById('siteHeader');
+  var scrollTopBtn = document.getElementById('scrollTopBtn');
+  function onScroll(){
+    if(window.scrollY > 12){ header.classList.add('scrolled'); }
+    else{ header.classList.remove('scrolled'); }
+    if(window.scrollY > 400){ scrollTopBtn.classList.add('is-visible'); }
+    else{ scrollTopBtn.classList.remove('is-visible'); }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  scrollTopBtn.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+
+  /* ---------- Mobile menu ---------- */
+  var hamburger = document.getElementById('hamburgerBtn');
+  var mainNav = document.getElementById('mainNav');
+  var overlay = document.getElementById('navOverlay');
+
+  function openMenu(){
+    mainNav.classList.add('is-open');
+    overlay.classList.add('is-active');
+    hamburger.setAttribute('aria-expanded','true');
+    hamburger.setAttribute('aria-label','Close menu');
+    document.body.style.overflow='hidden';
+  }
+  function closeMenu(){
+    mainNav.classList.remove('is-open');
+    overlay.classList.remove('is-active');
+    hamburger.setAttribute('aria-expanded','false');
+    hamburger.setAttribute('aria-label','Open menu');
+    document.body.style.overflow='';
+  }
+  hamburger.addEventListener('click', function(){
+    if(mainNav.classList.contains('is-open')){ closeMenu(); } else { openMenu(); }
+  });
+  overlay.addEventListener('click', closeMenu);
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && mainNav.classList.contains('is-open')){ closeMenu(); }
+  });
+  mainNav.querySelectorAll('a').forEach(function(link){
+    link.addEventListener('click', closeMenu);
+  });
+
+  /* ---------- Doctor Directory Data for Modal ---------- */
+  var DOCTOR_DATA = {
+    "sarah": {
+      name: "Dr. Sarah Ahmed",
+      specialty: "General Medicine",
+      credentials: "MBBS, FCPS · 15+ Years Experience",
+      photo: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=600&q=80",
+      bio: "Dr. Sarah Ahmed brings over 15 years of dedicated clinical experience in adult general medicine. She believes that thoughtful listening is the cornerstone of clinical accuracy, providing patient-paced evaluations and tailored wellness regimens.",
+      expertise: ["Adult Checkups", "Chronic Condition Management", "Preventive Screenings", "Diagnostic Workups", "Lifestyle Medicine"],
+      days: "Monday, Tuesday, Thursday",
+      hours: "9:00 AM – 4:30 PM"
+    },
+    "james": {
+      name: "Dr. James Wilson",
+      specialty: "Family Medicine",
+      credentials: "MBBS, MD · 12+ Years Experience",
+      photo: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=600&q=80",
+      bio: "Dr. James Wilson specializes in comprehensive family care across multiple generations. From adolescent health reviews to senior wellness consultations, Dr. Wilson emphasizes clear communication and preventive roadmaps.",
+      expertise: ["Family Health Management", "Adolescent Care", "Senior Mobility", "Annual Physicals", "Immunization Reviews"],
+      days: "Monday through Friday",
+      hours: "8:30 AM – 3:30 PM"
+    },
+    "emily": {
+      name: "Dr. Emily Carter",
+      specialty: "Pediatrics",
+      credentials: "MBBS, DCH · 10+ Years Experience",
+      photo: "https://images.unsplash.com/photo-1651008376811-b90baee60c1f?auto=format&fit=crop&w=600&q=80",
+      bio: "Dr. Emily Carter is a warm, attentive pediatrician dedicated to guiding infants, children, and teenagers through every developmental stage. Her child-friendly approach helps young patients feel comfortable and secure.",
+      expertise: ["Newborn Care", "Childhood Development", "Vaccination Schedules", "Pediatric Nutrition", "School Physicals"],
+      days: "Tuesday, Wednesday, Saturday",
+      hours: "9:00 AM – 2:00 PM"
+    },
+    "daniel": {
+      name: "Dr. Daniel Khan",
+      specialty: "Internal Medicine & Diagnostics",
+      credentials: "MBBS, FCPS · 14+ Years Experience",
+      photo: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=600&q=80",
+      bio: "Dr. Daniel Khan leads our diagnostic evaluation team with over 14 years of internal medicine expertise. He excels in deciphering complex multivariant symptoms and coordinating personalized recovery pathways.",
+      expertise: ["Advanced Diagnostics", "Metabolic Health", "Internal Medicine", "Pre-operative Clearance", "Diagnostic Imaging Review"],
+      days: "Monday, Wednesday, Friday",
+      hours: "10:00 AM – 5:00 PM"
+    },
+    "ayesha": {
+      name: "Dr. Ayesha Malik",
+      specialty: "Women's Health",
+      credentials: "MBBS, MRCOG · 13+ Years Experience",
+      photo: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80",
+      bio: "Dr. Ayesha Malik provides sensitive, comprehensive healthcare for women at every stage of life. She focuses on preventative screenings, hormonal equilibrium, reproductive health consultations, and annual well-woman exams.",
+      expertise: ["Well-Woman Exams", "Hormonal Balance", "Preventive Screenings", "Bone Density Monitoring", "Menopause Care"],
+      days: "Monday, Wednesday, Thursday",
+      hours: "9:00 AM – 4:00 PM"
+    },
+    "michael": {
+      name: "Dr. Michael Brown",
+      specialty: "Cardiology",
+      credentials: "MD, FACC · 16+ Years Experience",
+      photo: "https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=600&q=80",
+      bio: "Dr. Michael Brown is a board-certified cardiologist dedicated to preventive cardiovascular wellness. He works with patients to identify early arterial and metabolic risks, manage blood pressure, and build cardiac longevity.",
+      expertise: ["Cardiovascular Risk Panels", "Hypertension Management", "ECG Analysis", "Lipid Management", "Heart-Healthy Lifestyle Plans"],
+      days: "Tuesday, Thursday, Friday",
+      hours: "10:00 AM – 5:30 PM"
+    },
+    "sophia": {
+      name: "Dr. Sophia Williams",
+      specialty: "Dermatology",
+      credentials: "MD, FAAD · 11+ Years Experience",
+      photo: "https://images.unsplash.com/photo-1591604021695-0c69b7c03381?auto=format&fit=crop&w=600&q=80",
+      bio: "Dr. Sophia Williams offers comprehensive medical dermatology focused on skin cancer screenings, chronic dermatitis, eczema, and allergic skin conditions. Her consultations emphasize evidence-based medical skincare.",
+      expertise: ["Mole & Skin Screening", "Eczema & Dermatitis", "Allergic Skin Reactions", "Psoriasis Care", "Skin Barrier Health"],
+      days: "Monday, Tuesday, Saturday",
+      hours: "9:30 AM – 3:30 PM"
+    },
+    "hamza": {
+      name: "Dr. Hamza Ali",
+      specialty: "Preventive Medicine",
+      credentials: "MBBS, MPH · 9+ Years Experience",
+      photo: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=600&q=80",
+      bio: "Dr. Hamza Ali combines clinical medicine with public health science to deliver proactive preventive healthcare. He guides patients through biometric health scorecards, cardiovascular risk optimization, and longevity planning.",
+      expertise: ["Preventive Health Audits", "Biometric Profiling", "Metabolic Optimization", "Sleep Hygiene", "Longevity Strategies"],
+      days: "Wednesday, Thursday, Friday",
+      hours: "9:00 AM – 4:00 PM"
+    }
+  };
+
+  /* ---------- Modal Functionality ---------- */
+  var modalBackdrop = document.getElementById('doctorModalBackdrop');
+  var modalCloseBtn = document.getElementById('modalCloseBtn');
+  var lastFocusedElement = null;
+
+  function openDoctorModal(docKey){
+    var data = DOCTOR_DATA[docKey];
+    if(!data) return;
+
+    lastFocusedElement = document.activeElement;
+
+    document.getElementById('modalDoctorName').textContent = data.name;
+    document.getElementById('modalDoctorSpecialty').textContent = data.specialty;
+    document.getElementById('modalDoctorCredentials').innerHTML = '<i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> ' + data.credentials;
+    document.getElementById('modalDoctorPhoto').src = data.photo;
+    document.getElementById('modalDoctorPhoto').alt = "Portrait of " + data.name;
+    document.getElementById('modalDoctorBio').textContent = data.bio;
+    document.getElementById('modalDoctorDays').textContent = data.days;
+    document.getElementById('modalDoctorHours').textContent = data.hours;
+
+    var expertiseContainer = document.getElementById('modalDoctorExpertise');
+    expertiseContainer.innerHTML = '';
+    data.expertise.forEach(function(item){
+      var badge = document.createElement('span');
+      badge.textContent = item;
+      expertiseContainer.appendChild(badge);
+    });
+
+    modalBackdrop.classList.add('is-open');
+    modalBackdrop.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    modalCloseBtn.focus();
+  }
+
+  function closeDoctorModal(){
+    modalBackdrop.classList.remove('is-open');
+    modalBackdrop.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if(lastFocusedElement){ lastFocusedElement.focus(); }
+  }
+
+  document.querySelectorAll('.view-profile').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      var docKey = this.getAttribute('data-doc');
+      openDoctorModal(docKey);
+    });
+  });
+
+  modalCloseBtn.addEventListener('click', closeDoctorModal);
+  modalBackdrop.addEventListener('click', function(e){
+    if(e.target === modalBackdrop){ closeDoctorModal(); }
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && modalBackdrop.classList.contains('is-open')){
+      closeDoctorModal();
+    }
+  });
+
+  /* ---------- Doctor Search & Filter System ---------- */
+  var searchInput = document.getElementById('doctorSearch');
+  var searchClear = document.getElementById('searchClear');
+  var filterButtons = document.querySelectorAll('.filter-btn');
+  var doctorCards = document.querySelectorAll('#expandedDoctorGrid .doctor-card');
+  var noResultsMessage = document.getElementById('noResultsMessage');
+  var resetFiltersBtn = document.getElementById('resetFiltersBtn');
+
+  var currentFilter = 'all';
+  var currentSearchQuery = '';
+
+  function applyDoctorFilters(){
+    var visibleCount = 0;
+
+    doctorCards.forEach(function(card){
+      var specialty = card.getAttribute('data-specialty') || '';
+      var name = (card.getAttribute('data-name') || '').toLowerCase();
+      var cardText = card.textContent.toLowerCase();
+
+      var matchesFilter = (currentFilter === 'all') || (specialty === currentFilter);
+      var matchesSearch = !currentSearchQuery || 
+                          name.includes(currentSearchQuery) || 
+                          cardText.includes(currentSearchQuery);
+
+      if(matchesFilter && matchesSearch){
+        card.style.display = 'flex';
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(12px)';
+        setTimeout(function(){
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        }, 30);
+        visibleCount++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    if(visibleCount === 0){
+      noResultsMessage.style.display = 'block';
+    } else {
+      noResultsMessage.style.display = 'none';
+    }
+  }
+
+  // Filter button clicks
+  filterButtons.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      filterButtons.forEach(function(b){
+        b.classList.remove('active');
+        b.setAttribute('aria-pressed', 'false');
+      });
+      this.classList.add('active');
+      this.setAttribute('aria-pressed', 'true');
+      currentFilter = this.getAttribute('data-filter');
+      applyDoctorFilters();
+    });
+  });
+
+  // Search input typing
+  searchInput.addEventListener('input', function(){
+    currentSearchQuery = this.value.trim().toLowerCase();
+    if(currentSearchQuery.length > 0){
+      searchClear.classList.add('is-visible');
+    } else {
+      searchClear.classList.remove('is-visible');
+    }
+    applyDoctorFilters();
+  });
+
+  // Search clear button
+  searchClear.addEventListener('click', function(){
+    searchInput.value = '';
+    currentSearchQuery = '';
+    searchClear.classList.remove('is-visible');
+    searchInput.focus();
+    applyDoctorFilters();
+  });
+
+  // Reset filters button
+  resetFiltersBtn.addEventListener('click', function(){
+    searchInput.value = '';
+    currentSearchQuery = '';
+    searchClear.classList.remove('is-visible');
+    currentFilter = 'all';
+    filterButtons.forEach(function(b){
+      if(b.getAttribute('data-filter') === 'all'){
+        b.classList.add('active');
+        b.setAttribute('aria-pressed', 'true');
+      } else {
+        b.classList.remove('active');
+        b.setAttribute('aria-pressed', 'false');
+      }
+    });
+    applyDoctorFilters();
+  });
+
+  /* ---------- FAQ Accordion with + / - icons ---------- */
+  var faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(function(item){
+    var questionBtn = item.querySelector('.faq-question');
+    var icon = questionBtn.querySelector('i');
+
+    questionBtn.addEventListener('click', function(){
+      var isOpen = item.classList.contains('open');
+
+      // Close all other items
+      faqItems.forEach(function(other){
+        other.classList.remove('open');
+        var otherBtn = other.querySelector('.faq-question');
+        var otherIcon = other.querySelector('.faq-question i');
+        if(otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+        if(otherIcon){ otherIcon.className = 'fa-solid fa-plus'; }
+      });
+
+      // Toggle current item
+      if(!isOpen){
+        item.classList.add('open');
+        questionBtn.setAttribute('aria-expanded', 'true');
+        if(icon) icon.className = 'fa-solid fa-minus';
+      } else {
+        item.classList.remove('open');
+        questionBtn.setAttribute('aria-expanded', 'false');
+        if(icon) icon.className = 'fa-solid fa-plus';
+      }
+    });
+  });
+
+  /* ---------- IntersectionObserver Scroll Reveal ---------- */
+  var reveals = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {rootMargin:'0px 0px -40px 0px', threshold:0.08});
+    reveals.forEach(function(el){ observer.observe(el); });
+  } else {
+    reveals.forEach(function(el){ el.classList.add('is-visible'); });
+  }
+
+  /* ---------- Smooth scroll for internal links ---------- */
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var id = a.getAttribute('href');
+      if(id && id.length > 1){
+        var target = document.querySelector(id);
+        if(target){
+          e.preventDefault();
+          var offset = 90;
+          var top = target.getBoundingClientRect().top + window.scrollY - offset;
+          window.scrollTo({top: top, behavior:'smooth'});
+        }
+      }
+    });
+  });
+
+})();
+</script>
+</body>
+</html>
+
