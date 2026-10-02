@@ -21,9 +21,9 @@ export default function HowItWorks() {
       <div className="container">
         <div className="section-head center">
           <div className="eyebrow" style={{ justifyContent: 'center' }}>
-            GETTING STARTED
+            OUR HEALTHCARE PROCESS
           </div>
-          <h2 className="heading">How It Works</h2>
+          <h2 className="heading">How Our Services Work</h2>
         </div>
         <div className="steps-wrap">
           <div className="steps-grid">

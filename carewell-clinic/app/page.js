@@ -5,13 +5,14 @@ import TrustStrip from "@/components/TrustStrip";
 import About from "@/components/About";
 import Services from "@/components/Services";
 import FeaturedCheckup from "@/components/FeaturedCheckup";
+import Doctors from "@/components/Doctors";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import HowItWorks from "@/components/HowItWorks";
-import Statistics from "@/components/Statistics";
-import Doctors from "@/components/Doctors";
-import Testimonials from "@/components/Testimonials";
 import AppointmentForm from "@/components/AppointmentForm";
-import Resources from "@/components/Resources";
+import Testimonials from "@/components/Testimonials";
+import FAQ from "@/components/FAQ";
+import HomeContact from "@/components/HomeContact";
+import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -25,13 +26,14 @@ export default function Home() {
         <About />
         <Services />
         <FeaturedCheckup />
+        <Doctors />
         <WhyChooseUs />
         <HowItWorks />
-        <Statistics />
-        <Doctors />
-        <Testimonials />
         <AppointmentForm />
-        <Resources />
+        <Testimonials />
+        <FAQ />
+        <HomeContact />
+        <FinalCTA />
       </main>
       <Footer />
     </>
