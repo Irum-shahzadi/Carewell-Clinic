@@ -1,5 +1,6 @@
 import Header from '@/components/Header';
 import ServicesPageContent from '@/components/ServicesPageContent';
+import Footer from '@/components/Footer';
 
 export const metadata = {
   title: 'Our Services — Carewell Health Clinic',
@@ -12,6 +13,7 @@ export default function ServicesPage() {
     <>
       <Header />
       <ServicesPageContent />
+      <Footer />
     </>
   );
 }

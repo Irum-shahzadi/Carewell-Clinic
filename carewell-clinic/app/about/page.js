@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Header from '@/components/Header';
 import AboutPageContent from '@/components/AboutPageContent';
+import Footer from '@/components/Footer';
 
 export const metadata = {
   title: 'About Us — Carewell Health Clinic',
@@ -13,6 +14,7 @@ export default function AboutPage() {
     <>
       <Header />
       <AboutPageContent />
+      <Footer />
     </>
   );
 }
